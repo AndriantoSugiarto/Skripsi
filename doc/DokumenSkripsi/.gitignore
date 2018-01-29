@@ -1,9 +1,10 @@
-*.aux
+/*.aux
 *.bbl
 *.blg
 *.dvi
-*.log
+/*.log
 /*.lof
 /*.lot
 /*.out
 /*.toc
+/*.synctex.gz

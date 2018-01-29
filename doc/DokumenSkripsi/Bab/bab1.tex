@@ -5,40 +5,77 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Bagian ini akan diisi dengan apa yang melatarbelakangi pembuatan template skripsi ini.
-Termasuk juga masalah-masalah yang akan dihadapi untuk membuatnya, termasuk kurangnya kemampuan penguasaan \LaTeX{} sehingga template ini dibuat dengan mengandalkan berbagai contoh yang tersebar di dunia maya, yang digabung-gabung menjadi satu jua.
-Bagian lain juga akan dilengkapi, untuk sementara diisi dengan lorem ipsum versi bahasa inggris.
+\paragraph{} IFStudentPortal merupakan sistem informasi berbasis  \textit{web} yang dibuat menggunakan Play Framework untuk Teknik Informatika UNPAR. IFStudentPortal merupakan aplikasi buatan Herfan Heryandi dan kontributor lainnya. Fitur-fitur dari IFStudentPortal yaitu memeriksa prasyarat mata kuliah, memeriksa syarat yang masih kurang untuk kelulusan dan melihat jadwal kuliah. Berdasarkan catatan akademik mahasiswa yang login (terpersonalisasi). Data-data yang terdapat pada IFStudentPortal diolah dari Portal Akademik Mahasiswa dengan ekstraksi data dari situs web menggunakan \textit{library} jsoup.
 
-\dtext{5-10}
+Pada saat ini Prodi Informatika dalam proses perubahan kurikulum dari 2013 ke 2018. Pada draft kurikulum 2018(saat ini versi 0.4) sudah memperlihatkan beberapa perbedaan seperti dalam kode mata kuliah(contoh: AIF401 menjadi AIF184001), struktur kuliah serta prasyaratnya, konversi dari mata kuliah kurikulum 2013, Nilai Akhir lebih bervariasi(ada A, A-, B+,dst), perbedaan dalam syarat kelulusan (tidak ada lagi pilihan wajib), dll. Dari perbedaan-perbedaan tersebut dapat dilihat bahwa diperlukannya perubahan terhadap IFStudentPortal yang saat ini mendukung kurikulum 2013. Perubahan terhadap prasyarat mata kuliah di kurikulum 2018 pada beberapa mata kuliah yang ada pada kurikulum 2018, sehingga membuat fitur dari IfStudentPortal untuk memeriksa prasayarat mata kuliah perlu dilakukannya perubahan yang sesuai dengan prasyarat mata kuliah pada kurikulum 2018. Selain itu, perlu juga dilakukan perubahan terhadap fitur IFStudentPortal untuk memeriksa syarat yang masih kurang untuk kelulusan dan kemudian disesuaikan dengan syarat kelulusan pada kurikulum 2018.
+
+Untuk mendukung perubahan kurikulum dari 2013 ke 2018 yang dilakukan oleh Prodi Informatika, perlu dilakukannya konversi terhadap IFStudentPortal dan SIAModels yang saat ini mendukung kurikulum 2013 menjadi mendukung kurikulum 2018. Pada SIAModels yang merupakan kelas-kelas dalam bahasa Java yang merepsesentasikan Sistem Informasi Akademik Teknik Informatika UNPAR. Untuk itu SIAModels perlu dikonversi untuk mendukung mata kuliah pada kurikulum 2018. Pada SIAModels pada bagian \textit{package} mata kuliah perlu dilakukan penyusaian pada mata kuliah yang terdapat pada Program Studi Teknik Informatika UNPAR berserta aturan prasyaratnya yang berlaku pada kurikulum 2018. Pada Skripsi ini pun perlu dilakukan konversi dari mata kuliah di kurikulum 2013 ke kurikulum 2018 terutama untuk mahasiswa/i yang sudah mengambil mata kuliah di kurikulum 2013.
+
+%\dtext{5-10}
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Bagian ini akan diisi dengan penajaman dari masalah-masalah yang sudah diidentifikasi di bagian sebelumnya. 
+Rumusan masalah yang akan dibahas dalam penelitian ini:
+\begin{enumerate}
+	\item Bagaimana mengonversi SIAModels dan IFStudentPortal, sehingga mendukung kurikulum 2018 serta konversinya (untuk mahasiswa yang sudah mengambil kuliah-kuliah di kurikulum 2013)?
+	\item Bagaimana mengimplementasikan kurikulum 2018 untuk SIAModels dan IFStudentPortal?
+\end{enumerate}
 
-\dtext{6}
+%\dtext{6}
 
 \section{Tujuan}
 \label{sec:tujuan}
-Akan dipaparkan secara lebih terperinci dan tersturkur apa yang menjadi tujuan pembuatan template skripsi ini
+Tujuan yang ingin dicapai dalam penelitian ini:
+\begin{enumerate}
+	\item Mengonversi SIAModels dan IFStudentPortal untuk mendukung kurikulum 2018 dan konversi dari mata kuliah kurikulum 2013 ke 2018.
+	\item Mengimplementasikan kurikulum 2018 untuk SIAModels dan IFStudentPortal.
+\end{enumerate}
 
-\dtext{7}
+%\dtext{7}
 
 \section{Batasan Masalah}
 \label{sec:batasan}
-Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi, misalnya saja bahwa template ini bukan berupa style \LaTeX{} pada umumnya (dengan alasannya karena belum mampu jika diminta membuat seperti itu)
+Dalam penilitian ini ditetapkan batasan-batasan masalah sebagai berikut:
+\begin{enumerate}
+	\item SIAModels hanya akan mendukung mata kuliah pada kurikulum 2018
+	\item 
+	\item
+\end{enumerate}
 
-\dtext{8}
+%\dtext{8}
 
 \section{Metodologi}
 \label{sec:metlit}
-Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
+Metode penelitian yang akan digunakan dalam skripsi ini adalah:
+\begin{enumerate}
+	\item Studi literatur mengenai:
+	\begin{enumerate}
+		\item Kurikulum 2018
+		\item \textit{library} jsoup
+		\item Play Framework
+	\end{enumerate}
+	\item Analisis kebutuhan untuk konversi SIAModels dan IFStudentPortal dari kurikulum 2013 lalu melakukan mengimplementasikan kurikulum 2018.
+	\item Melakukan pengujian dan eksperimen
+	\item Melakukan dokumentasi
+	
+\end{enumerate}
 
-\dtext{9}
+%\dtext{9}
 
 \section{Sistematika Pembahasan}
 \label{sec:sispem}
-Rencananya Bab 2 akan berisi petunjuk penggunaan template dan dasar-dasar \LaTeX.
-Mungkin bab 3,4,5 dapt diisi oleh ketiga jurusan, misalnya peraturan dasar skripsi atau pedoman penulisan, tentu jika berkenan.
-Bab 6 akan diisi dengan kesimpulan, bahwa membuat template ini ternyata sungguh menghabiskan banyak waktu.
+Untuk penulisan skripsi ini akan dibagi dalam enam bagian sebagai berikut:
 
-\dtext{10}
+Bab 1 Pendahuluan berisi latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi penelitian dan sistematika penulisan.
+
+Bab 2 Landasan Teori
+
+Bab 3 Analisis
+
+Bab 4 Perancangan
+
+Bab 5 Impelementasi dan pengujian
+
+Bab 6 Kesimpulan dan Saran 
+
+%\dtext{10}
