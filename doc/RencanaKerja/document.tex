@@ -16,7 +16,7 @@
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2015/2016}}}
+\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Genap 2017/2018}}}
 
 \onehalfspacing
  
@@ -26,84 +26,70 @@
 \author{\nama \textendash \@npm} 
 
 %tulis nama dan NPM anda di sini:
-\newcommand{\nama}{Lionov}
-\newcommand{\@npm}{1997730020}
-\newcommand{\@judultopik}{Simulasi Kerumunan di Museum} % Judul/topik anda
+\newcommand{\nama}{Andrianto Sugiarto}
+\newcommand{\@npm}{2013730046}
+\newcommand{\@judultopik}{Migrasi SIAModels dan IFStudentPortal ke Kurikulum 2018} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\tanggal}{01/01/1900}
+\newcommand{\tanggal}{26/01/2018}
 \maketitle
 
 \pagenumbering{arabic}
 
 \section{Deskripsi}
-Tuliskan deskripsi dari topik skripsi yang akan anda ajukan. Di sini dapat dituliskan latar belakang, seperti apa penelitian yang sudah ada sebelumnya dan apa yang akan anda kerjakan. Sertakan gambar agar penjelasan anda menjadi lebih baik.
 
-Pada skripsi ini, akan dibuat sebuah perangkat lunak yang dapat menampilkan visualisasi dan simulasi kerumunan orang yang berkunjung ke sebuah museum. Dengan menggunakan perangkat lunak tersebut, pengelola museum dapat mengatur tempat peletakan objek sehingga tidak terjadi kerumunan yang terlalu padat.
+\paragraph{} IFStudentPortal merupakan sistem informasi berbasis \textit{web} untuk mahasiswa Teknik Informatika UNPAR. IFStudentPortal sendiri adalah aplikasi buatan Herfan Heryandi dan kontributor lainnya. Fitur-fitur yang dimiliki IFStudentPortal yaitu persiapan perwalian, jadwal kuliah, dan syarat kelulusan. Saat ini IFStudentPortal dan SIAModels mendukung kurikulum 2013. SIAModels sendiri merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik Teknik Informatika UNPAR.
 
-Dari berbagai macam teknik yang dapat digunakan untuk melakukan simulasi kerumunan, dipilih dua buah teknik yaitu teknik {\it flow tiles} dan {\it social force model (steering behaviour)}.
+Pada skripsi ini, akan ditambahkan fitur untuk mengonversi kurikulum 2013 ke kurikulum 2018 terutama untuk mahasiswa yang sudah mengambil kuliah-kuliah pada kurikulum 2013. Selain itu, IFStudentPortal dan SIAModels yang tadinya mendukung kurikulum 2013 akan diubah ke kurikulum 2018 yang terlihat ada perbedaan dari kurikulum sebelumnya.
 
-Dst, dst, dst, \ldots\ldots\ldots 
 
-Perangkat lunak akan dibuat dengan bantuan {\it framework} OpenSteer. Sebagai studi kasus, museum yang digunakan untuk melakukan simulasi adalah Museum Geologi Bandung.
-
-Dst, dst, dst, \ldots\ldots\ldots 
 
 \section{Rumusan Masalah}
-Tuliskan rumusan dari masalah yang akan anda bahas pada skripsi ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+Rumusan dari masalaah yang akan dibahas pada skripsi ini sebagai berikut:
+\begin{itemize}
+	\item Bagaimana mengonversi SIAModels dan IFStudentPortal, sehingga mendukung kurikulum 2018 serta konversinya (untuk mahasiswa yang sudah mengambil kuliah-kuliah di kurikulum 2013)?
+	\item Bagaimana mengimplementasikan kurikulum 2018 untuk SIAModels dan IFStudentPortal?
+\end{itemize}
 
 \section{Tujuan}
-Tuliskan tujuan dari topik skripsi yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+Tujuan yang ingin dicapai dalam penulisan skripsi ini sebagai berikut:
+\begin{itemize}
+	\item Mengonversi SIAModels dan IFStudentPortal untuk mendukung kurikulum 2018 dan konversi dari mata kuliah kurikulum 2013 ke 2018.
+	\item Mengimplementasikan kurikulum 2018 untuk SIAModels dan IFStudentPortal.
+\end{itemize}
 
 \section{Deskripsi Perangkat Lunak}
-Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur yang disediakan oleh PL tersebut dan apa saja kemampuan dari PL tersebut. Perhatikan contoh di bawah ini:
-
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	\item Pengguna dapat melihat denah Musem Geologi Bandung dalam bidang dua dimensi. Sedangkan pengunjung direpresentasikan menggunakan lingkaran-lingkaran kecil (tidak menggunakan gambar manusia yang diambil dari atas)
-	\item Pengguna dapat memunculkan atau menghilangkan gambar {\it flow tiles} pada denah museum. 
-	\item Pengguna dapat mengatur jalannya simulasi: memulai(start) simulasi, menunda(pause) simulasi, melanjutkan(continue) simulasi, maupun menghentikan(stop) simulasi
-	\item Pengguna dapat mengatur banyaknya pengunjung di dalam museum, baik melalui perubahan frekuensi kedatangan pengunjung maupun menambahkan dan menghapus pengunjung satu-persatu secara manual.
-	\item Posisi kamera dapat diubah (pergerakan di bidang tiga dimensi) sehingga pengguna dapat melihat simulasi di museum dari berbagai arah. 
-	\item Posisi kamera dapat diubah untuk emngikuti perjalanan seorang pengunjung di dalam 
-	\item Pengguna dapat memilih apakah akan menggunakan teknik {\it flow tiles} atau tidak pada saat simulasi berlangsung
-	\item Jenis {\it flow tiles} yang digunakan dapat diubah-ubah pada saat simulasi sedang berlangsung
-		
+	\item Perangkat lunak mendukung kurikulum 2018
+	\item Perangkat lunak mampu mengonversi kuliah-kuliah kurikulum 2013 ke kurikulum 2018
 \end{itemize}
 
 \section{Detail Pengerjaan Skripsi}
-Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
-
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
-		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll)
-		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.
-		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}
-		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer
-		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung
-		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)
-		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer 
-		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif
+		\item Mempelajari IFStudentPortal dan SIAModels saat ini
+		\item Melakukan Studi Literatur mengenai Kurikulum 2018, \textit{library} jsoup  dan Play Framework
+		\item Melakukan konversi dari mata kuliah kurikulum 2013 ke kurikulum 2018 
+		\item Mengimplementasikan kurikulum 2018 untuk IFStudentPortal dan SIAModels
+		\item Melakukan pengujian dan eksperimen
 		\item Menulis dokumen skripsi
 	\end{enumerate}
 
 \section{Rencana Kerja}
-Tuliskan rencana anda untuk menyelesaikan skripsi. Rencana kerja dibagi menjadi dua bagian yaitu yang akan dilakukan pada saat mengambil kuliah AIF401 Skripsi 1 dan pada saat mengambil kuliah AIF402 Skripsi 2. Perhatikan contoh berikut ini :
+Rencana kerja dibagi menjadi dua bagian yaitu yang akan dilakukan pada saat mengambil kuliah AIF401 Skripsi 1 dan pada saat mengambil kuliah AIF402 Skripsi 2. diuraikan sebagai berikut :
 
 
 \begin{center}
   \begin{tabular}{ | c | c | c | c | l |}
     \hline
     1*  & 2*(\%) & 3*(\%) & 4*(\%) &5*\\ \hline \hline
-    1   & 5  & 5  &  &  \\ \hline
-    2   & 5 & 5  &   & \\ \hline
-    3   & 10  & 7  & 3 & {\footnotesize sebagian kecil teknik {\it flow tiles} di S2}  \\ \hline
-    4   & 15  & 10  &  5 & {\footnotesize teknik lanjut OOP di C++ di S2} \\ \hline
-    5   & 20  & 5  & 15 & {\footnotesize perancangan awal SFM, pathway dan waypoint di S1} \\ \hline
-    6   & 5 &   & 5  & \\ \hline
-    7   & 20  & 5  & 15 &  {\footnotesize implementasi denah dan rancangan awal SFM di S1}\\ \hline
-    8   & 5  &   &  5  & \\ \hline
-    9   & 15  & 3  & 12  & {\footnotesize sebagian bab 1 dan 2, serta bagian awal analisis di S1}\\ \hline
-    Total  & 100  & 40  & 60 &  \\ \hline
+    1   & 10  & 10  &  &  \\ \hline
+    2   & 10 & 10  &   & \\ \hline
+    3   & 10  &   & 10 & \\ \hline
+    4   & 35  & 15  & 20 &  \\ \hline
+    5   & 20  &   & 20 & \\ \hline
+    6   & 15  & 7  & 8  & {\footnotesize sebagian bab 1,2 dan 3 dikerjakan di skripsi 1}\\ \hline
+    Total  & 100  & 42  & 58 &  \\ \hline
                           \end{tabular}
 \end{center}
 
