@@ -5,13 +5,11 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-\paragraph{} IFStudentPortal\cite{ifstudentportal} merupakan sistem informasi berbasis  \textit{web} yang dibuat menggunakan Play Framework \cite{Leroux:2014} untuk Teknik Informatika UNPAR. IFStudentPortal merupakan aplikasi buatan Herfan Heryandi dan kontributor lainnya. Fitur-fitur dari IFStudentPortal yaitu memeriksa prasyarat mata kuliah, memeriksa syarat yang masih kurang untuk kelulusan dan melihat jadwal kuliah. Berdasarkan catatan akademik mahasiswa yang login (terpersonalisasi). Data-data yang terdapat pada IFStudentPortal diolah dari Portal Akademik Mahasiswa dengan ekstraksi data dari situs web menggunakan \textit{library} jsoup.
+\paragraph{} IFStudentPortal\cite{ifstudentportal} merupakan sistem informasi berbasis  \textit{web} yang dibuat menggunakan Play Framework \cite{Leroux:2014} untuk Teknik Informatika UNPAR. Selain itu, data-data yang terdapat pada IFStudentPortal diolah dari Portal Akademik Mahasiswa dengan ekstraksi data dari situs web menggunakan \textit{library} jsoup. IFStudentPortal merupakan aplikasi buatan Herfan Heryandi dan kontributor lainnya. Fitur-fitur dari IFStudentPortal yaitu memeriksa prasyarat mata kuliah, memeriksa syarat yang masih kurang untuk kelulusan dan melihat jadwal kuliah. Catatan akademik dari fitur-fitur pada IFStudentPortal diambil berdasarkan catatan akademik mahasiswa yang login (terpersonalisasi).
 
 Pada saat ini Program Studi Informatika dalam proses perubahan kurikulum dari 2013 ke 2018. Pada draft kurikulum 2018 versi 0.8 \cite{draftkurikulum2018} sudah memperlihatkan beberapa perbedaan seperti dalam kode mata kuliah (contoh: AIF401 menjadi AIF184001), struktur kuliah serta prasyaratnya, konversi dari mata kuliah kurikulum 2013, Nilai Akhir lebih bervariasi (ada A, A-, B+, dst), perbedaan dalam syarat kelulusan (tidak ada lagi pilihan wajib), dll. Dari perbedaan-perbedaan tersebut dapat dilihat bahwa diperlukan perubahan terhadap IFStudentPortal yang saat ini mendukung kurikulum 2013. Perbedaan syarat kelulusan pada kurikulum 2018 dengan kurikulum 2013 membuat diperlukan beberapa penyesuaian dengan aturan kelulusan untuk angkatan yang sudah mengambil mata kuliah pada kurikulum 2013.
 
-Pada SIAModels\cite{siamodels} yang merupakan kelas-kelas dalam bahasa Java yang merepsesentasikan Sistem Informasi Akademik Teknik Informatika UNPAR. Dan untuk mendukung perubahan kurikulum dari 2013 ke 2018 yang dilakukan oleh Program Studi Informatika, perlu dilakukan konversi terhadap IFStudentPortal dan SIAModels yang saat ini mendukung kurikulum 2013 menjadi mendukung kurikulum 2018.  Untuk itu SIAModels perlu dikonversi untuk mendukung mata kuliah pada kurikulum 2018. Pada SIAModels pada bagian \textit{package} mata kuliah perlu dilakukan penyusaian pada mata kuliah yang terdapat pada Program Studi Teknik Informatika UNPAR berserta aturan prasyaratnya yang berlaku pada kurikulum 2018. Pada Skripsi ini pun perlu dilakukan konversi nilai-nilai mata kuliah di kurikulum 2013 ke kurikulum 2018 terutama untuk mahasiswa/i yang sudah mengambil mata kuliah di kurikulum 2013.
-
-%\dtext{5-10}
+Pada SIAModels\cite{siamodels} merupakan kelas-kelas dalam bahasa Java yang merepresentasikan Sistem Informasi Akademik Teknik Informatika UNPAR. Untuk mendukung perubahan kurikulum dari 2013 ke 2018 yang dilakukan oleh Program Studi Informatika, perlu dilakukan konversi terhadap IFStudentPortal dan SIAModels yang saat ini mendukung kurikulum 2013 menjadi mendukung kurikulum 2018.  Untuk itu SIAModels perlu dikonversi untuk mendukung mata kuliah pada kurikulum 2018. Pada SIAModels bagian \textit{package} mata kuliah perlu dilakukan penyusaian pada mata kuliah yang terdapat pada Program Studi Teknik Informatika UNPAR berserta aturan prasyaratnya yang berlaku pada kurikulum 2018. Pada Skripsi ini pun perlu dilakukan konversi nilai-nilai mata kuliah di kurikulum 2013 ke kurikulum 2018 terutama untuk mahasiswa/i yang sudah mengambil mata kuliah di kurikulum 2013.
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
@@ -19,7 +17,7 @@ Rumusan masalah yang akan dibahas dalam penelitian ini:
 \begin{enumerate}
 	\item Bagaimana mengonversi SIAModels dan IFStudentPortal, sehingga mendukung kurikulum 2018 serta konversinya (untuk mahasiswa yang sudah mengambil kuliah-kuliah di kurikulum 2013)?
 	\item Bagaimana mengonversi nilai-nilai mata kuliah pada kurikulum 2013 ke 2018?
-	\item Bagaimana mengimplementasikan IFStudentPortal ke cloud server?
+	\item Bagaimana mengimplementasikan IFStudentPortal ke \textit{cloud server}?
 \end{enumerate}
 
 \section{Tujuan}
@@ -46,8 +44,8 @@ Metode penelitian yang akan digunakan dalam skripsi ini adalah:
 \begin{enumerate}
 	\item Studi literatur mengenai:
 	\begin{enumerate}
-		\item Kurikulum 2018
-		\item Skripsi Herfan Heryandi
+		\item Draft Kurikulum 2018
+		\item Skripsi Herfan Heryandi serta Aplikasi IFStudentPortal
 	\end{enumerate}
 	\item Analisis kebutuhan untuk konversi SIAModels dan IFStudentPortal dari kurikulum 2013 lalu melakukan mengimplementasikan kurikulum 2018.
 	\item Melakukan pengujian dan eksperimen

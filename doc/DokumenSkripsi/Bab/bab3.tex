@@ -1,0 +1,23 @@
+\chapter{Analisis}
+\label{chap:analisis}
+
+Pada bab ini akan dijelaskan mengenai analisis (dan kode) apa saja yang berubah untuk kurikulum 2018.
+
+\section{Analisis SIAModels }
+
+SIAModels merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik UNPAR. SIAModels saat ini merepresentasikan mata kuliah dan syarat kelulusan yang berlaku pada kurikulum 2013. Pada SIAModels terdapat perubahan-perubahan yang perlu dilakukan untuk menyesusaikan dengan kurikulum 2018.
+
+Pada SIAModels terdapat beberapa perubahan yang ada pada kurikulum 2018, yaitu :
+\begin{enumerate}
+	\item \textit{Package} \texttt{id.ac.unpar.siamodels.prodi.teknikinformatika}\\
+	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus atau diubah pada kelas Kelulusan, yaitu :
+	\begin{itemize}
+		\item Pada atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus.
+		\item Pada atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
+		\item Pada atribut \textbf{String[] AGAMA} perlu diubah kode mata kuliah yang ada.
+		\item Pada atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus.
+		\item Pada \textit{method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib.
+	\end{itemize}
+		
+	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah}
+\end{enumerate}
