@@ -18,7 +18,7 @@ Pada SIAModels terdapat beberapa perubahan yang ada pada kurikulum 2018, yaitu :
 		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
 		\item Atribut \textbf{String[] AGAMA} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
 		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
-		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib.
+		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib dan mengubah kode mata kuliah pada cek projek.
 	\end{itemize}
 		
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah} \\
@@ -112,7 +112,14 @@ Pada SIAModels terdapat beberapa perubahan yang ada pada kurikulum 2018, yaitu :
 		\item Mata Kuliah \textbf{MKU 011} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
 		\item Mata Kuliah \textbf{MKU 012} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
 	\end{itemize}
-	\item \textit{Package} \texttt{id.ac.unpar.siamodels}
+	
+	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah.interfaces}\\
+	Pada \textit{Package} ini terdapat interface yang merepresentasikan suatu mata kuliah memiliki prasyarat, praktikum dan responsi. Pada interface HasPrasyarat ada yang berubah, yaitu :
+	\begin{itemize}
+		\item Atribut \textbf{String[] DEFAULT\_HASPRASYARAT\_CLASSES} perlu diubah menjadi kode mata kuliah yang memiliki prasyarat pada kurikulum 2018.
+	\end{itemize}
+	
+	\item \textit{Package} \texttt{id.ac.unpar.siamodels}\\
 	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas Dosen, InfoMataKuliah, JadwalKuliah, Mahasiswa, MataKuliah, MataKuliahFactory, Semester, dan TahunSemester. Disini terdapat perubahan pada kelas Mahasiswa, yaitu :
 	\begin{itemize}
 		\item \textit{Method} \textbf{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.
