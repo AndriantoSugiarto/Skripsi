@@ -1,9 +1,11 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Pada bab ini akan dijelaskan mengenai analisis (dan kode) apa saja yang berubah untuk kurikulum 2018.
+Pada bab ini akan dijelaskan mengenai analisis apa saja yang berubah untuk kurikulum 2018.
 
-\section{Analisis SIAModels }
+\section{Analisis Sistem Usulan}
+
+\subsection{Analisis SIAModels }
 
 SIAModels merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik UNPAR. SIAModels saat ini merepresentasikan mata kuliah dan syarat kelulusan yang berlaku pada kurikulum 2013. Pada SIAModels terdapat perubahan-perubahan yang perlu dilakukan untuk menyesusaikan dengan kurikulum 2018.
 
@@ -12,12 +14,107 @@ Pada SIAModels terdapat beberapa perubahan yang ada pada kurikulum 2018, yaitu :
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.prodi.teknikinformatika}\\
 	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus atau diubah pada kelas Kelulusan, yaitu :
 	\begin{itemize}
-		\item Pada atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus.
-		\item Pada atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
-		\item Pada atribut \textbf{String[] AGAMA} perlu diubah kode mata kuliah yang ada.
-		\item Pada atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus.
-		\item Pada \textit{method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib.
+		\item Atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
+		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
+		\item Atribut \textbf{String[] AGAMA} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
+		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
+		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib.
 	\end{itemize}
 		
-	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah}
+	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah} \\
+	Pada \textit{package} ini terdapat kelas-kelas yang merepresentasikan sebuah mata kuliah. Beberapa mata kuliah yang berbuah pada kurikulum 2018, yaitu:
+	\begin{itemize}
+		\item Mata Kuliah \textbf{AIF 101} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 102} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 103} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 104} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 105} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 106} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 191} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 192} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 201} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 202} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 203} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 204} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 205} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 206} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 208} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 210} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 292} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 294} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 301} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 302} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 303} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 304} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 305} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 306} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 311} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 312} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 313} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 314} perlu diubah kode mata kuliah dan nama mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 315} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 316} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 317} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 318} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 330} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 332} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 334} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 335} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 336} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 337} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 339} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 341} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 342} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 343} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 344} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 347} perlu diubah kode mata kuliah dan nama mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 352} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 358} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 360} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 362} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 381} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 387} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 401} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 402} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 403} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 405} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 438} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 441} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 442} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 443} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 445} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 446} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 450} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 453} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 455} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 456} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 457} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 458} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 461} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 462} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 463} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 465} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 468} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 469} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 480} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AIF 486} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AMS 100} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AMS 190} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{AMS 200} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{APS 402} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 001} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 002} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 003} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 004} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 008} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 009} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 010} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 011} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Mata Kuliah \textbf{MKU 012} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+	\end{itemize}
+	\item \textit{Package} \texttt{id.ac.unpar.siamodels}
+	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas Dosen, InfoMataKuliah, JadwalKuliah, Mahasiswa, MataKuliah, MataKuliahFactory, Semester, dan TahunSemester. Disini terdapat perubahan pada kelas Mahasiswa, yaitu :
+	\begin{itemize}
+		\item \textit{Method} \textbf{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.
+	\end{itemize}
 \end{enumerate}
