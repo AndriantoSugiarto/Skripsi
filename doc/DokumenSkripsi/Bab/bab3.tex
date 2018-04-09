@@ -9,119 +9,223 @@ Pada bab ini akan dijelaskan mengenai analisis apa saja yang berubah untuk kurik
 
 SIAModels merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik UNPAR. SIAModels saat ini merepresentasikan mata kuliah dan syarat kelulusan yang berlaku pada kurikulum 2013. Pada SIAModels terdapat perubahan-perubahan yang perlu dilakukan untuk menyesusaikan dengan kurikulum 2018.
 
-Pada SIAModels terdapat beberapa perubahan yang ada pada kurikulum 2018, yaitu :
+Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 2018, yaitu :
 \begin{enumerate}
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.prodi.teknikinformatika}\\
-	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus atau diubah pada kelas Kelulusan, yaitu :
+	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus atau diubah pada kelas \texttt{Kelulusan}, yaitu :
 	\begin{itemize}
 		\item Atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
-		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
+		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018. (tabel \ref{tab:strukturkurikulum2018} \& \ref{tab:2_strukturkurikulum2018})
 		\item Atribut \textbf{String[] AGAMA} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
-		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
-		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib dan mengubah kode mata kuliah pada cek proyek.
+		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib. (tabel \ref{tab:strukturkurikulum2018})
+		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib, menambahkan pengecekan untuk mata kuliah skripsi atau tugas akhir, dan mengubah kode mata kuliah pada cek proyek, disesuaikan dengan tabel \ref{tab:2_strukturkurikulum2018} \& \ref{tab:aturankonversiwajib}.
 	\end{itemize}
 		
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah} \\
-	Pada \textit{package} ini terdapat kelas-kelas yang merepresentasikan sebuah mata kuliah. Beberapa mata kuliah yang berbuah pada kurikulum 2018, yaitu:
+	Pada \textit{package} ini terdapat kelas-kelas yang merepresentasikan sebuah mata kuliah. Beberapa mata kuliah yang berubah pada kurikulum 2018, yaitu:
 	\begin{itemize}
-		\item Mata Kuliah \textbf{AIF 101} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 102} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 103} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 104} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 105} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 106} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 191} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 192} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 201} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 202} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 203} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 204} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 205} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 206} perlu diubah kode mata kuliah dan bobot sks sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 208} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 210} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 292} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 294} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 301} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 302} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 303} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 304} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 305} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 306} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 311} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 312} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 313} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 314} perlu diubah kode mata kuliah dan nama mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 315} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 316} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 317} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 318} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 330} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 332} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 334} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 335} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 336} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 337} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 339} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 341} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 342} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 343} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 344} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 347} perlu diubah kode mata kuliah dan nama mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 352} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 358} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 360} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 362} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 381} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 387} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 401} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 402} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 403} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 405} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 438} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 441} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 442} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 443} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 445} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 446} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 450} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 453} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 455} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 456} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 457} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 458} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 461} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 462} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 463} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 465} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 468} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 469} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 480} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AIF 486} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AMS 100} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AMS 190} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{AMS 200} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{APS 402} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 001} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 002} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 003} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 004} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 008} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 009} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 010} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 011} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
-		\item Mata Kuliah \textbf{MKU 012} perlu diubah kode mata kuliah sesuai dengan kurikulum 2018.
+		\item Perlu dibuat kelas \texttt{AIF181091\_02} untuk merepresentasikan mata kuliah Bahasa Inggris.
+		\item Perlu dibuat kelas \texttt{AIF181100\_04} untuk merepresentasikan mata kuliah Dasar Pemrograman.
+		\item Perlu dibuat kelas \texttt{AIF181101\_03} untuk merepresentasikan mata kuliah Computational Thinking.
+		\item Perlu dibuat kelas \texttt{AIF181103\_04} untuk merepresentasikan mata kuliah Matematika Dasar.
+		\item Perlu dibuat kelas \texttt{AIF181104\_03} untuk merepresentasikan mata kuliah Logika Informatika.
+		\item Perlu dibuat kelas \texttt{AIF181105\_02} untuk merepresentasikan mata kuliah Pengantar Informatika.
+		\item Perlu dibuat kelas \texttt{AIF181106\_03} untuk merepresentasikan mata kuliah Matriks dan Ruang Vektor.
+		\item Perlu dibuat kelas \texttt{AIF181107\_03} untuk merepresentasikan mata kuliah Matematika Diskret.
+		\item Perlu dibuat kelas \texttt{AIF181193\_03} untuk merepresentasikan mata kuliah Matematika Dasar.
+		\item Perlu dibuat kelas \texttt{AIF181194\_02} untuk merepresentasikan mata kuliah Logika Informatika.
+		\item Perlu dibuat kelas \texttt{AIF181195\_03} untuk merepresentasikan mata kuliah Pengantar Informatika.
+		\item Perlu dibuat kelas \texttt{AIF181202\_04} untuk merepresentasikan mata kuliah Arsitektur dan Organisasi Komputer.
+		\item Perlu dibuat kelas \texttt{AIF181298\_03} untuk merepresentasikan mata kuliah Sistem Dijital.
+		\item Perlu dibuat kelas \texttt{AIF182007\_02} untuk merepresentasikan mata kuliah Teknik Presentasi.
+		\item Perlu dibuat kelas \texttt{AIF182100\_04} untuk merepresentasikan mata kuliah Analisis Desain Berorientasi Objek.
+		\item Perlu dibuat kelas \texttt{AIF182101\_03} untuk merepresentasikan mata kuliah Algoritma dan Struktur Data.
+		\item Perlu dibuat kelas \texttt{AIF182103\_04} untuk merepresentasikan mata kuliah Struktur Diskret.
+		\item Perlu dibuat kelas \texttt{AIF182105\_02} untuk merepresentasikan mata kuliah Pemrograman Berorientasi Objek.
+		\item Perlu dibuat kelas \texttt{AIF182109\_03} untuk merepresentasikan mata kuliah Statistika untuk Komputasi.
+		\item Perlu dibuat kelas \texttt{AIF182110\_02} untuk merepresentasikan mata kuliah Pemrograman Fungsional.
+		\item Perlu dibuat kelas \texttt{AIF182112\_03} untuk merepresentasikan mata kuliah Pemodelan Formal.
+		\item Perlu dibuat kelas \texttt{AIF182114\_03} untuk merepresentasikan mata kuliah Pemrograman Kompetitif 1.
+		\item Perlu dibuat kelas \texttt{AIF182116\_02} untuk merepresentasikan mata kuliah Dasar-dasar Java.
+		\item Perlu dibuat kelas \texttt{AIF182118\_03} untuk merepresentasikan mata kuliah Teori Bilangan.
+		\item Perlu dibuat kelas \texttt{AIF182120\_02} untuk merepresentasikan mata kuliah Teori Bahasa dan Kompilasi.
+		\item Perlu dibuat kelas \texttt{AIF182122\_03} untuk merepresentasikan mata kuliah Matematika Kombinatorial.
+		\item Perlu dibuat kelas \texttt{AIF182124\_03} untuk merepresentasikan mata kuliah Metode Numerik.
+		\item Perlu dibuat kelas \texttt{AIF182126\_02} untuk merepresentasikan mata kuliah Pemrograman Lojik.
+		\item Perlu dibuat kelas \texttt{AIF182190\_03} untuk merepresentasikan mata kuliah Analisis Desain Berorientasi  Objek.
+		\item Perlu dibuat kelas \texttt{AIF182191\_01} untuk merepresentasikan mata kuliah Praktika Algoritma dan Struktur Data.
+		\item Perlu dibuat kelas \texttt{AIF182195\_01} untuk merepresentasikan mata kuliah Praktika Pemrograman Berorientasi Objek.
+		\item Perlu dibuat kelas \texttt{AIF182204\_03} untuk merepresentasikan mata kuliah Pemrograman Berbasis Web.
+		\item Perlu dibuat kelas \texttt{AIF182206\_03} untuk merepresentasikan mata kuliah Sistem Operasi.
+		\item Perlu dibuat kelas \texttt{AIF182294\_02} untuk merepresentasikan mata kuliah Pemrograman Berbasis Web.
+		\item Perlu dibuat kelas \texttt{AIF182296\_01} untuk merepresentasikan mata kuliah Praktika Sistem Operasi.
+		\item Perlu dibuat kelas \texttt{AIF182302\_04} untuk merepresentasikan mata kuliah Majemen Informasi dan Basis Data.
+		\item Perlu dibuat kelas \texttt{AIF182308\_03} untuk merepresentasikan mata kuliah Pengantar Sistem Informasi.
+		\item Perlu dibuat kelas \texttt{AIF182392\_03} untuk merepresentasikan mata kuliah Manajemen Informasi dan Basis Data.
+		\item Perlu dibuat kelas \texttt{AIF183002\_02} untuk merepresentasikan mata kuliah Penulisan Ilmiah.
+		\item Perlu dibuat kelas \texttt{AIF183010\_03} untuk merepresentasikan mata kuliah Kerja Praktek 2.
+		\item Perlu dibuat kelas \texttt{AIF183013\_02} untuk merepresentasikan mata kuliah Kerja Praktek 1.
+		\item Perlu dibuat kelas \texttt{AIF183015\_03} untuk merepresentasikan mata kuliah Pendidikan Pengabdian kepada Masyarakat.
+		\item Perlu dibuat kelas \texttt{AIF183100\_03} untuk merepresentasikan mata kuliah Pengantar Sistem Cerdas.
+		\item Perlu dibuat kelas \texttt{AIF183101\_03} untuk merepresentasikan mata kuliah Desain dan Analisis Algoritma.
+		\item Perlu dibuat kelas \texttt{AIF183104\_03} untuk merepresentasikan mata kuliah Interaksi Manusia Komputer.
+		\item Perlu dibuat kelas \texttt{AIF183106\_06} untuk merepresentasikan mata kuliah Proyek Informatika.
+		\item Perlu dibuat kelas \texttt{AIF183112\_02} untuk merepresentasikan mata kuliah Pengujian Perangkat Lunak.
+		\item Perlu dibuat kelas \texttt{AIF183114\_03} untuk merepresentasikan mata kuliah Algoritma Kriptografi.
+		\item Perlu dibuat kelas \texttt{AIF183116\_02} untuk merepresentasikan mata kuliah Komputasi Paralel.
+		\item Perlu dibuat kelas \texttt{AIF183117\_02} untuk merepresentasikan mata kuliah Grafika Komputer.
+		\item Perlu dibuat kelas \texttt{AIF183118\_03} untuk merepresentasikan mata kuliah Komputasi Geometri.
+		\item Perlu dibuat kelas \texttt{AIF183119\_02} untuk merepresentasikan mata kuliah Keamanan Informasi.
+		\item Perlu dibuat kelas \texttt{AIF183120\_03} untuk merepresentasikan mata kuliah Perancangan Permainan Komputer.
+		\item Perlu dibuat kelas \texttt{AIF183121\_03} untuk merepresentasikan mata kuliah Pemrograman Kompetitif 2.
+		\item Perlu dibuat kelas \texttt{AIF183122\_03} untuk merepresentasikan mata kuliah Pemodelan Simulasi.
+		\item Perlu dibuat kelas \texttt{AIF183123\_02} untuk merepresentasikan mata kuliah Topik Khusus Informatika 1.
+		\item Perlu dibuat kelas \texttt{AIF183124\_03} untuk merepresentasikan mata kuliah Grafika Komputer Lanjut.
+		\item Perlu dibuat kelas \texttt{AIF183126\_03} untuk merepresentasikan mata kuliah Pemrograman Kompetitif 3.
+		\item Perlu dibuat kelas \texttt{AIF183128\_03} untuk merepresentasikan mata kuliah Topik Khusus Informatika 2.
+		\item Perlu dibuat kelas \texttt{AIF183191\_01} untuk merepresentasikan mata kuliah Praktika Desain dan Analisis Algoritma .
+		\item Perlu dibuat kelas \texttt{AIF183194\_02} untuk merepresentasikan mata kuliah Interaksi Manusia Komputer.
+		\item Perlu dibuat kelas \texttt{AIF183195\_02} untuk merepresentasikan mata kuliah Desain Antarmuka Grafis.
+		\item Perlu dibuat kelas \texttt{AIF183197\_03} untuk merepresentasikan mata kuliah Matematika Teknik.
+		\item Perlu dibuat kelas \texttt{AIF183209\_03} untuk merepresentasikan mata kuliah Pemrograman Aplikasi Bergerak.
+		\item Perlu dibuat kelas \texttt{AIF183211\_04} untuk merepresentasikan mata kuliah Jaringan Komputer.
+		\item Perlu dibuat kelas \texttt{AIF183225\_03} untuk merepresentasikan mata kuliah Administrasi Jaringan Komputer 1.
+		\item Perlu dibuat kelas \texttt{AIF183227\_03} untuk merepresentasikan mata kuliah Pengantar Telekomunikasi.
+		\item Perlu dibuat kelas \texttt{AIF183229\_02} untuk merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 1.
+		\item Perlu dibuat kelas \texttt{AIF183230\_03} untuk merepresentasikan mata kuliah Jaringan Komputer Lanjut.
+		\item Perlu dibuat kelas \texttt{AIF183232\_03} untuk merepresentasikan mata kuliah Pemrograman Berbasis Web Lanjut.
+		\item Perlu dibuat kelas \texttt{AIF183234\_03} untuk merepresentasikan mata kuliah Sistem Aplikasi Telematika.
+		\item Perlu dibuat kelas \texttt{AIF183236\_03} untuk merepresentasikan mata kuliah Administrasi Jaringan Komputer 2.
+		\item Perlu dibuat kelas \texttt{AIF183238\_03} untuk merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 2.
+		\item Perlu dibuat kelas \texttt{AIF183290\_02} untuk merepresentasikan mata kuliah Analisis Proses Bisnis.
+		\item Perlu dibuat kelas \texttt{AIF183299\_02} untuk merepresentasikan mata kuliah Pemrograman Aplikasi Bergerak.
+		\item Perlu dibuat kelas \texttt{AIF183303\_03} untuk merepresentasikan mata kuliah Rekayasa Perangkat Lunak.
+		\item Perlu dibuat kelas \texttt{AIF183305\_02} untuk merepresentasikan mata kuliah Manajemen Proyek.
+		\item Perlu dibuat kelas \texttt{AIF183307\_02} untuk merepresentasikan mata kuliah Teknologi Basis Data.
+		\item Perlu dibuat kelas \texttt{AIF183308\_03} untuk merepresentasikan mata kuliah Proyek Sistem Informasi 1.
+		\item Perlu dibuat kelas \texttt{AIF183331\_03} untuk merepresentasikan mata kuliah Sistem e-Commerce.
+		\item Perlu dibuat kelas \texttt{AIF183333\_02} untuk merepresentasikan mata kuliah Metodologi Pengembangan Sistem Informasi 1.
+		\item Perlu dibuat kelas \texttt{AIF183335\_02} untuk merepresentasikan mata kuliah Perencanaan Sistem Informasi.
+		\item Perlu dibuat kelas \texttt{AIF183337\_02} untuk merepresentasikan mata kuliah Topik Khusus Sistem Informasi 1.
+		\item Perlu dibuat kelas \texttt{AIF183340\_02} untuk merepresentasikan mata kuliah Metodologi Pengembangan Sistem Informasi 2.
+		\item Perlu dibuat kelas \texttt{AIF183342\_03} untuk merepresentasikan mata kuliah Kewirausahaan Berbasis Teknologi.
+		\item Perlu dibuat kelas \texttt{AIF183344\_03} untuk merepresentasikan mata kuliah Kecerdasan Bisnis .
+		\item Perlu dibuat kelas \texttt{AIF183346\_03} untuk merepresentasikan mata kuliah Topik Khusus Sistem Informasi 2.
+		\item Perlu dibuat kelas \texttt{AIF183348\_03} untuk merepresentasikan mata kuliah Sistem Kecerdasan Bisnis.
+		\item Perlu dibuat kelas \texttt{AIF183390\_03} untuk merepresentasikan mata kuliah Sistem Pendukung Keputusan.
+		\item Perlu dibuat kelas \texttt{AIF183393\_02} untuk merepresentasikan mata kuliah Analisis Sistem Informasi.
+		\item Perlu dibuat kelas \texttt{AIF183393\_04} untuk merepresentasikan mata kuliah Rekayasa Perangkat Lunak.
+		\item Perlu dibuat kelas \texttt{AIF183395\_02} untuk merepresentasikan mata kuliah Perencanaan Sistem Informasi.
+		\item Perlu dibuat kelas \texttt{AIF184000\_02} untuk merepresentasikan mata kuliah Etika Profesi.
+		\item Perlu dibuat kelas \texttt{AIF184001\_03} untuk merepresentasikan mata kuliah Skripsi 1.
+		\item Perlu dibuat kelas \texttt{AIF184002\_05} untuk merepresentasikan mata kuliah Skripsi 2.
+		\item Perlu dibuat kelas \texttt{AIF184004\_08} untuk merepresentasikan mata kuliah Tugas Akhir.
+		\item Perlu dibuat kelas \texttt{AIF184005\_02} untuk merepresentasikan mata kuliah Komputer dan Masyarakat.
+		\item Perlu dibuat kelas \texttt{AIF184007\_04} untuk merepresentasikan mata kuliah Kerja Praktek 3.
+		\item Perlu dibuat kelas \texttt{AIF184091\_04} untuk merepresentasikan mata kuliah Skripsi 1.
+		\item Perlu dibuat kelas \texttt{AIF184092\_06} untuk merepresentasikan mata kuliah Skripsi 2.
+		\item Perlu dibuat kelas \texttt{AIF184104\_03} untuk merepresentasikan mata kuliah Bio-Inspired Computing.
+		\item Perlu dibuat kelas \texttt{AIF184106\_03} untuk merepresentasikan mata kuliah Pemrograman Permainan Komputer.
+		\item Perlu dibuat kelas \texttt{AIF184108\_03} untuk merepresentasikan mata kuliah Kompresi Data.
+		\item Perlu dibuat kelas \texttt{AIF184109\_03} untuk merepresentasikan mata kuliah Pembelajaran Mesin.
+		\item Perlu dibuat kelas \texttt{AIF184110\_03} untuk merepresentasikan mata kuliah Pengolahan Citra.
+		\item Perlu dibuat kelas \texttt{AIF184112\_03} untuk merepresentasikan mata kuliah Pemrosesan Data Geografis.
+		\item Perlu dibuat kelas \texttt{AIF184114\_03} untuk merepresentasikan mata kuliah Verifikasi Formal.
+		\item Perlu dibuat kelas \texttt{AIF184115\_02} untuk merepresentasikan mata kuliah Pencarian dan Temu Kembali Informasi.
+		\item Perlu dibuat kelas \texttt{AIF184116\_02} untuk merepresentasikan mata kuliah Sistem Multi Agen.
+		\item Perlu dibuat kelas \texttt{AIF184118\_02} untuk merepresentasikan mata kuliah Pemrograman Sistem.
+		\item Perlu dibuat kelas \texttt{AIF184119\_03} untuk merepresentasikan mata kuliah Kecerdasan Buatan untuk Permainan Komputer.
+		\item Perlu dibuat kelas \texttt{AIF184120\_02} untuk merepresentasikan mata kuliah Topik Khusus Informatika 4.
+		\item Perlu dibuat kelas \texttt{AIF184121\_03} untuk merepresentasikan mata kuliah Metode Optimisasi.
+		\item Perlu dibuat kelas \texttt{AIF184123\_03} untuk merepresentasikan mata kuliah Teknologi Mesin Pencari.
+		\item Perlu dibuat kelas \texttt{AIF184125\_03} untuk merepresentasikan mata kuliah Pengolahan Bahasa Alami.
+		\item Perlu dibuat kelas \texttt{AIF184127\_03} untuk merepresentasikan mata kuliah Topik Khusus Informatika 3.
+		\item Perlu dibuat kelas \texttt{AIF184129\_03} untuk merepresentasikan mata kuliah Administrasi Jaringan Komputer 3.
+		\item Perlu dibuat kelas \texttt{AIF184191\_02} untuk merepresentasikan mata kuliah Algoritma Genetika.
+		\item Perlu dibuat kelas \texttt{AIF184193\_02} untuk merepresentasikan mata kuliah Jaringan Syaraf Tiruan.
+		\item Perlu dibuat kelas \texttt{AIF184197\_02} untuk merepresentasikan mata kuliah Metode Formal.
+		\item Perlu dibuat kelas \texttt{AIF184222\_03} untuk merepresentasikan mata kuliah Administrasi Jaringan Komputer 4.
+		\item Perlu dibuat kelas \texttt{AIF184224\_03} untuk merepresentasikan mata kuliah Sistem Terdistribusi.
+		\item Perlu dibuat kelas \texttt{AIF184226\_03} untuk merepresentasikan mata kuliah Teknologi Multimedia.
+		\item Perlu dibuat kelas \texttt{AIF184228\_02} untuk merepresentasikan mata kuliah Pemrograman Jaringan.
+		\item Perlu dibuat kelas \texttt{AIF184230\_03} untuk merepresentasikan mata kuliah Keamanan Jaringan.
+		\item Perlu dibuat kelas \texttt{AIF184231\_03} untuk merepresentasikan mata kuliah Jaringan Nirkabel.
+		\item Perlu dibuat kelas \texttt{AIF184232\_02} untuk merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 4.
+		\item Perlu dibuat kelas \texttt{AIF184233\_03} untuk merepresentasikan mata kuliah Teknologi Middleware.
+		\item Perlu dibuat kelas \texttt{AIF184235\_03} untuk merepresentasikan mata kuliah Layanan Berbasis Web.
+		\item Perlu dibuat kelas \texttt{AIF184237\_03} untuk merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 3.
+		\item Perlu dibuat kelas \texttt{AIF184303\_03} untuk merepresentasikan mata kuliah Proyek Sistem Informasi 2.
+		\item Perlu dibuat kelas \texttt{AIF184334\_03} untuk merepresentasikan mata kuliah Sistem Informasi Skala Besar.
+		\item Perlu dibuat kelas \texttt{AIF184336\_02} untuk merepresentasikan mata kuliah Sistem e-Government.
+		\item Perlu dibuat kelas \texttt{AIF184338\_03} untuk merepresentasikan mata kuliah Manajemen Proses Bisnis.
+		\item Perlu dibuat kelas \texttt{AIF184339\_03} untuk merepresentasikan mata kuliah Pengendalian dan Audit Teknologi Informasi.
+		\item Perlu dibuat kelas \texttt{AIF184340\_02} untuk merepresentasikan mata kuliah Sistem Informasi Geografis.
+		\item Perlu dibuat kelas \texttt{AIF184341\_03} untuk merepresentasikan mata kuliah Penambangan Data.
+		\item Perlu dibuat kelas \texttt{AIF184342\_02} untuk merepresentasikan mata kuliah Topik Khusus Sistem Informasi 4.
+		\item Perlu dibuat kelas \texttt{AIF184343\_03} untuk merepresentasikan mata kuliah Topik Khusus Sistem Informasi 3.
+		\item Perlu dibuat kelas \texttt{AIF184344\_03} untuk merepresentasikan mata kuliah Analisis Big Data.
+		\item Perlu dibuat kelas \texttt{AIF184345\_03} untuk merepresentasikan mata kuliah Teknologi Big Data dan Cloud Computing.
+		\item Perlu dibuat kelas \texttt{AIF184390\_02} untuk merepresentasikan mata kuliah Sistem Perusahaan Berskala Besar.
+		\item Perlu dibuat kelas \texttt{MKU170110\_02} untuk merepresentasikan mata kuliah Pendidikan Kewarganegaraan.
+		\item Perlu dibuat kelas \texttt{MKU170120\_02} untuk merepresentasikan mata kuliah Logika.
+		\item Perlu dibuat kelas \texttt{MKU170130\_02} untuk merepresentasikan mata kuliah Bahasa Indonesia.
+		\item Perlu dibuat kelas \texttt{MKU170240\_02} untuk merepresentasikan mata kuliah Etika.
+		\item Perlu dibuat kelas \texttt{MKU170250\_02} untuk merepresentasikan mata kuliah Pancasila.
+		\item Perlu dibuat kelas \texttt{MKU170360\_02} untuk merepresentasikan mata kuliah Estetika.
+		\item Perlu dibuat kelas \texttt{MKU170370\_02} untuk merepresentasikan mata kuliah Agama Katolik.
+		\item Perlu dibuat kelas \texttt{MKU170380\_02} untuk merepresentasikan mata kuliah Fenomenologi Agama.
 	\end{itemize}
 	
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah.interfaces}\\
-	Pada \textit{Package} ini terdapat interface yang merepresentasikan suatu mata kuliah memiliki prasyarat, praktikum dan responsi. Pada interface HasPrasyarat ada yang berubah, yaitu :
+	Pada \textit{Package} ini terdapat interface yang merepresentasikan suatu mata kuliah memiliki prasyarat, praktikum dan responsi. Pada interface \texttt{HasPrasyarat} ada yang berubah, yaitu :
 	\begin{itemize}
-		\item Atribut \textbf{String[] DEFAULT\_HASPRASYARAT\_CLASSES} perlu diubah menjadi kode mata kuliah yang memiliki prasyarat pada kurikulum 2018.
+		\item Atribut \textbf{String[] DEFAULT\_HASPRASYARAT\_CLASSES} perlu diubah menjadi kode mata kuliah yang memiliki prasyarat pada kurikulum 2018, yaitu AIF181100\_04, AIF182101\_03,
+		AIF182103\_04, AIF182105\_02, AIF182100\_04, AIF182302\_04,
+		AIF182204\_03, AIF182206\_03, AIF182308\_03, AIF183101\_03,
+		AIF183303\_03, AIF183305\_02, AIF183307\_02, AIF183209\_03,
+		AIF183211\_04, AIF183100\_03, AIF183105\_06, AIF183308\_03,
+		AIF184303\_03, AIF184001\_03, AIF184002\_05, AIF184004\_08,
+		AIF182110\_02, AIF182112\_03, AIF182114\_03, AIF182116\_02,
+		AIF182118\_03, AIF182120\_02, AIF182122\_03, AIF182124\_03,
+		AIF182126\_02, AIF183117\_02,	AIF183119\_02, AIF183121\_03,
+		AIF183227\_03, AIF183331\_03, AIF183333\_02, AIF183335\_02,
+		AIF183112\_02, AIF183114\_03, AIF183116\_02, AIF183118\_03,
+		AIF183120\_03, AIF183122\_03,	AIF183124\_03, AIF183126\_03,
+		AIF183230\_03, AIF183232\_03, AIF183234\_03, AIF183236\_03,
+		AIF183340\_02, AIF183342\_03, AIF183344\_03, AIF183348\_03,
+		AIF184109\_03, AIF184115\_02,	AIF184119\_03, AIF184121\_03,
+		AIF184123\_03, AIF184125\_03, AIF184129\_03, AIF184231\_03,
+		AIF184233\_03, AIF184235\_03, AIF184339\_03, AIF184341\_03,
+		AIF184345\_03, AIF184104\_03,	AIF184106\_03, AIF184108\_03,
+		AIF184110\_03, AIF184112\_03, AIF184114\_03, AIF184116\_02,
+		AIF184118\_02, AIF184222\_03, AIF184224\_03, AIF184226\_03,
+		AIF184228\_02, AIF184230\_03,	AIF184334\_03, AIF184338\_03, dan AIF184340\_02.
 	\end{itemize}
 	
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels}\\
-	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas Dosen, InfoMataKuliah, JadwalKuliah, Mahasiswa, MataKuliah, MataKuliahFactory, Semester, dan TahunSemester. Disini terdapat perubahan di dalam kelas Mahasiswa terdapat kelas Nilai, yaitu :
+	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas \texttt{Dosen}, \texttt{InfoMataKuliah}, \texttt{JadwalKuliah}, \texttt{Mahasiswa}, \texttt{MataKuliah}, \texttt{MataKuliahFactory}, \texttt{Semester}, dan \texttt{TahunSemester}. Disini terdapat perubahan di dalam kelas \texttt{Mahasiswa} terdapat kelas \texttt{Nilai}, yaitu :
 	\begin{itemize}
-		\item \textit{Method} \textbf{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.
+		\item Atribut \textbf{Character nilaiAkhir} perlu diubah menjadi \textit{String}, karena untuk beberapa kasus seperti pada tabel \ref{tab:AngkaAkhirDanKonversinya} memerlukan lebih dari satu karakter.
+		\item Constructor kelas \texttt{Nilai} untuk parameter \textbf{Character nilaiAkhir} diubah tipe datanya menjadi \textbf{String}.
+		\item \textit{Method} \textbf{Character getNilaiAkhir} tipe datanya diubah menjadi \textbf{String}.
+		\item \textit{Method} \textbf{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.(subbab \ref{sec:penilaian}) 
 	\end{itemize}
+	Beberapa perubahan yang ada pada kelas \texttt{Mahasiswa}, yaitu :
+	\begin{itemize}
+		\item \textit{Method} \texttt{double calculateIPTempuh(boolean lulusSaja)} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{double calculateIPKumulatif()} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{double calculateIPS()} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{int calculateSKSTempuh(boolean lulusSaja)} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{boolean hasLulusKuliah(String kodeMataKuliah} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Analisis IFStudentPortal}
+
+Pada IFStudentPortal terdapat beberapa perubahan yang harus dilakukan untuk mendukung SIAModels yang disesuaikan dengan kurikulum 2018, yaitu :
+\begin{enumerate}
+	\item \textit{Package} \texttt{Models.Support} \\
+	Pada \textit{package} ini terdapat kelas \texttt{Scraper} yang perlu disesuaikan. Berikut perubahan yang perlu dilakukan, yaitu \textit{Method} \textbf{public void requestNilai(String phpsessid, Mahasiswa logged\_mhs)} perlu disesuaikan pada bagian untuk mendapatkan nilai akhir menjadi tipe data \texttt{String}.
+	\item \textit{Package} \texttt{controllers} \\
+	Pada \textit{Package} ini terdapat kelas yang mengontrol jalanya komunikasi models dengan view. Perubahan yang pada kelas ini, yaitu \textit{Method} perwalian perlu diubah sedikit sesuai perubahan yang ada pada kelas \texttt{Nilai}.
 \end{enumerate}
