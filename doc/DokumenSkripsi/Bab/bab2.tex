@@ -360,7 +360,7 @@ SIAModels merupakan kelas-kelas dalam bahasa Java yang merepresentasikan Sistem 
 					\item \textbf{lokasi} lokasi kuliah.
 				\end{itemize}
 				
-			\item \textbf{public Doesen getPengajar()}\\
+			\item \textbf{public Dosen getPengajar()}\\
 				Berfungsi untuk mendapatkan nama pengajar.\\
 				\textbf{Kembalian:} nama pengajar.
 
@@ -560,12 +560,12 @@ SIAModels merupakan kelas-kelas dalam bahasa Java yang merepresentasikan Sistem 
 				Mendapatkan nilai UAS.\\
 				\textbf{Kembalian:} nilai UAS.
 				
-			\item \textbf{public Double getNilaikhir()}\\
-				Mendapatkan nilai akhir dalam bentuk angka.\\
+			\item \textbf{public Character getNilaikhir()}\\
+				Mengembalikan nilai akhir dalam bentuk huruf (A, B, C, D, ...).\\
 				\textbf{Kembalian:} nilai akhir dalam huruf atau \texttt{null} jika tidak ada.
 			
 			\item \textbf{public Double getAngkaAkhir()}\\
-				Mengembalikan nilai akhir dalam bentuk huruf (A, B, C, D, ...).\\
+				Mendapatkan nilai akhir dalam bentuk angka.\\
 				\textbf{Kembalian:} nilai akhir dalam angka, atau \texttt{null} jika \texttt{getNilaiAkhir()} mengembalikan \texttt{null}.
 			
 			\item \textbf{public int getTahunAjaran()}\\
@@ -789,7 +789,15 @@ SIAModels merupakan kelas-kelas dalam bahasa Java yang merepresentasikan Sistem 
 	\textit{Package} ini memiliki kelas sebagai berikut:
 	\begin{enumerate}
 		\item Kelulusan\\
-		kelas ini untuk memeriksa syarat kelulusan. \textit{Method} yang dimiliki kelas ini sebagai berikut:
+		Kelas ini untuk memeriksa syarat kelulusan. Atribut yang dimiliki kelas ini antara lain:
+		\begin{itemize}
+			\item \textbf{String[] PILIHAN\_WAJIB:} kode mata kuliah pilihan wajib.
+			\item \textbf{String[][] WAJIB:} kode mata kuliah wajib.
+			\item \textbf{String[] AGAMA:} kode mata kuliah agama.
+			\item \textbf{int MIN\_SKS\_LULUS:} jumlah minimal sks lulus.
+			\item \textbf{int MIN\_PILIHAN\_WAJIB:} jumlah minimal mata kuliah pilihan wajib yang diambil.
+		\end{itemize}
+		\textit{Method} yang dimiliki kelas ini sebagai berikut:
 		\begin{itemize}
 			\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
 			Melakukan pengecekan syarat kelulusan.

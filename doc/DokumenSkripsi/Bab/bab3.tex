@@ -3,9 +3,10 @@
 
 Pada bab ini akan dijelaskan mengenai analisis apa saja yang berubah untuk kurikulum 2018.
 
-\section{Analisis Sistem Usulan}
+\section{Analisis Sistem Akibat Kurikulum 2018}
 
 \subsection{Analisis SIAModels }
+\label{subbab:analisissiamodels}
 
 SIAModels merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik UNPAR. SIAModels saat ini merepresentasikan mata kuliah dan syarat kelulusan yang berlaku pada kurikulum 2013. Pada SIAModels terdapat perubahan-perubahan yang perlu dilakukan untuk menyesusaikan dengan kurikulum 2018.
 
@@ -15,7 +16,7 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus atau diubah pada kelas \texttt{Kelulusan}, yaitu :
 	\begin{itemize}
 		\item Atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
-		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018. (tabel \ref{tab:strukturkurikulum2018} \& \ref{tab:2_strukturkurikulum2018})
+		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah wajib yang ada di kurikulum 2018. (tabel \ref{tab:strukturkurikulum2018} \& \ref{tab:2_strukturkurikulum2018})
 		\item Atribut \textbf{String[] AGAMA} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
 		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib. (tabel \ref{tab:strukturkurikulum2018})
 		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib, menambahkan pengecekan untuk mata kuliah skripsi atau tugas akhir, dan mengubah kode mata kuliah pada cek proyek, disesuaikan dengan tabel \ref{tab:2_strukturkurikulum2018} \& \ref{tab:aturankonversiwajib}.
@@ -109,7 +110,6 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 		\item Perlu dibuat kelas \texttt{AIF183337\_02} untuk merepresentasikan mata kuliah Topik Khusus Sistem Informasi 1.
 		\item Perlu dibuat kelas \texttt{AIF183340\_02} untuk merepresentasikan mata kuliah Metodologi Pengembangan Sistem Informasi 2.
 		\item Perlu dibuat kelas \texttt{AIF183342\_03} untuk merepresentasikan mata kuliah Kewirausahaan Berbasis Teknologi.
-		\item Perlu dibuat kelas \texttt{AIF183344\_03} untuk merepresentasikan mata kuliah Kecerdasan Bisnis .
 		\item Perlu dibuat kelas \texttt{AIF183346\_03} untuk merepresentasikan mata kuliah Topik Khusus Sistem Informasi 2.
 		\item Perlu dibuat kelas \texttt{AIF183348\_03} untuk merepresentasikan mata kuliah Sistem Kecerdasan Bisnis.
 		\item Perlu dibuat kelas \texttt{AIF183390\_03} untuk merepresentasikan mata kuliah Sistem Pendukung Keputusan.
@@ -203,7 +203,7 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 	\end{itemize}
 	
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels}\\
-	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas \texttt{Dosen}, \texttt{InfoMataKuliah}, \texttt{JadwalKuliah}, \texttt{Mahasiswa}, \texttt{MataKuliah}, \texttt{MataKuliahFactory}, \texttt{Semester}, dan \texttt{TahunSemester}. Disini terdapat perubahan di dalam kelas \texttt{Mahasiswa} terdapat kelas \texttt{Nilai}, yaitu :
+	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas \texttt{Dosen}, \texttt{InfoMataKuliah}, \texttt{JadwalKuliah}, \texttt{Mahasiswa}, \texttt{MataKuliah}, \texttt{MataKuliahFactory}, \texttt{Semester}, dan \texttt{TahunSemester}. Di sini terdapat perubahan di dalam kelas \texttt{Mahasiswa} terdapat kelas \texttt{Nilai}, yaitu :
 	\begin{itemize}
 		\item Atribut \textbf{Character nilaiAkhir} perlu diubah menjadi \textit{String}, karena untuk beberapa kasus seperti pada tabel \ref{tab:AngkaAkhirDanKonversinya} memerlukan lebih dari satu karakter.
 		\item Constructor kelas \texttt{Nilai} untuk parameter \textbf{Character nilaiAkhir} diubah tipe datanya menjadi \textbf{String}.
@@ -221,6 +221,7 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 \end{enumerate}
 
 \subsection{Analisis IFStudentPortal}
+\label{subbab:analisisifstudentportal}
 
 Pada IFStudentPortal terdapat beberapa perubahan yang harus dilakukan untuk mendukung SIAModels yang disesuaikan dengan kurikulum 2018, yaitu :
 \begin{enumerate}
