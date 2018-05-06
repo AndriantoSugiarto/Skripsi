@@ -3,9 +3,7 @@
 
 Pada bab ini akan dijelaskan mengenai analisis apa saja yang berubah untuk kurikulum 2018.
 
-\section{Analisis Sistem Akibat Kurikulum 2018}
-
-\subsection{Analisis SIAModels }
+\section{Analisis SIAModels Akibat kurikulum 2018}
 \label{subbab:analisissiamodels}
 
 SIAModels merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik UNPAR. SIAModels saat ini merepresentasikan mata kuliah dan syarat kelulusan yang berlaku pada kurikulum 2013. Pada SIAModels terdapat perubahan-perubahan yang perlu dilakukan untuk menyesusaikan dengan kurikulum 2018.
@@ -214,19 +212,16 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 	\begin{itemize}
 		\item \textit{Method} \texttt{double calculateIPTempuh(boolean lulusSaja)} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
 		\item \textit{Method} \texttt{double calculateIPKumulatif()} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
-		\item \textit{Method} \texttt{double calculateIPS()} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
 		\item \textit{Method} \texttt{int calculateSKSTempuh(boolean lulusSaja)} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
 		\item \textit{Method} \texttt{boolean hasLulusKuliah(String kodeMataKuliah} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
 	\end{itemize}
 \end{enumerate}
 
-\subsection{Analisis IFStudentPortal}
+\section{Analisis IFStudentPortal Akibat Kurikulum 2018}
 \label{subbab:analisisifstudentportal}
 
 Pada IFStudentPortal terdapat beberapa perubahan yang harus dilakukan untuk mendukung SIAModels yang disesuaikan dengan kurikulum 2018, yaitu :
-\begin{enumerate}
+\begin{itemize}
 	\item \textit{Package} \texttt{Models.Support} \\
 	Pada \textit{package} ini terdapat kelas \texttt{Scraper} yang perlu disesuaikan. Berikut perubahan yang perlu dilakukan, yaitu \textit{Method} \textbf{public void requestNilai(String phpsessid, Mahasiswa logged\_mhs)} perlu disesuaikan pada bagian untuk mendapatkan nilai akhir menjadi tipe data \texttt{String}.
-	\item \textit{Package} \texttt{controllers} \\
-	Pada \textit{Package} ini terdapat kelas yang mengontrol jalanya komunikasi models dengan view. Perubahan yang pada kelas ini, yaitu \textit{Method} perwalian perlu diubah sedikit sesuai perubahan yang ada pada kelas \texttt{Nilai}.
-\end{enumerate}
+\end{itemize}

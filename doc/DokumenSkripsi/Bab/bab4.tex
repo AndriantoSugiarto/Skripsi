@@ -3,7 +3,50 @@
 
 \section{Perancangan Kelas Akibat Kurikulum 2018}
 
-Perancangan kelas akibat kurikulum 2018 dari hasil analisis pada subbab \ref{subbab:analisissiamodels} \& \ref{subbab:analisisifstudentportal}. Perancangan kelas akibat kurikulum 2018 dapat dilihat pada gambar \ref{}. Deskripsi kelas berserta fungsi dari diagram kelas tersebut adalah sebagai berikut:
+Pada subbab ini akan menjelaskan perancangan kelas akibat kurikulum 2018 dari hasil analisis pada subbab \ref{subbab:analisissiamodels} \& \ref{subbab:analisisifstudentportal}. Diagram kelas akibat kurikulum 2018 dibagi menjadi beberapa bagian yang dapat dilihat pada gambar \ref{fig:siamodels_class_2018} untuk diagram kelas SIAModels yang berubah pada kelas \texttt{Nilai} dan untuk diagram kelas lengkapnya dapat dilihat pada gambar \ref{fig:2_siamodels_class}. Gambar \ref{fig:siamodels_class_2018_kurikulum_1}, \ref{fig:siamodels_class_2018_kurikulum_2}, \ref{fig:siamodels_class_2018_kurikulum_3}, \ref{fig:siamodels_class_2018_kurikulum_4}, dan \ref{fig:siamodels_class_2018_kurikulum_5} untuk diagram kelas yang merepresentasikan mata kuliah pada kurikulum 2018. Deskripsi kelas berserta fungsi dari diagram kelas tersebut adalah sebagai berikut:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{Gambar/class-diagram-siamodels-new}
+\caption{Diagram Kelas SIAModels Bagian \texttt{Nilai}}
+\label{fig:siamodels_class_2018}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-2}
+\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} 1}
+\label{fig:siamodels_class_2018_kurikulum_1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-1}
+\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} 2}
+\label{fig:siamodels_class_2018_kurikulum_2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-3}
+\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} 3}
+\label{fig:siamodels_class_2018_kurikulum_3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.135]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-4}
+\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} 4}
+\label{fig:siamodels_class_2018_kurikulum_4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.135]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-5}
+\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} 5}
+\label{fig:siamodels_class_2018_kurikulum_5}
+\end{figure}
+
 \begin{enumerate}
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah.kurikulum2018} \\
 	\textit{Package} ini berisi kelas-kelas yang merepresentasikan mata kuliah pada kurikulum 2018 berserta aturan prasyaratnya. Kelas-kelas yang ada pada \textit{package} ini adalah sebagai berikut:
@@ -1141,22 +1184,15 @@ Perancangan kelas akibat kurikulum 2018 dari hasil analisis pada subbab \ref{sub
 	\textit{Package} ini memiliki kelas sebagai berikut:
 	\begin{itemize}
 		\item Kelulusan\\
-		Kelas ini untuk memeriksa syarat kelulusan. Atribut yang dimiliki kelas ini antara lain:
+		Kelas ini untuk memeriksa syarat kelulusan. Atribut yang berubah untuk kelas ini antara lain:
 		\begin{itemize}
-			\item \textbf{String[][] WAJIB:} kode mata kuliah wajib.
-			\item \textbf{String[] AGAMA:} kode mata kuliah agama.
-			\item \textbf{int MIN\_SKS\_LULUS:} jumlah minimal sks lulus.
+			\item \textbf{String[][] WAJIB:} kode mata kuliah wajib pada kurikulum 2018.
+			\item \textbf{String[] AGAMA:} kode mata kuliah agama pada kurikulum 2018.
 		\end{itemize}
-		\textit{Method} yang dimiliki kelas ini sebagai berikut:
+		\textit{Method} yang berubah kelas ini sebagai berikut:
 		\begin{itemize}
 			\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-			Melakukan pengecekan syarat kelulusan.\\
-			\textbf{Parameter:}
-			\begin{itemize}
-				\item \textbf{mahasiswa} mahasiswa yang dicek.
-				\item \textbf{reasonsContainer} alasan-alasan yang ada jika tidak lulus.
-			\end{itemize}
-			\textbf{Kembalian:} \texttt{true} jika memenuhi syarat, \texttt{false} jika tidak.
+			Pada \textit{method} ini ditambahkan kondisi apakah mahasiswa sudah lulus kuliah skripsi 1 dan 2 atau kuliah tugas akhir. jika belum lulus salah satu mata kuliah skripsi atau tugas akhir, maka mahasiswa tidak bisa lulus.
 		\end{itemize}
 	\end{itemize}
 	
@@ -1164,21 +1200,9 @@ Perancangan kelas akibat kurikulum 2018 dari hasil analisis pada subbab \ref{sub
 	\textit{Package} ini memiliki beberapa \textit{interface} antara lain:
 	\begin{itemize}
 		\item HasPrasyarat\\
-		Mendefinisikan kelas-kelas yang memiliki prasyarat, terkustomisasi untuk seorang mahasiswa. Atribut yang dimiliki interfaces ini adalah sebagai berikut:
+		Mendefinisikan kelas-kelas yang memiliki prasyarat, terkustomisasi untuk seorang mahasiswa. Atribut yang berubah untuk interfaces ini adalah sebagai berikut:
 		\begin{itemize}
-			\item \textbf{String[] DEFAULT\_HASPRASYARAT\_CLASSES:} daftar dari nama kelas \textit{default} seluruh turunan interface ini. Perlu didaftarkan \textit{manual}, karena \textit{Java reflection} tidak dapat mendeteksi otomatis.
-			\item \textbf{String DEFAULT\_PRASYARAT\_PACKAGE} \textit{package} tempat menyimpan seluruh turunan standar \texttt{interface} ini. Perlu didefinisikan \textit{manual}, karena \textit{Java reflection} tidak dapat mendeteksi otomatis.
-		\end{itemize}
-		\textit{Method} yang dimiliki \textit{interface} ini adalah sebagai berikut:
-		\begin{itemize}
-			\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> resonsContainer)}\\
-			Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-			\textbf{Parameter:}
-			\begin{itemize}
-				\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-				\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-			\end{itemize}
-			\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
+			\item \textbf{String[] DEFAULT\_HASPRASYARAT\_CLASSES:} Pada variabel ini terdapat perubahan nama kelas-kelas sesuai dengan mata kuliah yang memiliki prasyarat dalam kurikulum 2018.
 		\end{itemize}
 	\end{itemize}
 	
@@ -1186,233 +1210,36 @@ Perancangan kelas akibat kurikulum 2018 dari hasil analisis pada subbab \ref{sub
 	\textit{Package} ini memiliki kelas-kelas yang berubah akibat kurikulum 2018 adalah sebagai berikut:
 	\begin{itemize}
 			\item Mahasiswa\\
-				Kelas ini merepresentasikan mahasiswa. Atribut yang dimiliki kelas ini antara lain:
+				Kelas ini merepresentasikan mahasiswa. \textit{Method-method} yang berubah untuk kelas ini adalah sebagai berikut:
 				\begin{itemize}
-					\item \textbf{String npm:} Nomor Pokok Mahasiswa (NPM).
-					\item \textbf{String nama:} nama mahasiswa.
-					\item \textbf{List<Nilai> riwayatNilai:} riwayat nilai 		yang dimiliki mahasiswa.
-					\item \textbf{URL photoURL:} alamat dari photo mahasiswa.
-					\item \textbf{List<JadwalKuliah> jadwalKuliahList:} daftar jadwal kuliah dari mahasiswa.
-					\item \textbf{SortedMap<LocalDate, Integer> nilaiTOEFL:} nilai TOEFL dari mahasiswa.
-				\end{itemize}
-			\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut:
-				\begin{itemize}
-					\item \textbf{public Mahasiswa (String npm)}\\
-					Merupakan \textit{constructor} dari kelas Mahasiswa.\\
-					\textbf{Parameter:}
-					\begin{itemize}
-						\item \textbf{npm} nomor pokok mahasiswa.
-					\end{itemize}
-					\item \textbf{public String getNama()}\\
-						Berfungsi untuk mendapatkan nama mahasiswa.\\
-						\textbf{Kembalian:} nama mahasiswa.
-
-					\item \textbf{public void setNama(String nama)}\\
-						Berfungsi untuk mengubah nama mahasiswa.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{nama} nama mahasiswa.
-						\end{itemize}
-				
-					\item \textbf{public String getNpm()}\\
-						Berfungsi untuk mendapatkan nomor pokok mahasiswa.\\
-						\textbf{Kembalian:} nomor pokok mahasiswa.
-						
-					\item \textbf{public URL getPhotoURL()}\\
-						Berfungsi untuk mendapatkan alamat photo dari mahasiswa.\\
-						\textbf{Kembalian:} URL dari photo
-					
-					\item \textbf{public void setPhotoURL(URL photoURL)}\\
-						Berfungsi untuk mengubah URL photo dari mahasiswa.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{photoURL} alamat photo dari mahasiswa.
-						\end{itemize}
-						
-					\item \textbf{public List<JadwalKuliah> getJadwalKuliahList()}\\
-						Berfungsi untuk mendapatkan daftar jadwal kuliah  dari mahasiswa.\\
-						\textbf{Kembalian:} daftar jadwal kuliah dari mahasiswa.
-					
-					\item \textbf{public void setJadwalKuliahList(List<JadwalKuliah> jadwalKuliahList)}\\
-						Berfungsi untuk mengubah daftar jadwal kuliah dari mahasiswa.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{jadwalKuliahList} daftar jadwal kuliah dari mahasiswa.
-						\end{itemize}
-					
-					\item \textbf{public String getEmailAddress()}\\
-						Berfungsi untuk mendapatkan \textit{email} mahasiswa.\\
-						\textbf{Kembalian:} \textit{email} mahasiswa.
-						
-					\item \textbf{public List<Nilai> getRiwayatNilai()}\\
-						Berfungsi untuk mendapatkan riwayat nilai mahasiswa.\\
-						\textbf{Kembalian:} riwayat nilai mahasiswa dalam List.
-					\item \textbf{public SortedMap<LocalDate, Integer> getNilaiTOEFL()}\\
-						Berfungsi untuk mendapatkan nilai TOEFL  dari mahasiswa.\\
-						\textbf{Kembalian:} nilai TOEFL dari mahasiswa.
-					
-					\item \textbf{public void setNilaiTOEFL(SortedMAP<LocalDate, Integer> nilaiTOEFL)}\\
-						Berfungsi untuk mengubah nilai TOEFL dari mahasiswa.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{nilaiTOEFL} nilai TOEFL dari mahasiswa.
-						\end{itemize}
-					 
-					 \item \textbf{public double calculateIPKLulus()}\\
-						Menghitung IPK mahasiswa sampai saat ini, dengan aturan kuliah yang tidak lulus tidak dihitung dan jika pengambilan beberapa kali, diambil nilai terbaik. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Kembalian:} IPK lulus.
-					
-					\item \textbf{public double calculateIPLulus()}\\
-						Menghitung IP mahasiswa sampai saat ini, dengan aturan kuliah yang tidak lulus tidak dihitung, jika pengembalian beberapa kali, maka diambil nilai terbaik. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Kembalian:}  IPK lulus.
-					
 					\item \textbf{public double calculateIPTempuh(boolean lulusSaja)}\\
-						Menghitung IP mahasiswa sampai saat ini, dengan aturan perhitungan kuliah yang tidak lulus ditentukan parameter, jika pengembilan beberapa kali, maka diambil nilai terbaik. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Parameter:} 
-						\begin{itemize}
-							\item \textbf{lulusSaja} \texttt{true} jika ingin membuang mata kuliah tidak lulus, \texttt{false} jika ingin semua (sama dengan "IP N. Terbaik" di DPS)
-						\end{itemize}
-						\textbf{Kembalian:}  IPK lulus.
+						Pada \textit{method} ini yang berubah adalah ketika proses \textit{looping} untuk mencari nilai terbaik yang lulus pada setiap mata kuliah. Di dalam looping akan dilakukan pengecekan jika nilai akhir yang didapatkan adalah \textit{string} kosong, maka baris selanjutnya tidak akan dikerjakan lalu dilanjutkan dengan iterasi berikutnya.
 					
 					\item \textbf{public double calculateIPKumulatif()}\\
-						Menghitung IP Kumulatif mahasiswa sampai saat ini, dengan aturan jika pengembalian beberapa kali, maka diambil semua. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Kembalian:}  IPK lulus.
-						
-								\item \textbf{public double calculateIPKTempuh(boolean lulusSaja)}\\
-						Menghitung IPK mahasiswa sampai saat ini, dengan aturan perhitungan kuliah yang tidak lulus ditentukan parameter, jika pengembilan beberapa kali, maka diambil nilai terbaik. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Parameter:} 
-						\begin{itemize}
-							\item \textbf{lulusSaja} \texttt{true} jika ingin membuang mata kuliah tidak lulus
-						\end{itemize}
-						\textbf{Kembalian:}  IPK lulus.
-					
-					\item \textbf{public double calculateIPS()}\\
-						Menghitung IPS semester terakhir sampai saat ini, dengan aturan kuliah yang tidak lulus dihitung. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Kembalian:}  nilai IPS sampai saat ini.
-						
-					\item \textbf{public int calculateSKSLulus()}\\
-						Menghitung jumlah SKS lulus mahasiswa saat ini. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Kembalian:} SKS lulus.
+						Pada \textit{method} ini yang berubah adalah ketika proses \textit{looping} untuk mencari nilai untuk setiap mata kuliah. Di dalam looping akan dilakukan kondisi jika nilai akhir yang didapatkan adalah \textit{string} kosong, maka baris selanjutnya tidak akan dikerjakan kemudian dilanjutkan dengan iterasi berikutnya.
 					
 					\item \textbf{public int calculateSKSTempuh(boolean lulusSaja)}\\
-						Menghitung jumlah SKS lulus mahasiswa saat ini. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Parameter:} 
-						\begin{itemize}
-							\item \textbf{lulusSaja} \texttt{true} jika ingin membuang SKS tidak lulus.
-						\end{itemize}
-						\textbf{Kembalian:} SKS tempuh.
-						
-					\item \textbf{public Set<TahunSemester> calculateTahunSemesterAktif()}\\
-						Mendapatkan seluruh tahun semester di mana mahasiswa ini tercatat sebagai mahasiswa aktif, dengan strategi memeriksa riwayat nilainya.Jika ada satu nilai saja pada sebuah tahun semester, maka dianggap aktif pada semester tersebut.\\
-						\textbf{Kembalian:} kumpulan tahun semester di mana mahasiswa ini aktif.
+						Pada \textit{method} ini yang berubah adalah ketika proses \textit{looping} untuk menambahkan jumlah sks setiap mata kuliah. Di dalam looping akan dilakukan kondisi jika nilai akhir yang didapatkan adalah \textit{string} kosong, maka baris selanjutnya tidak akan dikerjakan kemudian dilanjutkan dengan iterasi berikutnya.
 					
 					\item \textbf{public boolean hasLulusKuliah(String kodeMataKuliah)}\\
-						Memeriksa apakah mahasiswa ini sudah lulus mata kuliah tertentu. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{kodeMataKuliah} kode mata kuliah yang ingin diperiksa kelulusannya.
-						\end{itemize}
-						\textbf{Kembalian:} \texttt{true} jika sudah pernah mengambil dan lulus, \texttt{false} jika belum.
-						
-					\item \textbf{public boolean hasTempuhKuliah(String kodeMataKuliah)}\\
-						Memeriksa apakah mahasiswa ini sudah pernah menempuh mata kuliah tertentu. Sebelum memanggil \textit{method} ini, \texttt{getRiwayatNilai()} harus sudah mengandung nilai per mata kuliah.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{kodeMataKuliah} kode mata kuliah yang ingin diperiksa kelulusannya.
-						\end{itemize}
-						\textbf{Kembalian:} \texttt{true} jika sudah pernah mengambil, \texttt{false} jika belum.
-						
-					\item \textbf{public int getTahunAngkatan()}\\
-						Mendapatkan tahun angkatan mahasiswa ini berdasarkan NPM-nya.\\
-						\textbf{Kembalian:} tahun angkatan.
-				\end{itemize}
-				
+						Pada \textit{method} ini yang berubah adalah ketika proses \textit{looping} untuk mengetahui apakah mahasiswa sudah lulus mata kuliah tertentu terdapat sebuah kondisi jika nilai akhir tidak sama dengan \textit{string} kosong dan nilai akhir dibandingkan dengan nilai 'A' lebih besar sama dengan 0 dan nilai akhir dibandingkan dengan nilai 'D' lebih kecil sama dengan 0, maka akan mengembalikan nilai true.
+		\end{itemize}
+			
 				\item Nilai\\
-				Kelas ini merepresentasikan nilai yang ada pada riwayat nilai mahasiswa. Atribut yang dimiliki kelas ini antara lain:
+				Kelas ini merepresentasikan nilai yang ada pada riwayat nilai mahasiswa. Atribut yang berubah untuk kelas ini antara lain:
 				\begin{itemize}
-					\item \textbf{TahunSemester tahunSemester:} tahun dan semester kuliah ini diambil
-					\item \textbf{MataKuliah mataKuliah:} mata kuliah yang diambil.
-					\item \textbf{Character kelas:} kelas kuliah.
-					\item \textbf{Double nilaiART:} nilai Angka Rata-rata Tugas (ART).
-					\item \textbf{Double nilaiUTS:} nilai Ujian Tengah Semester (UTS).
-					\item \textbf{Double nilaiUAS:} nilai Ujian Akhir Semester (UAS).
-					\item \textbf{String nilaiAkhir:} nilai akhir.
+					\item \textbf{String nilaiAkhir:} tipe data nilaiAkhir berubah yang sebelumnya memiliki tipe data \textit{Character}.
 				\end{itemize}
-			\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut:
+			\textit{Method-method} yang berubah untuk kelas ini adalah sebagai berikut:
 				\begin{itemize}
 					\item \textbf{public Nilai(TahunSemester tahunSemester, MataKuliah mataKuliah, Character kelas, Double nilaiART, Double nilaiUTS, Double nilaiUAS, String nilaiAkhir)}\\
-						Merupakan \textit{constructor} dari kelas Nilai.\\
-						\textbf{Parameter:}
-						\begin{itemize}
-							\item \textbf{tahunSemester} tahun dan semester kuliah ini diambil.
-							\item \textbf{mataKuliah} mata kuliah yang diambil.
-							\item \textbf{kelas} kelas kuliah.
-							\item \textbf{nilaiART} nilai ART.
-							\item \textbf{nilaiUTS} nilai UTS.
-							\item \textbf{nilaiUAS} nilai UAS.
-							\item \textbf{nilaiAkhir} nilai akhir.
-						\end{itemize}
-						
-					\item \textbf{public MataKuliah getMataKuliah()}\\
-						Mendapatkan mata kuliah yang diambil.\\
-						\textbf{Kembalian:} mata kuliah.
-						
-					\item \textbf{public Character getKelas()}\\
-						Mendapatkan kelas kuliah.\\
-						\textbf{Kembalian:} kelas kuliah.
-						
-					\item \textbf{public Double getNilaiART()}\\
-						Mendapatkan nilai ART.\\
-						\textbf{Kembalian:} nilai ART.
-						
-					\item \textbf{public Double getNilaiUTS()}\\
-						Mendapatkan nilai UTS.\\
-						\textbf{Kembalian:} nilai UTS.
-						
-					\item \textbf{public Double getNilaiUAS()}\\
-						Mendapatkan nilai UAS.\\
-						\textbf{Kembalian:} nilai UAS.
+						Pada \textit{Constructor} kelas \texttt{Nilai} terdapat perubahan pada parameter \textbf{nilaiAkhir} dari tipe data \textit{Character} menjadi tipe data \textit{String}.
 						
 					\item \textbf{public String getNilaikhir()}\\
-						Mengembalikan nilai akhir dalam bentuk huruf (A, A-, B+, B, B-, C+, C, C-, D, ...).\\
-						\textbf{Kembalian:} nilai akhir dalam huruf atau \texttt{string} kosong jika tidak ada.
+						Pada \textit{method} ini tipe data berubaha menjadi tipe data \textit{String} yang sebelumnya tipe data \textit{Character}.
 					
 					\item \textbf{public Double getAngkaAkhir()}\\
-						Mendapatkan nilai akhir dalam bentuk angka.\\
-						\textbf{Kembalian:} nilai akhir dalam angka, atau \texttt{null} jika \texttt{getNilaiAkhir()} mengembalikan \texttt{null}.
-					
-					\item \textbf{public int getTahunAjaran()}\\
-						Mendapatkan tahun ajaran saat pengambilan mata kuliah.\\
-						\textbf{Kembalian:} tahun ajaran saat pengambilan mata kuliah.
-					
-					\item \textbf{public TahunSemester getTahunSemester()}\\
-						Mendapatkan tahun dan semester pengambilan mata kuliah.\\
-						\textbf{Kembalian:} tahun dan semester pengambilan mata kuliah.	
-						
-					\item \textbf{public Semester getSemester()}\\
-						Mendapatkan semester pengambilan mata kuliah.\\
-						\textbf{Kembalian:} semester pengambilan mata kuliah
+						Pada \textit{method} ini nilai akhir akan diubah menjadi bobot nilai akhir. Perubahan yang terdapat \textit{method} ini adalah nilai akhir menjadi lebih bervariasi dan otomatis bobot nilai akhir akan mengikuti nilai akhir yang ada. Contohnya: terdapat nilai A- pada kurikulum 2018 yang memiliki bobot 3.67. 
 				\end{itemize}
 		\end{itemize}
 \end{enumerate}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{Gambar/class-diagram-siamodels-new}
-\caption{Diagram Kelas SIAModels}
-\label{fig:siamodels_class_2018}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-2}
-\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} Bagian 1}
-\label{fig:siamodels_class_2018_kurikulum_1}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{Gambar/class-diagram-siamodels-mk-kurikulum-2018-1}
-\caption{Diagram Kelas SIAModels \textit{Package} \texttt{kurikulum2018} Bagian 2}
-\label{fig:siamodels_class_2018_kurikulum_2}
-\end{figure}
