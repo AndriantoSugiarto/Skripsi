@@ -19,7 +19,7 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah wajib yang ada di kurikulum 2018. (tabel \ref{tab:strukturkurikulum2018} \& \ref{tab:2_strukturkurikulum2018})
 		\item Atribut \textbf{String[] AGAMA} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
 		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib. (tabel \ref{tab:strukturkurikulum2018})
-		\item \textit{Method} \textbf{boolean checkPrasyarat} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib, menambahkan pengecekan untuk mata kuliah skripsi atau tugas akhir, dan mengubah kode mata kuliah pada cek proyek, disesuaikan dengan tabel \ref{tab:2_strukturkurikulum2018} \& \ref{tab:aturankonversiwajib}.
+		\item \textit{Method} \textbf{boolean checkPrasyarat()} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib, menambahkan pengecekan untuk mata kuliah skripsi atau tugas akhir, dan mengubah kode mata kuliah pada cek proyek, disesuaikan dengan tabel \ref{tab:2_strukturkurikulum2018} \& \ref{tab:aturankonversiwajib}.
 	\end{itemize}
 		
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah} \\
@@ -205,9 +205,9 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels}\\
 	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas \texttt{Dosen}, \texttt{InfoMataKuliah}, \texttt{JadwalKuliah}, \texttt{Mahasiswa}, \texttt{MataKuliah}, \texttt{MataKuliahFactory}, \texttt{Semester}, dan \texttt{TahunSemester}. Di sini terdapat perubahan di dalam kelas \texttt{Mahasiswa} terdapat kelas \texttt{Nilai}, yaitu :
 	\begin{itemize}
-		\item Atribut \textbf{Character nilaiAkhir} perlu diubah menjadi \textit{String}, karena untuk beberapa kasus seperti pada tabel \ref{tab:AngkaAkhirDanKonversinya} memerlukan lebih dari satu karakter.
+		\item Atribut \textbf{Character nilaiAkhir} perlu diubah menjadi \textbf{String}, karena untuk beberapa kasus seperti pada tabel \ref{tab:AngkaAkhirDanKonversinya} memerlukan lebih dari satu karakter.
 		\item Constructor kelas \texttt{Nilai} untuk parameter \textbf{Character nilaiAkhir} diubah tipe datanya menjadi \textbf{String}.
-		\item \textit{Method} \textbf{Character getNilaiAkhir} tipe datanya diubah menjadi \textbf{String}.
+		\item \textit{Method} \textbf{Character getNilaiAkhir()} tipe datanya diubah menjadi \textbf{String}.
 		\item \textit{Method} \textbf{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.(subbab \ref{sec:penilaian}) 
 	\end{itemize}
 	Beberapa perubahan yang ada pada kelas \texttt{Mahasiswa}, yaitu :
@@ -215,7 +215,7 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 		\item \textit{Method} \texttt{double calculateIPTempuh(boolean lulusSaja)} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
 		\item \textit{Method} \texttt{double calculateIPKumulatif()} perlu disesuikan dengan perubahan pada kelas \texttt{Nilai}.
 		\item \textit{Method} \texttt{int calculateSKSTempuh(boolean lulusSaja)} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
-		\item \textit{Method} \texttt{boolean hasLulusKuliah(String kodeMataKuliah} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{boolean hasLulusKuliah(String kodeMataKuliah)} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
 	\end{itemize}
 \end{enumerate}
 
