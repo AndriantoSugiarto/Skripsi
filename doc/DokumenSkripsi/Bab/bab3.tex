@@ -13,13 +13,19 @@ SIAModels merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem 
 Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 2018, yaitu :
 \begin{enumerate}
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.prodi.teknikinformatika}\\
-	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus atau diubah pada kelas \texttt{Kelulusan}, yaitu :
+	Pada \textit{package} ini terdapat kelas Kelulusan yang menentukan syarat kelulusan dari mahasiswa Teknik Informatika UNPAR. Beberapa bagian yang perlu dihapus, diubah, atau dibuat pada kelas \texttt{Kelulusan}, yaitu :
 	\begin{itemize}
-		\item Atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib.
+		\item Atribut \textbf{String[][] WAJIB\_ANGKATAN\_2011\_SAMPAI\_2015} perlu dibuat dengan mengikuti aturan pada tabel \ref{tab:2_wajibtidaklulus}.
+		\item Atribut \textbf{String[][] WAJIB\_ANGKATAN\_2016} perlu dibuat dengan mengikuti aturan pada tabel \ref{tab:2_wajibtidaklulus}.
+		\item Atribut \textbf{String[][] WAJIB\_ANGKATAN\_2017} perlu dibuat dengan mengikuti aturan pada tabel \ref{tab:2_wajibtidaklulus}.
+		\item Atribut \textbf{String[][] MKU} perlu dibuat, karena angkatan sebelum 2018 yang sudah mengambil mata kuliah MKU untuk kode mata kuliah MKU mengikuti kurikulum yang berlaku saat pengambilan MKU.
+		\item Atribut \textbf{String[] AGAMA\_13} perlu dibuat, karena angkatan sebelum 2018 yang sudah mengambil mata kuliah MKU untuk kode mata kuliah MKU mengikuti kurikulum yang berlaku saat pengambilan MKU.
+		\item Atribut \textbf{String[] PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2013 mata kuliah pilihan wajib adalah 8 mata kuliah pilihan wajib (Pemrograman Berbasis Web, Pemrograman Apilkasi Bergerak, dll), sedangkan istilah mata kuliah pilihan wajib pada kurikulum 2018 lebih berkaitan dengan pemilihan mata kuliah agama, proyek, dan proyek akhir.
 		\item Atribut \textbf{String[][] WAJIB} perlu diubah menjadi kode mata kuliah wajib yang ada di kurikulum 2018. (tabel \ref{tab:strukturkurikulum2018} \& \ref{tab:2_strukturkurikulum2018})
 		\item Atribut \textbf{String[] AGAMA} perlu diubah menjadi kode mata kuliah yang ada di kurikulum 2018.
 		\item Atribut \textbf{int MIN\_PILIHAN\_WAJIB} perlu dihapus, karena pada kurikulum 2018 sudah tidak ada mata kuliah pilihan wajib. (tabel \ref{tab:strukturkurikulum2018})
-		\item \textit{Method} \textbf{boolean checkPrasyarat()} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib, menambahkan pengecekan untuk mata kuliah skripsi atau tugas akhir, dan mengubah kode mata kuliah pada cek proyek, disesuaikan dengan tabel \ref{tab:2_strukturkurikulum2018} \& \ref{tab:aturankonversiwajib}.
+		\item \textit{Method} \textbf{boolean checkPrasyarat()} perlu ada perubahan untuk menghilangkan pengecekan pada pilihan wajib, menambahkan pengecekan untuk mata kuliah skripsi atau tugas akhir, mengubah kode mata kuliah pada cek proyek, disesuaikan dengan tabel \ref{tab:2_strukturkurikulum2018} \& \ref{tab:aturankonversiwajib}, dan menambahkan pengecekan untuk beberapa mata kuliah sebelum angkatan 2018 karena terdapat mata kuliah yang tidak wajib lulus untuk setiap angkatan dan terdapat beberapa mata kuliah pada kurikulum 2013 yang ekivalen dengan mata kuliah pada kurikulum 2018.
+		\item \textit{Method} \textbf{Map<String, String> getMKEkivalensi()} perlu dibuat, karena untuk mendapatkan daftar mata kuliah yang ekivalen dengan mata kuliah kurikulum 2018.
 	\end{itemize}
 		
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah} \\
@@ -206,7 +212,15 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 		\item Perlu dibuat kelas \texttt{ESA131101} untuk merepresentasikan mata kuliah Akuntansi Keuangan Dasar.
 		\item Perlu dibuat kelas \texttt{ESM131101} untuk merepresentasikan mata kuliah Pengantar Bisnis.
 		\item Perlu dibuat kelas \texttt{ESM131105} untuk merepresentasikan mata kuliah Manajemen.
+		\item Perlu dibuat kelas \texttt{MKU130001} untuk merepresentasikan mata kuliah Pendidikan Pancasila.
+		\item Perlu dibuat kelas \texttt{MKU130002} untuk merepresentasikan mata kuliah Pendidikan Kewarganegaraan.
+		\item Perlu dibuat kelas \texttt{MKU130003} untuk merepresentasikan mata kuliah Agama Katolik.
+		\item Perlu dibuat kelas \texttt{MKU130004} untuk merepresentasikan mata kuliah Fenomenologi Agama.
+		\item Perlu dibuat kelas \texttt{MKU130008} untuk merepresentasikan mata kuliah Etika.
+		\item Perlu dibuat kelas \texttt{MKU130009} untuk merepresentasikan mata kuliah Bahasa Indonesia.
 		\item Perlu dibuat kelas \texttt{MKU130010} untuk merepresentasikan mata kuliah Bahasa Inggris.
+		\item Perlu dibuat kelas \texttt{MKU130011} untuk merepresentasikan mata kuliah Estetika.
+		\item Perlu dibuat kelas \texttt{MKU130012} untuk merepresentasikan mata kuliah Logika.
 		\item Perlu dibuat kelas \texttt{MKU180110} untuk merepresentasikan mata kuliah Pendidikan Kewarganegaraan.
 		\item Perlu dibuat kelas \texttt{MKU180120} untuk merepresentasikan mata kuliah Logika.
 		\item Perlu dibuat kelas \texttt{MKU180130} untuk merepresentasikan mata kuliah Bahasa Indonesia.
@@ -249,10 +263,19 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels}\\
 	Pada \textit{Package} ini terdapat beberapa kelas yaitu kelas \texttt{Dosen}, \texttt{InfoMataKuliah}, \texttt{JadwalKuliah}, \texttt{Mahasiswa}, \texttt{MataKuliah}, \texttt{MataKuliahFactory}, \texttt{Semester}, dan \texttt{TahunSemester}. Di sini terdapat perubahan di dalam kelas \texttt{Mahasiswa} terdapat kelas \texttt{Nilai}, yaitu :
 	\begin{itemize}
+		\item Atribut \textbf{Character kelas} perlu dihapus, karena tidak dibutuhkan untuk menghitung IPK dan IPS.
+		\item Atribut \textbf{Double nilaiART} perlu dihapus, karena tidak dibutuhkan untuk menghitung IPK dan IPS.
+		\item Atribut \textbf{Double nilaiUTS} perlu dihapus, karena tidak dibutuhkan untuk menghitung IPK dan IPS.
+		\item Atribut \textbf{Double nilaiUAS} perlu dihapus, karena tidak dibutuhkan untuk menghitung IPK dan IPS.
 		\item Atribut \textbf{Character nilaiAkhir} perlu diubah menjadi \textbf{String}, karena untuk beberapa kasus seperti pada tabel \ref{tab:AngkaAkhirDanKonversinya} memerlukan lebih dari satu karakter.
-		\item Constructor kelas \texttt{Nilai} untuk parameter \textbf{Character nilaiAkhir} diubah tipe datanya menjadi \textbf{String}.
-		\item \textit{Method} \textbf{Character getNilaiAkhir()} tipe datanya diubah menjadi \textbf{String}.
-		\item \textit{Method} \textbf{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.(subbab \ref{sec:penilaian}) 
+		\item Constructor kelas \texttt{Nilai} untuk parameter \textbf{Character nilaiAkhir} diubah tipe datanya menjadi \textbf{String} dan paramater \textbf{Character kelas, Double nilaiART, Double nilaiUTS,} dan \textbf{Double nilaiUAS} dihapus untuk menyesuaikan dengan atribut pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{Character getKelas()} perlu dihapus untuk menyesuaikan dengan atribut yang dihapus pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{Double getNilaiART()} perlu dihapus untuk menyesuaikan dengan atribut yang dihapus pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{Double getNilaiUTS()} perlu dihapus untuk menyesuaikan dengan atribut yang dihapus pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{Double getNilaiUAS()} perlu dihapus untuk menyesuaikan dengan atribut yang dihapus pada kelas \texttt{Nilai}.
+		\item \textit{Method} \texttt{Character getNilaiAkhir()} tipe datanya diubah menjadi \textbf{String}.
+		\item \textit{Method} \texttt{Double getAngkaAkhir()} perlu diubah, karena ada perubahan penilaian angka akhir dan bobot nilai akhir menjadi lebih bervariasi pada kurikulum 2018.(subbab \ref{sec:penilaian}) 
+		\item \textit{Method} \texttt{String toString()} perlu diubah untuk menyesuaikan dengan atribut yang dihapus pada kelas \texttt{Nilai}.
 	\end{itemize}
 	Beberapa perubahan yang ada pada kelas \texttt{Mahasiswa}, yaitu :
 	\begin{itemize}
@@ -261,13 +284,52 @@ Pada SIAModels terdapat beberapa perubahan yang harus dilakukan untuk kurikulum 
 		\item \textit{Method} \texttt{int calculateSKSTempuh(boolean lulusSaja)} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
 		\item \textit{Method} \texttt{boolean hasLulusKuliah(String kodeMataKuliah)} perlu disesuaikan dengan perubahan pada kelas \texttt{Nilai}.
 	\end{itemize}
+	Perubahan yang ada pada kelas \texttt{MataKuliahFactory}, yaitu 
+	\begin{itemize}
+		\item Nilai atribut \textbf{String DEFAULT\_MATAKULIAH\_PACKAGE} diganti dari\\ id.ac.unpar.siamodels.matakuliah menjadi id.ac.unpar.siamodels.matakuliah.kurikulum2018.
+	\end{itemize}
+	Perubahan yang ada pada kelas \texttt{TahunSemester}, yaitu
+	\begin{itemize}
+		\item Dibuat constructor dengan parameter \textbf{int tahun dan char kodeSemester} untuk menyesuaikan dengan StudentPortal yang baru.
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Analisis IFStudentPortal}
 \label{subbab:analisisifstudentportal}
 
-Pada IFStudentPortal terdapat beberapa perubahan yang harus dilakukan untuk mendukung SIAModels yang disesuaikan dengan kurikulum 2018, yaitu :
+Pada IFStudentPortal terdapat beberapa perubahan yang harus dilakukan untuk mendukung SIAModels yang disesuaikan dengan kurikulum 2018 dan perlu disesuaikan dengan StudentPortal yang baru, yaitu :
 \begin{itemize}
 	\item \textit{Package} \texttt{Models.Support} \\
-	Pada \textit{package} ini terdapat kelas \texttt{Scraper} yang perlu disesuaikan. Berikut perubahan yang perlu dilakukan, yaitu \textit{Method} \textbf{public void requestNilai(String phpsessid, Mahasiswa logged\_mhs)} perlu disesuaikan pada bagian untuk mendapatkan nilai akhir menjadi tipe data \texttt{String}.
+	Pada \textit{package} ini terdapat kelas \texttt{Scraper} yang perlu disesuaikan. Berikut perubahan yang perlu dilakukan, yaitu :
+	\begin{itemize}
+		\item Beberapa nilai atribut yang perlu disesuaikan dengan StudentPortal yang baru, yaitu :
+		\begin{itemize}
+			\item \texttt{String LOGIN\_URL} diubah dari home/index.login.submit.php menjadi C\_home/\\sso\_login.
+			\item \texttt{String ALLJADWAL\_URL} diubah dari includes/jadwal.all.php menjadi jadwal/seluruh\_fakultas.
+			\item \texttt{String JADWAL\_URL} diubah dari includes/jadwal.aktif.php menjadi jadwal.
+			\item \texttt{String NILAI\_URL} diubah dari includes/nilai.sem.php menjadi nilai
+			\item \texttt{String TOEFL\_URL} diubah dari includes/nilai.toefl.php menjadi nilai/toefl.
+			\item \texttt{String LOGOUT\_URL} diubah dari home/index.logout.php menjadi logout
+			\item \texttt{String HOME\_URL} diubah dari main.php menjadi home.
+			\item \texttt{String FRSPRS\_URL} dibuat untuk mendapatkan semester yang ditempuh mahasiswa.
+		\end{itemize}
+		\item Beberapa \textit{method} yang perlu disesuaikan dengan StudentPortal yang baru, yaitu :
+		\begin{itemize}
+			\item \textit{Method} \texttt{String login(String npm, String pass)}
+			\item \textit{Method} \texttt{TahunSemester requestNamePhotoTahunSemester(String phpsessid, \\Mahasiswa mhs)}
+			\item \textit{Method} \texttt{List<MataKuliah> requestAvailableKuliah(String phpsessid)} diambil dari array daftar mata kuliah yang ada pada kurikulum 2018, karena pada StudentPortal yang baru masih belum bisa mendapatkan seluruh jadwal mata kuliah. 
+			\item \textit{Method} \texttt{List<JadwalKuliah> requestJadwal(String phpsessid)}
+			\item \textit{Method} \texttt{void requestNilai(String phpsessid, Mahasiswa logged\_mhs)}
+			\item \textit{Method} \texttt{void requestNilaiTOEFL(String phpsessid, Mahasiswa mahasiswa)}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Revisi Dokumen Kurikulum 2018}
+\label{subbab:revisidokumenkurikulum2018}
+
+Dalam rangka pengerjaan penelitian ini, secara tidak langsung dokumen kurikulum 2018 diperiksa lagi dengan lebih teliti (dimulai dari versi draft 0.8. Akibatnya, ditemukan beberapa kesalahan yang menjadi masukan untuk dokumen versi final.)
+\begin{itemize}
+	\item Mata Kuliah Rekayasa Perangkat Lunak (AIF183393-04) dan Analisis Sistem Informasi (AIF183393-02) ternyata memiliki kode yang sama, dan hanya berbeda jumlah SKS-nya. Pada \cite{dokumenkurikulum2018}, kesalahan tersebut sudah diperbaiki menjadi AIF132208-04 untuk Rekayasa Perangkat Lunak dan AIF133381-02 untuk Analisis Sistem Informasi
+	\item Pada \cite{dokumenkurikulum2018} terjadi perbedaan kode mata kuliah pada Sertifikasi Dasar-dasar Java, Teori Bilangan, Teori Bahasa dan Kompilasi, Metode Numerik, Pemrograman Lojik, Pemrograman Berbasis Web. Perbedaan kode mata kuliah untuk mata kuliah Sertifikasi Dasar-dasar Java, Teori Bilangan, Teori Bahasa dan Kompilasi, Metode Numerik, dan Pemrograman Lojik dapat dilihat pada \cite{dokumenkurikulum2018} Tabel 6.7: Mata kuliah pilihan Prodi Teknik Informatika dengan Tabel 6.10: Daftar mata kuliah pilihan dan prasyaratnya dan untuk mata kuliah Pemrograman dapat dilihat pada \cite{dokumenkurikulum2018} Tabel Tabel 6.4: Struktur Kurikulum 2018 Program Studi Teknik Informatika dengan Tabel 10.3: Aturan konversi/ekivalensi mata kuliah wajib dan pilihan wajib. 
 \end{itemize}
