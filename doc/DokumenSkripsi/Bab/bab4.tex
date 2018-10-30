@@ -1309,3 +1309,38 @@ Kelas ini merepresentasikan mata kuliah Perekonomian Indonesia.
 				\end{itemize}
 		\end{itemize}
 \end{enumerate}
+
+\section{Perancangan Protokol}
+Pada bagian ini akan dijelaskan bagaimana memanfaatkan halaman-halaman di Student Portal untuk mendapatkan datanya. Beberapa halaman pada Student Portal yang dimanfaatkan untuk merubah protokol pada IFStudentPortal, yaitu:
+\begin{itemize}
+	\item Halaman Home
+	Pada halaman ini terdapat data mahasiswa berupa nama dan foto mahasiswa yang didapatkan setelah login ke student portal. Untuk mendapatkan nama mahasiswa diambil dari bagian kata kunci yang mengandung nama mahasiswa, sedangkan untuk foto mahasiswa diambil dengan mendapatkan sumber dari foto yang telah di \textit{encode} menjadi \textit{Base64}.
+	\item Halaman FRS/PRS
+	Pada halaman ini terdapat data mahasiswa berupa tahun semester yang ditempuh oleh mahasiswa. Karena pada halaman home tidak bisa mendapatkan tahun semester yang ditempuh oleh mahasiswa, sehingga data tahun semester diambil dari halaman FRS/PRS.
+	\item Halaman Jadwal
+	Pada halaman ini terdapat data jadwal kuliah dari mahasiswa. Data jadwal kuliah yang dibutuhkan untuk fitur jadwal kuliah pada IFStudentPortal diambil dari tampilan jadwal dalam bentuk tabel.
+	\item Halaman Nilai
+	Pada halaman ini terdapat data nilai dari mahasiswa. Nilai yang diambil adalah nilai per semester yang sudah memuat kode mata kuliah yang berlaku di kurikulum 2018.
+	\item Halaman Nilai TOEFL
+	Pada halaman ini terdapat data nilai TOEFL yang telah ditempuh oleh mahasiswa.
+\end{itemize}
+
+Dari halaman-halaman yang telah disebutkan diatas. Pada kelas \texttt{Scarper} terdapat beberapa method yang memanfaatkan halaman di Student Portal untuk mendapatkan data yang dibutuhkan oleh IFStudentPortal, yaitu:
+\begin{itemize}
+	\item \textit{Method} \texttt{TahunSemester requestNamePhotoTahunSemester(String phpsessid, Mahasiswa}
+	Pada \textit{method} ini melakukan koneksi ke halaman home dan setelah berhasil. Kemudian mengambil data nama dan foto mahasiswa yang didapat dengan mencari bagian yang terdapat data nama dan foto dari mahasiswa, setelah mendapatkan nama mahasiswa didapatkan juga email mahasiswa yang tidak dibutuhkan karena sudah disimpan saat melakukan login ke IFStudentPortal. Untuk itu dibutuhkan ekstrak data yang diambil hanya nama mahasiswa kemudian disimpan dalam kelas \texttt{Mahasiswa} yang memodelkan mahasiswa. Kemudian mengambil sumber data foto mahasiswa yang sudah dituliskan dalam \textit{Base64}, sehingga dibutuhkan perubahan pada kelas \textit{Mahasiswa} untuk variabel \texttt{Url photoUrl} tipe datanya diubah menjadi String. Terakhir melakukan koneksi ke halaman FRS/PRS untuk mendapatkan tahun dan semester yang ditempuh oleh mahasiswa dengan mencari bagian yang terdapat data tahun dan semester lalu disimpan.
+	\item \textit{Method} \texttt{List<jadwalKuliah> requestJadwal(String phpsessid)}
+	Pada \textit{method} ini melakukan koneksi ke halaman jadwal kuliah. Kemudian mengambil data dari halaman jadwal kuliah dalam bentuk tabel. Dilakukan parsing data tabel yang kemudian ditambahkan ke dalam sebuah list jadwal kuliah.
+	\item \textit{Method} \texttt{void requestNilai(String phpsessid, Mahasiswa logged\_mhs)}
+	Pada \textit{method} ini melakukan koneksi ke halaman nilai. Untuk mendapatkan seluruh nilai setiap mata kuliah yang telah diambil dari satu mahasiswa dibutuhkan beberapa kali koneksi yang diambil dari \textit{dropdown} pilihan semester yang telah ditempuh oleh mahasiswa, Sehingga membutuhkan waktu yang tidak sebentar. Karena pada halaman nilai tidak dapat menampilkan seluruh semester seperti Student Portal yang lama, sehingga untuk mengatasi masalah ini dibuat menjadi paralel. Dibuat kelas yang mengimplementasikan runnable, yaitu:
+	\begin{itemize}
+		\item \texttt{MultipleRequest}
+		Kelas ini dibuat untuk mengatasi masalah dimana dibutuhkan request berkali-kali untuk mendapatkan seluruh nilai yang telah diambil oleh mahasiswa. Pada kelas ini juga mengatasi masalah pengambilan data nilai dimana nilai di isi ke dalam tabel menggunakan \textit{javascript}. Untuk mengatasi masalah ini adalah dengan menggunakan kelas yang telah disediakan oleh java untuk menjalankan \textit{javascript}. Kelas \textit{java} yang digunakan yaitu \texttt{ScriptEngineManager}, \texttt{ScriptEngine} dan \texttt{ScriptObjectMirror}. Kemudian data nilai yang berupa script dijalankan menggunakan \textit{method eval} untuk mengeksekusi script yang terdapat nilai dari mata kuliah. \textit{Method eval} mengembalikan sebuah kelas \texttt{ScriptObjectMirror} yang merupakan objek mirror yang membungkus hasil eksekusi. Setelah mendapatkan data nilai mata kuliah yang didapat dengan menggunakan \textit{method get(Object key)} kemudian ditambahkan ke dalam sebuah list nilai dari mahasiswa.
+	\end{itemize}
+	Setelah berhasil mendapatkan seluruh nilai, kemudian data diurutkan berdasarkan tahun semester mata kuliah tersebut ditempuh.
+	\item textit{Method} \texttt{void requestNilai(String phpsessid, Mahasiswa mahasiswa)}
+	Pada \textit{method} ini melakukan koneksi ke halaman nilai TOEFL. Data nilai TOEFL didapatkan dari tabel nilai TOEFL.
+\end{itemize}
+
+\section{Perancangan Antarmuka}
+Pada antarmuka untuk IFStudentPortal tidak ada perubahan.

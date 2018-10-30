@@ -8,13 +8,14 @@ Bab ini terdiri atas dua bagian, yaitu Implementasi Perangkat Lunak dan Pengujia
 
 \subsection{Lingkungan Implementasi}
 		\label{sec:lingkungan_implementasi}
-			Implementasi perangkat lunak ini dilakukan di satu buah komputer. Implementasi pertama dilakukan pada komputer peneliti untuk keperluan pengujian fungsional. Komputer tersebut memiliki spesifikasi sebagai berikut:
-				\begin{enumerate}
-					\item Processor: 2.80Ghz 
-					\item RAM: 16.00 GB DDR4	
-					\item Sistem Operasi: Windows 10 Pro 64-bit 
-					\item Versi Java: 1.8.0\_181
-				\end{enumerate}
+			Lingkungan implemementasi yang digunakan adalah Heroku. Heroku merupakan \textit{cloud platform} yang menyediakan fitur yang dapat membantu pengguna untuk dapat memiliki alamat domain. Spesifikasi Heroku yang digunakan oleh IFStudentPortal akan dijelaskan sebagai berikut:
+			
+			\begin{tabular}{ |p{1.5cm}|p{1.5cm}|p{2cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+			\hline
+			Dyno Type & Sleeps & Professional Features & Memory (RAM) & CPU Share & Dedicated & Compute \\ \hline
+			free & yes & no & 512 MB & 1x & no & 1x-4x \\ \hline
+				
+			\end{tabular}
 				
 \subsection{Hasil Implementasi}
 		Hasil implementasi berupa aplikasi berbasis web yang dikembangkan untuk menyesuaikan dengan StudentPortal Baru dan Kurikulum 2018. Aplikasi dapat diakses dengan URL \url{https://ifstudentportalskripsi.herokuapp.com}. Aplikasi Informatika Student Portal terdiri dari lima halaman antara lain:
@@ -73,3 +74,39 @@ Bab ini terdiri atas dua bagian, yaitu Implementasi Perangkat Lunak dan Pengujia
 		\end{enumerate}
 		
 \section{Pengujian}
+
+\subsection{Pengujian Fungsional}
+\label{subsec:fungsional}
+
+Pengujian fungsional dilakukan untuk mengetahui kesesuaian reaksi perangkat lunak dengan reaksi yang diharapkan berdasarkan aksi pengguna terhadap perangkat lunak. Pengujian dilakukan pada \textit{cloud platform} dan Windows dengan hasil yang sama.
+
+			\begin{table}[H]
+			\centering
+			\caption{Tabel Pengujian Fungsional}
+				\begin{tabular}{|p{0.25cm}| p{3.5cm}| p{7cm}| p{2.5cm}|} \hline
+				No.	&	Aksi Pengguna	&	Reaksi yang diharapkan	&	Reaksi Perangkat Lunak \\ \hline
+				1.	&	Pengguna menjalankan aplikasi	&	Halaman \textit{login} akan ditampilkan	&	sesuai	\\ \hline
+				2.	&	Pengguna memasukkan \textit{email} dan \textit{password}	&	Jika \textit{email} dan \textit{password}	sesuai, pengguna akan diarahkan ke halaman utama. & sesuai\\ \hline
+				3.	&	Pengguna memilih menu ``Perwalian'' &	Jika pengguna belum memiliki riwayat nilai(masih menempuh semester 1), akan ditampilkan pesan ``PRASYARAT BELUM TERSEDIA''	&	sesuai	\\ \hline
+					&	&	Jika pengguna sudah memiliki riwayat nilai	akan ditampilkan tabel prasyarat mata kuliah beserta status pengambilannya dan ringkasan data akademik mahasiswa berupa IPS semester terakhir, IPK, IP Lulus, IP N. Terbaik, SKS Lulus, dan nilai TOEFL &	sesuai	\\ \hline
+				4.	&	Pengguna memilih menu ``Jadwal Kuliah'' &	Jika pengguna belum melakukan FRS, cuti studi, atau jadwal kuliah pengguna belum tersedia, akan ditampilkan pesan ``JADWAL KULIAH BELUM TERSEDIA''	&	sesuai	\\ \hline
+					&	&	Jika jadwal kuliah pengguna sudah tersedia, akan ditampilkan jadwal kuliah dalam bentuk kalendar yang sudah diurutkan berdasarkan hari &	sesuai	\\ \hline
+				5.	&	Pengguna memilih menu ``Syarat Kelulusan'' &	Jika pengguna belum memiliki riwayat nilai(masih menempuh semester 1), akan ditampilkan seluruh mata kuliah wajib dan sks lulus adalah 0 &	sesuai	\\ \hline
+					&	&	Jika pengguna sudah memiliki riwayat nilai, akan ditampilkan syarat kelulusan yang belum dipenuhi dari mahasiswa &	sesuai	\\ \hline
+				6.	&	Pengguna memilih tombol \textit{logout}	&	Pengguna akan diarahkan kembali ke halaman \textit{login} &	sesuai	\\ \hline
+				7.	& Dua pengguna menggunakan aplikasi secara bersamaan	&	Pengguna dapat menggunakan aplikasi dengan akun yang sesuai &	sesuai	\\ \hline
+				\end{tabular}
+				\label{table:hasilFungsional}
+			\end{table}
+			
+\subsection{Pengujian Eksperimental}
+Pengujian eksperimental dilakukan terhadap mahasiswa angkata 2013 sampai 2017. Dari setiap angkatan, diambil satu orang untuk melakukan pengujian. Setiap responden diminta untuk melakukan \textit{login} kemudian melihat dari setiap halaman pada Student Portal dan memastikan apakah data tersebut sesuai dengan data sebenarnya.
+
+Hasil pengujian eksperimental lainnya dirangkum sebagai berikut:
+\begin{itemize}
+	\item Angakatan 2013
+	\item Angkatan 2014
+	\item Angkatan 2015
+	\item Angkatan 2016
+	\item Angkatan 2017
+\end{itemize}
