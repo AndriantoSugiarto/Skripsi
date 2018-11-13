@@ -1311,36 +1311,99 @@ Kelas ini merepresentasikan mata kuliah Perekonomian Indonesia.
 \end{enumerate}
 
 \section{Perancangan Protokol}
-Pada bagian ini akan dijelaskan bagaimana memanfaatkan halaman-halaman di Student Portal untuk mendapatkan datanya. Beberapa halaman pada Student Portal yang dimanfaatkan untuk merubah protokol pada IFStudentPortal, yaitu:
-\begin{itemize}
-	\item Halaman Home
-	Pada halaman ini terdapat data mahasiswa berupa nama dan foto mahasiswa yang didapatkan setelah login ke student portal. Untuk mendapatkan nama mahasiswa diambil dari bagian kata kunci yang mengandung nama mahasiswa, sedangkan untuk foto mahasiswa diambil dengan mendapatkan sumber dari foto yang telah di \textit{encode} menjadi \textit{Base64}.
-	\item Halaman FRS/PRS
-	Pada halaman ini terdapat data mahasiswa berupa tahun semester yang ditempuh oleh mahasiswa. Karena pada halaman home tidak bisa mendapatkan tahun semester yang ditempuh oleh mahasiswa, sehingga data tahun semester diambil dari halaman FRS/PRS.
-	\item Halaman Jadwal
-	Pada halaman ini terdapat data jadwal kuliah dari mahasiswa. Data jadwal kuliah yang dibutuhkan untuk fitur jadwal kuliah pada IFStudentPortal diambil dari tampilan jadwal dalam bentuk tabel.
-	\item Halaman Nilai
-	Pada halaman ini terdapat data nilai dari mahasiswa. Nilai yang diambil adalah nilai per semester yang sudah memuat kode mata kuliah yang berlaku di kurikulum 2018.
-	\item Halaman Nilai TOEFL
-	Pada halaman ini terdapat data nilai TOEFL yang telah ditempuh oleh mahasiswa.
-\end{itemize}
+Pada bagian ini akan dijelaskan bagaimana memanfaatkan halaman-halaman di Student Portal untuk mendapatkan datanya. Halaman-halaman pada Student Portal yang dimanfaatkan IFStudentPortal.
+\subsection{Halaman Home}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Home_nama_user}
+			\caption{Elemen ``div.namaUser.d-none.d-lg-block.mr-3'' pada Halaman Home}
+			\label{pic:home_nama_user}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Home_foto_user}
+			\caption{Elemen ``img.img-fluid.fotoProfil'' pada Halaman Home}
+			\label{pic:home_foto_user}
+		\end{figure}
+Pada halaman ini terdapat data mahasiswa berupa nama dan foto mahasiswa yang didapatkan setelah login ke student portal. Data nama dan foto mahasiswa diproses menggunakan \textit{method} yang terdapat pada kelas \texttt{Scraper}, yaitu  \textit{method} \texttt{TahunSemester requestNamePhotoTahunSemester(String phpsessid, Mahasiswa mhs)}. Untuk memproses data nama dan foto mahasiswa dilakukan dengan cara:
+\begin{enumerate}
+	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/home}
+	\item Setelah berhasil, mengambil data nama mahasiswa dengan melakukan kueri css menggunakan kueri ``div.namaUser.d-none.d-lg-block.mr-3'' (Gambar \ref{pic:home_nama_user})
+	\item Setelah berhasil melakukan kueri css, akan mendapatkan nama dan email mahasiswa. Data yang dibutuhkan hanya nama mahasiswa, sehingga perlu memotong hasil kueri dari karakter pertama sampai indeks awal email mahasiswa. 
+	\item Kemudian disimpan pada atribut kelas \texttt{Mahasiswa} dengan menggunakan \textit{method} \texttt{void setNama(String nama)}.
+	\item Setelah berhasil menyimpan nama mahasiswa, kemudian melakukan kueri css untuk menyimpan foto mahasiswa menggunakan kueri ``img.img-fluid.fotoProfil'' (Gambar \ref{pic:home_foto_user})
+	\item Setelah berhasil melakukan kueri css, akan mendapatkan foto mahasiswa dalam format \textit{Base64}. Disini perlu melakukan perubahan pada kelas \texttt{Mahasiswa}, yaitu:
+	\begin{itemize}
+		\item Atribut \texttt{URL photoUrl} menjadi \texttt{String photoPath}, karena data foto mahasiswa dalam format \textit{Base64}.
+		\item \textit{Method} \texttt{URL getPhotoURL()} menjadi \texttt{String getPhotoPath()}, karena perubahan pada atribut dibutuhkan perubahan \textit{method getter}.
+		\item \textit{Method} \texttt{void setPhotoURL(URL photoURL)} menjadi \texttt{void setPhotoPath(String photoPath)}, karena perubahan pada atribut dibutuhkan perubahan \textit{method setter}.
+	\end{itemize}
+	\item Kemudian disimpan pada atribut kelas \texttt{Mahasiswa} dengan menggunakan \textit{method} \texttt{void setPhotoPath(String photoPath)}
+	\item Proses berikutnya akan dijelaskan pada sub sub-bab halaman FRS/PRS
+\end{enumerate}
 
-Dari halaman-halaman yang telah disebutkan diatas. Pada kelas \texttt{Scarper} terdapat beberapa method yang memanfaatkan halaman di Student Portal untuk mendapatkan data yang dibutuhkan oleh IFStudentPortal, yaitu:
-\begin{itemize}
-	\item \textit{Method} \texttt{TahunSemester requestNamePhotoTahunSemester(String phpsessid, Mahasiswa}
-	Pada \textit{method} ini melakukan koneksi ke halaman home dan setelah berhasil. Kemudian mengambil data nama dan foto mahasiswa yang didapat dengan mencari bagian yang terdapat data nama dan foto dari mahasiswa, setelah mendapatkan nama mahasiswa didapatkan juga email mahasiswa yang tidak dibutuhkan karena sudah disimpan saat melakukan login ke IFStudentPortal. Untuk itu dibutuhkan ekstrak data yang diambil hanya nama mahasiswa kemudian disimpan dalam kelas \texttt{Mahasiswa} yang memodelkan mahasiswa. Kemudian mengambil sumber data foto mahasiswa yang sudah dituliskan dalam \textit{Base64}, sehingga dibutuhkan perubahan pada kelas \textit{Mahasiswa} untuk variabel \texttt{Url photoUrl} tipe datanya diubah menjadi String. Terakhir melakukan koneksi ke halaman FRS/PRS untuk mendapatkan tahun dan semester yang ditempuh oleh mahasiswa dengan mencari bagian yang terdapat data tahun dan semester lalu disimpan.
-	\item \textit{Method} \texttt{List<jadwalKuliah> requestJadwal(String phpsessid)}
-	Pada \textit{method} ini melakukan koneksi ke halaman jadwal kuliah. Kemudian mengambil data dari halaman jadwal kuliah dalam bentuk tabel. Dilakukan parsing data tabel yang kemudian ditambahkan ke dalam sebuah list jadwal kuliah.
-	\item \textit{Method} \texttt{void requestNilai(String phpsessid, Mahasiswa logged\_mhs)}
-	Pada \textit{method} ini melakukan koneksi ke halaman nilai. Untuk mendapatkan seluruh nilai setiap mata kuliah yang telah diambil dari satu mahasiswa dibutuhkan beberapa kali koneksi yang diambil dari \textit{dropdown} pilihan semester yang telah ditempuh oleh mahasiswa, Sehingga membutuhkan waktu yang tidak sebentar. Karena pada halaman nilai tidak dapat menampilkan seluruh semester seperti Student Portal yang lama, sehingga untuk mengatasi masalah ini dibuat menjadi paralel. Dibuat kelas yang mengimplementasikan runnable, yaitu:
+\subsection{Halaman FRS/PRS}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Home_semester_user}
+			\caption{Elemen ``.custom-selectContent span'' pada Halaman FRS/PRS}
+			\label{pic:home_semester_user}
+		\end{figure}
+Pada halaman ini terdapat data mahasiswa berupa tahun semester yang ditempuh oleh mahasiswa. Karena pada halaman home tidak bisa mendapatkan tahun semester yang ditempuh oleh mahasiswa, sehingga data tahun semester diambil dari halaman FRS/PRS. Data tahun semester diproses menggunakan \textit{method} yang terdapat pada kelas \texttt{Scraper}, yaitu  \textit{method} \texttt{TahunSemester requestNamePhotoTahunSemester(String phpsessid, Mahasiswa mhs)}. Untuk memproses data tahun semester dilakukan dengan cara:
+\begin{enumerate}
+	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/frs_prs}
+	\item Setelah berhasil, mengambil data tahun semester mahasiswa dengan melakukan kueri css menggunakan kueri ``.custom-selectContent span'' (Gambar \ref{pic:home_semester_user})
+	\item Setelah berhasil melakukan kueri css, akan didapatkan data tahun semester mahasiswa
+	\item data tahun semester perlu diuraikan menjadi tahun dan semester yang disimpan pada \textit{array} tipe data \textit{String}, sehingga bisa disimpan pada atribut kelas \texttt{TahunSemester} dengan constructor \texttt{TahunSemester(int tahun, Semester semester)}
+\end{enumerate}
+
+\subsection{Halaman Jadwal}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Jadwal_user}
+			\caption{Elemen ``table.table.table-responsive.table-hover.d-md-table'' pada Halaman Jadwal}
+			\label{pic:jadwal_user}
+		\end{figure}
+Pada halaman ini terdapat data jadwal kuliah dari mahasiswa. Data jadwal kuliah yang dibutuhkan untuk fitur jadwal kuliah pada IFStudentPortal diambil dari tampilan jadwal dalam bentuk tabel. Data jadwal kuliah diproses menggunakan \textit{method} yang terdapat pada kelas \texttt{Scraper}, yaitu  \textit{method} \texttt{List<JadwalKuliah> requestJadwal(String phpsessid)}. Untuk memproses data jadwal kuliah dilakukan dengan cara:
+\begin{enumerate}
+	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/jadwal}
+	\item Setelah berhasil, mengambil data jadwal kuliah dengan melakukan kueri css menggunakan kueri ``table.table.table-responsive.table-hover.d-md-table'' (Gambar \ref{pic:jadwal_user}).
+	\item Setelah berhasil melakukan kueri css, jika terdapat jadwal kuliah, maka jadwal kuliah diolah dan kemudian disimpan dalam sebuah daftar jadwal kuliah yang kemudian akan dikembalikan dalam bentuk daftar jadwal kuliah. 
+\end{enumerate}
+
+\subsection{Halaman Nilai}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Nilai_combobox_user}
+			\caption{\textit{Combo Box} ``select\#dropdownSemester.custom-select.mr-3'' pada Halaman Nilai}
+			\label{pic:nilai_combobox_user}
+		\end{figure}
+Pada halaman ini terdapat data nilai mahasiswa terkini. Nilai yang diambil adalah nilai per semester yang sudah memuat kode mata kuliah yang berlaku di kurikulum 2018. Data nilai akan diproses menggunakan \textit{method} pada kelas \texttt{Scraper}, yaitu \textit{method} \texttt{void requestNilai(String phpsessid, Mahasiswa logged\_mhs)}. Untuk memproses daata nilai dilakukan dengan cara:
+\begin{enumerate}
+	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/nilai}
+	\item Setelah berhasil, mengambil data nilai berdasarkan tahun dan semester dengan melakukan kueri css menggunakan kueri ``select\#dropdownSemester.custom-select.mr-3'' (Gambar \ref{pic:nilai_combobox_user})
+	\item Setelah berhasil melakukan kueri css, kemudian disimpan pada atribut lokal \texttt{ArrayList<String> listSemester} dari atribut \textit{value} ``\textit{option}''
+	\item Setelah berhasil menyimpan \textit{value ``option''} dari \textit{Combo Box}. Kemudian diperlukan melakukan koneksi berkali-kali sebanyak semester yang telah ditempuh mahasiswa, sehingga dibutuhkan waktu yang tidak sebentar. Karena pada halaman nilai tidak dapat menampilkan seluruh semester seperti Student Portal yang lama, sehingga untuk mengatasi masalah ini dibuat menjadi paralel. Untuk itu dibuat kelas yang mengimplementasikan kelas \textit{interface} \texttt{Runnable}, yaitu:
 	\begin{itemize}
 		\item \texttt{MultipleRequest}
 		Kelas ini dibuat untuk mengatasi masalah dimana dibutuhkan request berkali-kali untuk mendapatkan seluruh nilai yang telah diambil oleh mahasiswa. Pada kelas ini juga mengatasi masalah pengambilan data nilai dimana nilai di isi ke dalam tabel menggunakan \textit{javascript}. Untuk mengatasi masalah ini adalah dengan menggunakan kelas yang telah disediakan oleh java untuk menjalankan \textit{javascript}. Kelas \textit{java} yang digunakan yaitu \texttt{ScriptEngineManager}, \texttt{ScriptEngine} dan \texttt{ScriptObjectMirror}. Kemudian data nilai yang berupa script dijalankan menggunakan \textit{method eval} untuk mengeksekusi script yang terdapat nilai dari mata kuliah. \textit{Method eval} mengembalikan sebuah kelas \texttt{ScriptObjectMirror} yang merupakan objek mirror yang membungkus hasil eksekusi. Setelah mendapatkan data nilai mata kuliah yang didapat dengan menggunakan \textit{method get(Object key)} kemudian ditambahkan ke dalam sebuah list nilai dari mahasiswa.
 	\end{itemize}
-	Setelah berhasil mendapatkan seluruh nilai, kemudian data diurutkan berdasarkan tahun semester mata kuliah tersebut ditempuh.
-	\item textit{Method} \texttt{void requestNilai(String phpsessid, Mahasiswa mahasiswa)}
-	Pada \textit{method} ini melakukan koneksi ke halaman nilai TOEFL. Data nilai TOEFL didapatkan dari tabel nilai TOEFL.
-\end{itemize}
+	\item Setelah berhasil mendapatkan seluruh nilai, kemudian data diurutkan berdasarkan tahun semester mata kuliah tersebut ditempuh.
+\end{enumerate}
+
+\subsection{Halaman Nilai TOEFL}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Nilai_toefl_css}
+			\caption{Elemen ``table tbody tr'' dengan nilai TOEFL Mahasiswa}
+			\label{pic:nilai_toefl_css}
+		\end{figure}
+Pada halaman ini terdapat data nilai TOEFL yang telah ditempuh oleh mahasiswa. Data nilai TOEFL akan diproses menggunakan \textit{method} pada kelas \texttt{Scraper}, yaitu \textit{method} \texttt{void requestNilaiTOEFL(String phpsessid, Mahasiswa mahasiswa)}. Untuk memproses data nilai TOEFL dilakukan dengan cara:
+\begin{enumerate}
+	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/nilai/toefl}
+	\item Setelah berhasil, mengambil data nilai TOEFL dengan melakukan kueri css menggunakan kueri ``table'', ``tbody'', dan ``tr'' (Gambar \ref{pic:nilai_toefl_css})
+	\item Setelah berhasil melakukan kueri css, akan mendapatkan data nilai TOEFL yang perlu diolah kemudian disimpan pada atribut kelas \textit{Mahasiswa} dengan menggunakan \textit{method} \texttt{void setNilaiTOEFL(SortedMap<LocalDate, Integer> nilaiTOEFL)}
+\end{enumerate}
 
 \section{Perancangan Antarmuka}
 Pada antarmuka untuk IFStudentPortal tidak ada perubahan.
