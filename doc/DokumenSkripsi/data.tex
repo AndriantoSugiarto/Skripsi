@@ -31,8 +31,8 @@
 % Isilah dengan 0 atau 1 (e.g. \daftarIsiError{1}). 
 % Pemilihan 0 atau 1 silahkan disesuaikan dengan hasil PDF yang dihasilkan.
 %=============================================================================
-%\daftarIsiError{0}   
-\daftarIsiError{1}   
+\daftarIsiError{0}   
+%\daftarIsiError{1}   
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -74,8 +74,8 @@
 % aktifkan salah satu mode di bawah ini :
 %=============================================================================
 %\mode{bimbingan} 		% untuk keperluan bimbingan
-\mode{sidang} 			% untuk sidang 1
-%\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
+%\mode{sidang} 			% untuk sidang 1
+\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
 %\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
 
@@ -215,7 +215,7 @@
 % - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
 \judulINA{Migrasi SIAModels Dan IFStudentPortal Ke Kurikulum 2018}
-\judulENG{Migrasi SIAModels Dan IFStudentPortal Ke Kurikulum 2018}
+\judulENG{Migration SIAModels And IFStudentPortal To Curriculum 2018}
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN X
@@ -227,8 +227,20 @@
 % - hilangkan tanda << & >>, dan isi sesuai dengan data anda
 % - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
 %=============================================================================
-\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>>}
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>>} 
+\abstrakINA{
+	Program Studi Teknik Informatika dalam proses melakukan kurikulum 2018. Pada kurikulum 2018 terdapat perbedaan kode mata kuliah, nilai akhir, dan syarat kelulusan dengan kurikulum 2013. Oleh karena itu, perlu dilakukan perubahan pada SIAmodels.
+	
+	IFStudentPortal merupakan aplikasi berbasis web yang dibuat menggunakan Play Framework untuk Teknik Informatika UNPAR. Data yang diolah IFStudentPortal diambil langsung dari StudentPortal Baru dengan memanfaatkan ekstrasi data situs web yang diimplementasikan menggunakan \textit{jsoup}. Untuk mendapatkan data yang dibutuhkan, perlu dilakukan analisis perubahan StudentPortal terhadap pengambilan data. Data yang telah diambil menggunakan jsoup dapat diseleksi dengan menggunakan CSS \textit{Selector} kemudian data tersebut akan diolah ke dalam SIAModels.
+	
+	Pengujian dari aplikasi IFStudentPortal dilakukan oleh beberapa mahasiswa dengan kriteria yang beragam. Berdasarkan hasil pengujian, aplikasi dapat berjalan dengan baik dan memberikan hasil yang tepat pada seluruh mahasiswa kecuali mahasiswa angkatan 2018 yang berbeda format NPM-nya. Hasil pengujian aplikasi IFStudentPortal membuktikan bahwa ekstrasi data situs web bergantung dengan penyedia layanan data untuk memenuhi kebutuhkan akademik mahasiswa Program Studi Teknik Informatika UNPAR.
+}
+\abstrakENG{
+The Informatics Engineering Program is in the process of carrying out the  curriculum 2018. In the curriculum 2018 there are differences in course codes, final grades, and graduation requirements with the curriculum 2013. Therefore, changes need to be made to SIAmodels.
+
+IFStudentPortal is a web-based application created using Play Framework for UNPAR Informatics Engineering. Data processed by IFStudentPortal is taken directly from the New StudentPortal by utilizing web site data extraction implemented using \ textit {jsoup}. To get the data needed, it is necessary to analyze Student Port changes to data retrieval. Data that has been taken using jsoup can be selected using CSS \ textit {Selector} then the data will be processed into SIAModels.
+
+Testing of the IFStudentPortal application was performed by some students with various criteria. Based on the results of the test, the application can run well and provide the right results for all students except students of class 2018 in different NPM formats. The results of testing the IFStudentPortal application prove that the extraction of website data depends on data service providers to fulfill the needs of student academics at the UNPAR's Informatics Engineering students.
+} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -240,8 +252,8 @@
 % - kunciENG: keywords in english
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
-\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
+\kunciINA{IFStudentPortal, StudentPortal, Teknik Informatika UNPAR, SIAModels, Kurikulum 2018}
+\kunciENG{IFStudentPortal, StudentPortal, Informatics Engineering UNPAR, SIAModels, Curriculum 2018}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -251,7 +263,7 @@
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\untuk{<<kepada siapa anda mempersembahkan skripsi ini\ldots?>>}
+\untuk{Teknik Informatika UNPAR dan diri sendiri}
 %=============================================================================
 
 %_____________________________________________________________________________

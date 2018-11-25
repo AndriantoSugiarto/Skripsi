@@ -7,7 +7,7 @@
 
 \paragraph{} IFStudentPortal\cite{ifstudentportal} merupakan sistem informasi berbasis  \textit{web} yang dibuat menggunakan Play Framework \cite{Leroux:2014} untuk Teknik Informatika UNPAR. Selain itu, data-data yang terdapat pada IFStudentPortal diolah dari Portal Akademik Mahasiswa dengan ekstraksi data dari situs web menggunakan \textit{library} jsoup. IFStudentPortal merupakan aplikasi buatan Herfan Heryandi dan kontributor lainnya. Fitur-fitur dari IFStudentPortal yaitu memeriksa prasyarat mata kuliah, memeriksa syarat yang masih kurang untuk kelulusan dan melihat jadwal kuliah. Catatan akademik dari fitur-fitur pada IFStudentPortal diambil berdasarkan catatan akademik mahasiswa yang login (terpersonalisasi).
 
-Program Studi Informatika dalam proses melakukan kurikulum 2018. Pada \cite{dokumenkurikulum2018} sudah memperlihatkan beberapa perbedaan seperti dalam kode mata kuliah (contoh: AIF401 menjadi AIF184001), struktur kuliah serta prasyaratnya, konversi dari mata kuliah kurikulum 2013, Nilai Akhir lebih bervariasi (ada A, A-, B+, dst), perbedaan dalam syarat kelulusan (tidak ada lagi pilihan wajib), dll. Dari perbedaan-perbedaan tersebut dapat dilihat bahwa diperlukan perubahan terhadap IFStudentPortal yang mendukung kurikulum 2013. Perbedaan syarat kelulusan pada kurikulum 2018 dengan kurikulum 2013 membuat diperlukan beberapa penyesuaian dengan aturan kelulusan untuk angkatan yang sudah mengambil mata kuliah pada kurikulum 2013.
+Program Studi Teknik Informatika dalam proses melakukan kurikulum 2018. Pada \cite{dokumenkurikulum2018} sudah memperlihatkan beberapa perbedaan seperti dalam kode mata kuliah (contoh: AIF401 menjadi AIF184001), struktur kuliah serta prasyaratnya, konversi dari mata kuliah kurikulum 2013, Nilai Akhir lebih bervariasi (ada A, A-, B+, dst), perbedaan dalam syarat kelulusan (tidak ada lagi pilihan wajib), dll. Dari perbedaan-perbedaan tersebut dapat dilihat bahwa diperlukan perubahan terhadap IFStudentPortal yang mendukung kurikulum 2013. Perbedaan syarat kelulusan pada kurikulum 2018 dengan kurikulum 2013 membuat diperlukan beberapa penyesuaian dengan aturan kelulusan untuk angkatan yang sudah mengambil mata kuliah pada kurikulum 2013.
 
 Pada SIAModels\cite{siamodels} merupakan kelas-kelas dalam bahasa Java yang merepresentasikan Sistem Informasi Akademik Teknik Informatika UNPAR. Untuk mendukung perubahan kurikulum dari 2013 ke 2018 yang dilakukan oleh Program Studi Informatika, perlu dilakukan konversi terhadap IFStudentPortal dan SIAModels yang saat ini mendukung kurikulum 2013 menjadi mendukung kurikulum 2018.  Untuk itu SIAModels perlu dikonversi untuk mendukung mata kuliah pada kurikulum 2018. Pada SIAModels bagian \textit{package} mata kuliah perlu dilakukan penyusaian pada mata kuliah yang terdapat pada Program Studi Teknik Informatika UNPAR berserta aturan prasyaratnya yang berlaku pada kurikulum 2018. Pada Skripsi ini pun perlu dilakukan konversi nilai-nilai mata kuliah di kurikulum 2013 ke kurikulum 2018 terutama untuk mahasiswa/i yang sudah mengambil mata kuliah di kurikulum 2013.
 
@@ -26,16 +26,15 @@ Tujuan yang ingin dicapai dalam penelitian ini:
 \begin{enumerate}
 	\item Mengonversi SIAModels dan IFStudentPortal untuk mendukung kurikulum 2018.
 	\item Mengonversi nilai-nilai mata kuliah pada kurikulum 2013 ke 2018.
-	\item Mengimplementasikan IFStudentPortal ke cloud server.
+	\item Mengimplementasikan IFStudentPortal ke \textit{cloud server}.
 \end{enumerate}
 
 \section{Batasan Masalah}
 \label{sec:batasan}
 Dalam penilitian ini ditetapkan batasan-batasan masalah sebagai berikut:
 \begin{enumerate}
-	\item 
-	\item 
-	\item
+	\item Aplikasi tidak menangani perubahaan format NPM angkatan 2018 ke atas.
+	\item Aplikasi tidak menangani perbedaan pada dokumen kurikulum 2018 dengan sistem StudentPortal yang baru.
 \end{enumerate}
 
 \section{Metodologi}
@@ -61,7 +60,7 @@ Bab 1 Pendahuluan berisi latar belakang, rumusan masalah, tujuan, batasan masala
 
 Bab 2 Landasan Teori berisi dasar-dasar teori yang akan digunakan dalam migrasi IFStudentPortal dan SIAModels ke kurikulum 2018. Dasar-dasar Teori yang akan digunakan diantaranya adalah IFStudentPortal, SIAModels, Kurikulum 2018 Program Studi Teknik Informatika. 
 
-Bab 3 Analisis berisi kebutuhan data, analisis sistem yang sudah ada sekarang dan analisis sistem usulan.
+Bab 3 Analisis berisi kebutuhan data, analisis akibat sistem akibat kurikulum 2018 dan analisis student portal baru.
 
 Bab 4 Perancangan berisi perancangan aplikasi, meliputi diagram kelas rinci berserta deskripsi kelas dan fungsinya.
 

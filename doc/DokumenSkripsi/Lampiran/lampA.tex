@@ -1,46 +1,254 @@
 %versi 3 (18-12-2016)
-\chapter{Kode Program}
+\chapter{Kode Program \textit{Controller}}
 \label{lamp:A}
 
-%terdapat 2 cara untuk memasukkan kode program
-% 1. menggunakan perintah \lstinputlisting (kode program ditempatkan di folder yang sama dengan file ini)
-% 2. menggunakan environment lstlisting (kode program dituliskan di dalam file ini)
-% Perhatikan contoh yang diberikan!!
-%
-% untuk keduanya, ada parameter yang harus diisi:
-% - language: bahasa dari kode program (pilihan: Java, C, C++, PHP, Matlab, C#, HTML, R, Python, SQL, dll)
-% - caption: nama file dari kode program yang akan ditampilkan di dokumen akhir
-%
-% Perhatian: Abaikan warning tentang textasteriskcentered!!
-%
+\singlespacing
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=Applicstion.java]
+package controllers;
 
+import java.io.IOException;
+import java.util.*;
 
-\begin{lstlisting}[language=Java, caption=MyCode.c]
+import models.display.DataAkademikDisplay;
+import models.display.JadwalDisplay;
+import models.display.PrasyaratDisplay;
+import models.display.KelulusanDisplay;
+import id.ac.unpar.siamodels.JadwalKuliah;
+import id.ac.unpar.siamodels.Mahasiswa;
+import id.ac.unpar.siamodels.Mahasiswa.Nilai;
+import id.ac.unpar.siamodels.MataKuliah;
+import id.ac.unpar.siamodels.Semester;
+import id.ac.unpar.siamodels.TahunSemester;
+import id.ac.unpar.siamodels.matakuliah.interfaces.HasPrasyarat;
+import id.ac.unpar.siamodels.prodi.teknikinformatika.*;
+import models.support.Scraper;
+import play.data.DynamicForm;
+import play.data.Form;
+import play.mvc.*;
+import play.Logger;
 
-// This does not make algorithmic sense, 
-// but it shows off significant programming characters.
+import javax.script.ScriptException;
 
-#include<stdio.h>
+public class Application extends Controller {
 
-void myFunction( int input, float* output ) {
-	switch ( array[i] ) {
-		case 1: // This is silly code
-			if ( a >= 0 || b <= 3 && c != x )
-				*output += 0.005 + 20050;
-			char = 'g';
-			b = 2^n + ~right_size - leftSize * MAX_SIZE;
-			c = (--aaa + &daa) / (bbb++ - ccc % 2 );
-			strcpy(a,"hello $@?"); 
+	public Result index() throws IOException {
+		if (session("npm") == null) {
+			return ok(views.html.login.render(""));
+		} else {
+			return home();
+		}
 	}
-	count = ~mask | 0x00FF00AA;
+
+	public Result login() throws IOException {
+		if (session("npm") == null) {
+			return index();
+		} else {
+			return home();
+		}
+	}
+
+	public Result submitLogin() throws IOException {
+		Scraper scrap = new Scraper();
+		String errorHtml = "<div class='alert alert-danger' role='alert'>"
+				+ "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>"
+				+ "<span class='sr-only'>Error:</span>";
+		DynamicForm dynamicForm = Form.form().bindFromRequest();
+		String email = dynamicForm.get("email");
+		String pass = dynamicForm.get("pass");
+		if (!email.matches("[0-9]{7}+@student.unpar.ac.id") && !email.matches("[0-9]{10}+@student.unpar.ac.id")) {
+			Logger.info(
+					"User: " + email + " gagal login dari " + request().remoteAddress() + " karena e-mail tidak valid");
+			return ok(views.html.login.render(errorHtml + "Email tidak valid" + "</div>"));
+		}
+		if (!(email.charAt(0) == '7' && email.charAt(1) == '3' || email.contains("201773"))) {
+			Logger.info("User: " + email + " gagal login dari " + request().remoteAddress()
+					+ " karena bukan mahasiswa teknik informatika (73*)");
+			return ok(views.html.login.render(errorHtml + " bukan mahasiswa teknik informatika" + "</div>"));
+		}
+		String npm = "";
+		if(email.contains("201773")){
+		    npm = email.substring(0,10);
+        } else {
+            npm = "20" + email.substring(2, 4) + email.substring(0, 2) + "0" + email.substring(4, 7);
+        }
+		String phpsessid = scrap.login(npm, pass);
+		if (phpsessid != null) {
+			Logger.info("User " + email + " berhasil login dari " + request().remoteAddress());
+			session("npm", npm);
+			session("email", email);
+			session("phpsessid", phpsessid);
+			return home();
+		} else {
+			Logger.info("User: " + email + " gagal login dari " + request().remoteAddress()
+					+ " karena input password salah atau bukan mahasiswa aktif");
+			return ok(views.html.login
+					.render(errorHtml + "Password yang anda masukkan salah atau bukan mahasiswa aktif" + "</div>"));
+		}
+	}
+
+	public Result home() throws IOException {
+		if (session("npm") == null || session("phpsessid") == null) {
+			session().clear();
+			return index();
+		} else {
+			Scraper scrap = new Scraper();
+			Mahasiswa mhs = new Mahasiswa(session("npm"));
+			scrap.requestNamePhotoTahunSemester(session("phpsessid"), mhs);
+			Logger.info("User " + session("email") + " mengakses halaman home dari " + request().remoteAddress());
+			return ok(views.html.home.render(mhs));
+		}
+	}
+
+	public Result perwalian() throws IOException, InterruptedException {
+
+		if (session("npm") == null || session("phpsessid") == null) {
+			session().clear();
+			return index();
+		} else {
+			String phpsessid = session("phpsessid");
+			Logger.info("User " + session("email") + " mengakses halaman prasyarat dari " + request().remoteAddress());
+			Mahasiswa mhs = new Mahasiswa(session("npm"));
+			Scraper scrap = new Scraper();
+			TahunSemester currTahunSemester = scrap.requestNamePhotoTahunSemester(session("phpsessid"), mhs);
+			scrap.requestAvailableKuliah(phpsessid);
+			scrap.requestNilaiTOEFL(phpsessid, mhs);
+			//List<JadwalKuliah> jadwalList = scrap.requestJadwal(phpsessid);
+			//mhs.setJadwalKuliahList(jadwalList);
+			scrap.requestNilai(phpsessid, mhs);
+			DataAkademikDisplay dataAkademik = new DataAkademikDisplay();
+			List<Nilai> riwayatNilai = mhs.getRiwayatNilai();
+
+			if (riwayatNilai.size() == 0) {
+				List<PrasyaratDisplay> table = null;
+				String currentSemester = currTahunSemester.getSemester() + " " + currTahunSemester.getTahun() + "/"
+						+ (currTahunSemester.getTahun() + 1);
+				return ok(views.html.perwalian.render(table, currentSemester, dataAkademik));
+			} else {
+				dataAkademik.ips = String.format("%.2f", mhs.calculateIPS());
+				dataAkademik.ipKumulatif = String.format("%.2f", mhs.calculateIPKumulatif());
+				dataAkademik.ipLulus = String.format("%.2f", mhs.calculateIPLulus());
+				dataAkademik.ipNTerbaik = String.format("%.2f", mhs.calculateIPTempuh(false));
+				dataAkademik.sksLulusTotal = mhs.calculateSKSLulus();
+				dataAkademik.nilaiTOEFL = "" + mhs.getNilaiTOEFL().values();
+
+				int lastIndex = riwayatNilai.size() - 1;
+				Semester semester = riwayatNilai.get(lastIndex).getSemester();
+				int tahunAjaran = riwayatNilai.get(lastIndex).getTahunAjaran();
+				int totalSKS = 0;
+				for (int i = lastIndex; i >= 0; i--) {
+					Nilai nilai = riwayatNilai.get(i);
+					if (nilai.getSemester() == semester && nilai.getTahunAjaran() == tahunAjaran) {
+						if (nilai.getAngkaAkhir() != null) {
+							totalSKS += nilai.getMataKuliah().getSks();
+						}
+					} else {
+						break;
+					}
+				}
+				String semTerakhir = semester + " " + tahunAjaran + "/" + (tahunAjaran + 1);
+				dataAkademik.semesterTerakhir = semTerakhir;
+				dataAkademik.sksLulusSemTerakhir = totalSKS;
+
+				List<PrasyaratDisplay> table = checkPrasyarat();
+				String currentSemester = currTahunSemester.getSemester() + " " + currTahunSemester.getTahun() + "/"
+						+ (currTahunSemester.getTahun() + 1);
+				return ok(views.html.perwalian.render(table, currentSemester, dataAkademik));
+			}
+		}
+	}
+
+	public Result jadwalKuliah() throws IOException {
+
+		if (session("npm") == null || session("phpsessid") == null) {
+			session().clear();
+			return index();
+		} else {
+			Scraper scrap = new Scraper();
+			Mahasiswa mhs = new Mahasiswa(session("npm"));
+			List<JadwalKuliah> jadwalList = scrap.requestJadwal(session("phpsessid"));
+			mhs.setJadwalKuliahList(jadwalList);
+			TahunSemester currTahunSemester = scrap.requestNamePhotoTahunSemester(session("phpsessid"), mhs);
+			JadwalDisplay table = new JadwalDisplay(mhs.getJadwalKuliahList());
+			String semester = currTahunSemester.getSemester() + " " + currTahunSemester.getTahun() + "/"
+					+ (currTahunSemester.getTahun() + 1);
+			Logger.info(
+					"User " + session("email") + " mengakses halaman jadwal kuliah dari " + request().remoteAddress());
+			return ok(views.html.jadwalKuliah.render(table, semester));
+		}
+	}
+
+	public Result kelulusan() throws IOException, InterruptedException {
+		if (session("npm") == null || session("phpsessid") == null) {
+			session().clear();
+			return index();
+		} else {
+			String phpsessid = session("phpsessid"); 
+			Logger.info(
+					"User " + session("email") + " mengakses halaman Data akademik dari " + request().remoteAddress());
+			Scraper scrap = new Scraper();
+			Mahasiswa mhs = new Mahasiswa(session("npm"));
+			scrap.requestNilai(phpsessid, mhs);
+			scrap.requestNilaiTOEFL(phpsessid, mhs);
+			if (mhs.getRiwayatNilai().size() == 0) {
+				KelulusanDisplay display = null;
+				return ok(views.html.kelulusan.render(display));
+			} else {
+				Mahasiswa currMahasiswa = mhs;
+				KelulusanDisplay display = new KelulusanDisplay();
+				Kelulusan str = new Kelulusan();
+				ArrayList<String> arrString = new ArrayList<>();
+				str.checkPrasyarat(currMahasiswa, arrString);
+				display.alasanBelumLulus = arrString;
+				return ok(views.html.kelulusan.render(display));
+			}
+		}
+	}
+
+	public Result tentang() throws IOException {
+		if (session("npm") == null || session("phpsessid") == null) {
+			session().clear();
+			return index();
+		} else {
+			Logger.info("User " + session("email") + " mengakses halaman info dari " + request().remoteAddress());
+			return ok(views.html.tentang.render());
+		}
+	}
+
+	public Result logout() throws IOException {
+		Logger.info("User " + session("email") + " telah logout dari " + request().remoteAddress());
+		session().clear();
+		return index();
+	}
+
+	private List<PrasyaratDisplay> checkPrasyarat() throws IOException, InterruptedException {
+		Scraper scrap = new Scraper();
+		Mahasiswa mhs = new Mahasiswa(session("npm"));
+		scrap.requestNilai(session("phpsessid"), mhs);
+		List<PrasyaratDisplay> table = new ArrayList<PrasyaratDisplay>();
+		List<MataKuliah> mkList = scrap.requestAvailableKuliah(session("phpsessid"));
+		for (MataKuliah mk : mkList) {
+			if (mhs.hasLulusKuliah(mk.getKode())) {
+				table.add(new PrasyaratDisplay(mk, new String[] { "sudah lulus" }));
+			} else {
+				if ((Object)mk instanceof HasPrasyarat) {
+					List<String> reasons = new ArrayList<String>();
+					((HasPrasyarat) mk).checkPrasyarat(mhs, reasons);
+					if (!reasons.isEmpty()) {
+						table.add(new PrasyaratDisplay(mk, reasons.toArray(new String[reasons.size()])));
+					} else {
+						if (mhs.hasLulusKuliah(mk.getKode())) {
+							table.add(new PrasyaratDisplay(mk, new String[] { "sudah lulus" }));
+						} else {
+							table.add(new PrasyaratDisplay(mk, new String[] { "memenuhi syarat" }));
+						}
+					}
+				} else {
+					table.add(new PrasyaratDisplay(mk, new String[] { "tidak memiliki prasyarat" }));
+				}
+
+			}
+		}
+		return table;
+	}
 }
-
-// Fonts for Displaying Program Code in LATEX
-// Adrian P. Robson, nepsweb.co.uk
-// 8 October 2012
-// http://nepsweb.co.uk/docs/progfonts.pdf
-
 \end{lstlisting}
-
-\lstinputlisting[language=Java, caption=MyCode.java]{./Lampiran/MyCode.java} 
-

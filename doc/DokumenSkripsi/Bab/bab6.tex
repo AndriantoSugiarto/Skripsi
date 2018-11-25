@@ -5,9 +5,15 @@
 \label{sec:kesimpulan}
 Dari hasil pembangunan aplikasi IFStudentPortal, didapatkan kesimpulan-kesimpulan sebagai berikut:
 \begin{enumerate}
-	\item IFStudentPortal telah berhasil mengambil data dengan baik sampai akhir oktober 2018 dari StudentPortal, tetapi pada awal november
-	\item Penggunaan metode scraping memiliki kelemahan karena jika terdapat perubahan struktur dan penyedia layanan data berhenti atau menghilangkan data yang dibutuhkan, maka data tersebut tidak dapat ditampilkan.  
+	\item Fitur-fitur yang telah ada di IFStudentPortal telah dapat mengambil data dengan baik dan penggunaan metode scraping sendiri memiliki kelemahan. Karena jika terdapat perubahan struktur dan penyedia layanan data berhenti atau menghilangkan data yang dibutuhkan, maka data tersebut tidak dapat ditampilkan.
+	\item Aplikasi IFStudentportal mengambil data nilai mahasiswa yang sudah sesuai dengan kurikulum 2018 melalui student portal yang baru, sehingga aplikasi hanya membutuhkan pengambilan nilai akhir mahasiswa kemudian nilai akhir dikonversi sesuai bobot dari masing-masing nilai akhir.
+	\item Aplikasi IFStudentportal telah dapat diakses dari berbagai perangkat dengan memanfaatkan heroku sebagai \textit{cloud server}.
 \end{enumerate}
 
 \section{Saran}
 \label{sec:saran}
+Dari hasil penelitian termasuk kesimpulan yang didapat, berikut adalah beberapa saran untuk pengembangan lebih lanjut:
+\begin{enumerate}
+	\item Dalam pengembangan berikutnya, IFStudentPortal perlu dapat menangani perubahan format NPM pada angkatan 2018, sehingga angkatan 2018 dapat masuk ke IFStudentPortal.
+	\item Aplikasi IFStudentportal sebaiknya menganti metode pengambilan data  yang sebelumnya menggunakan metode \textit{scraping} diganti dengan metode lain, sehingga jika terjadi perubahan struktur atau penyedia layanan data berhenti atau menghilangkan data yang dibutuhkan, maka masih dapat menampilkan data yang sesuai dengan kebutuhan aplikasi.
+\end{enumerate}
