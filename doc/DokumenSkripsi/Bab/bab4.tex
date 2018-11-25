@@ -1386,7 +1386,32 @@ Pada halaman ini terdapat data nilai mahasiswa terkini. Nilai yang diambil adala
 	\item Setelah berhasil menyimpan \textit{value ``option''} dari \textit{Combo Box}. Kemudian diperlukan melakukan koneksi berkali-kali sebanyak semester yang telah ditempuh mahasiswa, sehingga dibutuhkan waktu yang tidak sebentar. Karena pada halaman nilai tidak dapat menampilkan seluruh semester seperti Student Portal yang lama, sehingga untuk mengatasi masalah ini dibuat menjadi paralel. Untuk itu dibuat kelas yang mengimplementasikan kelas \textit{interface} \texttt{Runnable}, yaitu:
 	\begin{itemize}
 		\item \texttt{MultipleRequest}
-		Kelas ini dibuat untuk mengatasi masalah dimana dibutuhkan request berkali-kali untuk mendapatkan seluruh nilai yang telah diambil oleh mahasiswa. Pada kelas ini juga mengatasi masalah pengambilan data nilai dimana nilai di isi ke dalam tabel menggunakan \textit{javascript}. Untuk mengatasi masalah ini adalah dengan menggunakan kelas yang telah disediakan oleh java untuk menjalankan \textit{javascript}. Kelas \textit{java} yang digunakan yaitu \texttt{ScriptEngineManager}, \texttt{ScriptEngine} dan \texttt{ScriptObjectMirror}. Kemudian data nilai yang berupa script dijalankan menggunakan \textit{method eval} untuk mengeksekusi script yang terdapat nilai dari mata kuliah. \textit{Method eval} mengembalikan sebuah kelas \texttt{ScriptObjectMirror} yang merupakan objek mirror yang membungkus hasil eksekusi. Setelah mendapatkan data nilai mata kuliah yang didapat dengan menggunakan \textit{method get(Object key)} kemudian ditambahkan ke dalam sebuah list nilai dari mahasiswa.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Nilai_per_semester_salah_satu}
+			\caption{Script Data Nilai Mahasiswa Pada Halaman Nilai}
+			\label{pic:nilai_per_semester_script}
+		\end{figure}
+		Pada kelas ini juga mengatasi masalah pengambilan data nilai dimana nilai di isi ke dalam tabel menggunakan \textit{javascript}. Atribut pada kelas ini merupakan atribut yang diperlukan untuk mendapatkan nilai mahasiswa, yaitu:
+		\begin{itemize}
+			\item Atribut \texttt{int l} merupakan atribut untuk menyimpan satu angka urutan dari atribut \texttt{listSemester}.
+			\item Atribut \texttt{ArrayList<String> listSemester} merupakan daftar semester yang telah ditempuh mahasiswa.
+			\item Atribut \texttt{String NILAI\_URL} merupakan alamat untuk mendapatkan nilai mahasiswa.
+			\item Atribut \texttt{String phpsessid} untuk menyimpan \textit{cookies} dari \textit{login} ke Student Portal.
+			\item Atribut \texttt{Mahasiswa logged\_mhs} untuk menyimpan data mahasiswa.
+			\item Atribut \texttt{ScriptEngineManager factory} untuk menjalankan \textit{javascript}.
+			\item Atribut \texttt{ScriptEngine engine} untuk menjalankan \textit{javascript}.
+		\end{itemize}
+		\textit{Method} yang dimiliki kelas ini adalah \texttt{void run}. \textit{Method} ini merupakan \textit{method} turunan dari kelas \texttt{interface Runnable}. Untuk mendapatkan data nilai dilakukan dengan cara:
+		\begin{enumerate}
+			\item Mendapatkan tahun dan semester yang ditempuh mahasiswa dari atribut \texttt{Arraylist<String> listSemester} diambil dari value atribut \texttt{int l}. Kemudian String dibagi menjadi tahun dan semester yang dibutuhkan.
+			\item Setelah mendapatkan tahun dan semester. Kemudian melakukan koneksi ke alamat nilai berdasarkan tahun dan semester (\url{https://studentportal.unpar.ac.id/nilai/2013/1}).
+			\item Setelah berhasil, kemudian melakukan kueri css berdasarkan script yang mengandung nilai mahasiswa (Gambar \ref{pic:nilai_per_semester_script}). 
+			\item Selanjutnya adalah mendapatkan script yang mengandung script ``var data\_mata\_kuliah = [];'' sampai indeks dari ``var data\_angket = [];''.
+			\item Setelah mendapatkan script yang dibutuhkan, selanjutnya menjalankan script menggunakan \textit{method} milik kelas \texttt{ScriptEngine} yaitu \texttt{Object eval(String script)}.
+			\item Setelah berhasil, data yang didapatkan bertipe \texttt{ScriptObjectMirror} yang membungkus hasil eksekusi. Data nilai didapatkan dengan menggunakan \textit{method} \texttt{Object get(Object key)}.
+			\item Setelah berhasil, kemudian memasukan data nilai ke daftar riwayat nilai mahasiswa pada atribut kelas \texttt{Mahasiswa} yaitu \texttt{List<Nilai> riwayatNilai} menggunakan method \texttt{List<Nilai> getRiwayatNilai()}. Proses ini dilakukan berulang kali sebanyak jumlah mata kuliah per semesternya.
+		\end{enumerate}
 	\end{itemize}
 	\item Setelah berhasil mendapatkan seluruh nilai, kemudian data diurutkan berdasarkan tahun semester mata kuliah tersebut ditempuh.
 \end{enumerate}
