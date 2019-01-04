@@ -5,18 +5,22 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-\paragraph{} IFStudentPortal\cite{ifstudentportal} merupakan sistem informasi berbasis  \textit{web} yang dibuat menggunakan Play Framework \cite{Leroux:2014} untuk Teknik Informatika UNPAR. Selain itu, data-data yang terdapat pada IFStudentPortal diolah dari Portal Akademik Mahasiswa dengan ekstraksi data dari situs web menggunakan \textit{library} jsoup. IFStudentPortal merupakan aplikasi buatan Herfan Heryandi dan kontributor lainnya. Fitur-fitur dari IFStudentPortal yaitu memeriksa prasyarat mata kuliah, memeriksa syarat yang masih kurang untuk kelulusan dan melihat jadwal kuliah. Catatan akademik dari fitur-fitur pada IFStudentPortal diambil berdasarkan catatan akademik mahasiswa yang login (terpersonalisasi).
+\paragraph{} SIAModels\cite{siamodels} merupakan kelas-kelas dalam bahasa java yang merepresentasikan Sistem Informasi Akademik Teknik Informatika UNPAR. Setiap kelas pada SIAModels memodelkan kebutuhkan akademik seperti jadwal kuliah, mahasiswa, syarat kelulusan, mata kuliah, dosen, dan semester. Perubahan data akademik dilakukan pada SIAModels, sehingga jika terdapat perubahan pada akademik, maka yang perlu diubah hanya pada SIAModels. 
 
-Program Studi Teknik Informatika dalam proses melakukan kurikulum 2018. Pada \cite{dokumenkurikulum2018} sudah memperlihatkan beberapa perbedaan seperti dalam kode mata kuliah (contoh: AIF401 menjadi AIF184001), struktur kuliah serta prasyaratnya, konversi dari mata kuliah kurikulum 2013, Nilai Akhir lebih bervariasi (ada A, A-, B+, dst), perbedaan dalam syarat kelulusan (tidak ada lagi pilihan wajib), dll. Dari perbedaan-perbedaan tersebut dapat dilihat bahwa diperlukan perubahan terhadap IFStudentPortal yang mendukung kurikulum 2013. Perbedaan syarat kelulusan pada kurikulum 2018 dengan kurikulum 2013 membuat diperlukan beberapa penyesuaian dengan aturan kelulusan untuk angkatan yang sudah mengambil mata kuliah pada kurikulum 2013.
+IFStudentPortal\cite{ifstudentportal} merupakan sistem informasi berbasis  \textit{web} yang dibuat menggunakan Play Framework \cite{Leroux:2014} untuk Teknik Informatika UNPAR. Selain itu, data-data yang terdapat pada IFStudentPortal diolah dari Student Portal UNPAR dengan ekstraksi data dari situs web menggunakan \textit{library} jsoup. IFStudentPortal merupakan aplikasi buatan herfan heryandi dan kontributor lainnya\cite{ifstudentportal}. IFStudentPortal memiliki fitur-fitur yaitu memeriksa prasyarat mata kuliah sebelum melakukan perwalian dan data akademik mahasiswa, melihat jadwal kuliah, dan melihat syarat kelulusan yang belum terpenuhi untuk lulus dari Program Studi Teknik Informatika UNPAR. Data akademik dari fitur-fitur IFStudentPortal diambil berdasarkan catatan akademik mahasiswa Teknik Informatika UNPAR yang login (terpersonalisasi).
 
-Pada SIAModels\cite{siamodels} merupakan kelas-kelas dalam bahasa Java yang merepresentasikan Sistem Informasi Akademik Teknik Informatika UNPAR. Untuk mendukung perubahan kurikulum dari 2013 ke 2018 yang dilakukan oleh Program Studi Informatika, perlu dilakukan konversi terhadap IFStudentPortal dan SIAModels yang saat ini mendukung kurikulum 2013 menjadi mendukung kurikulum 2018.  Untuk itu SIAModels perlu dikonversi untuk mendukung mata kuliah pada kurikulum 2018. Pada SIAModels bagian \textit{package} mata kuliah perlu dilakukan penyusaian pada mata kuliah yang terdapat pada Program Studi Teknik Informatika UNPAR berserta aturan prasyaratnya yang berlaku pada kurikulum 2018. Pada Skripsi ini pun perlu dilakukan konversi nilai-nilai mata kuliah di kurikulum 2013 ke kurikulum 2018 terutama untuk mahasiswa/i yang sudah mengambil mata kuliah di kurikulum 2013.
+Program Studi Teknik Informatika UNPAR mulai menerapkan kurikulum 2018. Kurikulum 2018\cite{dokumenkurikulum2018} merupakan kurikulum yang disusun berdasarkan hasil evaluasi  perkuliahan pada setiap akhir semester dilakukan untuk menilai apakah terdapat masalah atau kekurangan dari kurikulum sebelumnya yaitu kurikulum 2013 oleh Program Studi Teknik Informatika. Selain melalui evaluasi perkuliahan tiap semester, Program Studi Teknik Informatika juga melakukan evaluasi melalui rapat-rapat dan lokakarya. Kurikulum didefinsikan sebagai seperangkat rencana dan pengaturan capaian pembelajaran lulusan, bahan kajian, proses, dan penilaian yang digunakan sebagai pedoman penyelenggaran program studi menjadi sarana utama untuk mencapai tujuan dari Program Studi Teknik Informatika UNPAR. Dibandingkan dengan kurikulum 2013, pada kurikulum 2018 memperlihatkan beberapa perbedaan seperti dalam kode mata kuliah (contoh: AIF401 menjadi AIF184001), struktur kuliah serta prasyaratnya, konversi dari mata kuliah kurikulum 2013, Nilai Akhir lebih bervariasi (ada A, A-, B+, dst), perbedaan dalam syarat kelulusan (tidak ada lagi pilihan wajib), dll. 
+
+Tidak dapat dipungkiri bahwa perkembangan informatika yang sangat pesat telah membawa pengaruh pada dunia keinformatikaan saat ini. Penerapan informatika di berbagai bidang kehidupan memunculkan profesi-profesi baru yang menuntut kompentensi khusus. Kebutuhan dunia kerja akan sumber daya manusia yang kompeten pada bidang informatika semakin meningkat. Seiring dengan itu, semakin banyak perguruan tinggi yang mendirikan program studi sejenis dan setara. Situasi ini menimbulkan tingginya tingkat persaingan antar program studi. Dari situasi yang dihadapi tersebut menjadi tantangan bagi program studi Teknik Informatika UNPAR untuk dapat menghasilkan kurikulum yang dapat mendukung proses pembelajaran sehingga menghasilkan lulusan yang mampu memenuhi tuntutan pengguna lulusan dan mampu bersaing dengan lulusan program studi sejenis. Program Studi Teknik Informatika UNPAR melakukan perubahan kurikulum setiap lima tahun merupakan tanggapan atas perkembangan Ilmu Pengetahuan dan Teknologi (IPTEK) (\textit{scientific vision}), kebutuhan masyarakat (\textit{societal need}), serta kebutuhan pengguna lulusan (\textit{stakeholder need}).
+
+Pada Semester Ganjil 2018/2019 terdapat perubahan pada Student Portal UNPAR. Untuk mendukung perubahan pada kurikulum 2018 dan Student Portal UNPAR, SIAModels dan IFStudentPortal perlu disesuaikan dengan perubahan pada kurikulum 2018 dan Student Portal UNPAR. Perubahan pada Student Portal UNPAR perlu dianalisis kemudian diimplementasikan ke IFStudentPortal. Data-data yang didapatkan dari Student Portal UNPAR kemudian akan diolah ke SIAModels yang didapat menggunakan \textit{library} jsoup. Analisis pada \cite{dokumenkurikulum2018} akan dilakukan yang kemudian perubahannya akan diimplementasikan ke SIAModels.
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
 Rumusan masalah yang akan dibahas dalam penelitian ini:
 \begin{enumerate}
-	\item Bagaimana mengonversi SIAModels dan IFStudentPortal, sehingga mendukung kurikulum 2018 serta konversinya (untuk mahasiswa yang sudah mengambil kuliah-kuliah di kurikulum 2013)?
-	\item Bagaimana mengonversi nilai-nilai mata kuliah pada kurikulum 2013 ke 2018?
+	\item Bagaimana mengkonversi SIAModels dan IFStudentPortal, sehingga mendukung kurikulum 2018 serta konversinya (untuk mahasiswa yang sudah mengambil kuliah-kuliah di kurikulum 2013)?
+	\item Bagaimana mengkonversi nilai-nilai mata kuliah pada kurikulum 2013 ke kurikulum 2018?
 	\item Bagaimana mengimplementasikan IFStudentPortal ke \textit{cloud server}?
 \end{enumerate}
 
@@ -24,7 +28,7 @@ Rumusan masalah yang akan dibahas dalam penelitian ini:
 \label{sec:tujuan}
 Tujuan yang ingin dicapai dalam penelitian ini:
 \begin{enumerate}
-	\item Mengonversi SIAModels dan IFStudentPortal untuk mendukung kurikulum 2018.
+	\item Mengkonversi SIAModels dan IFStudentPortal untuk mendukung kurikulum 2018.
 	\item Mengonversi nilai-nilai mata kuliah pada kurikulum 2013 ke 2018.
 	\item Mengimplementasikan IFStudentPortal ke \textit{cloud server}.
 \end{enumerate}
@@ -43,12 +47,14 @@ Metode penelitian yang akan digunakan dalam skripsi ini adalah:
 \begin{enumerate}
 	\item Studi literatur mengenai:
 	\begin{enumerate}
-		\item Draft Kurikulum 2018
-		\item Skripsi Herfan Heryandi serta Aplikasi IFStudentPortal
+		\item Dokumen Kurikulum 2018.
+		\item Dokumen skripsi Herfan Heryandi\cite{skripsiherfan} serta Aplikasi IFStudentPortal.
 	\end{enumerate}
-	\item Analisis kebutuhan untuk konversi SIAModels dan IFStudentPortal dari kurikulum 2013 lalu melakukan mengimplementasikan kurikulum 2018.
-	\item Melakukan pengujian dan eksperimen
-	\item Melakukan dokumentasi
+	\item Analisis kebutuhan untuk konversi SIAModels dan IFStudentPortal dari kurikulum 2013 ke kurikulum 2018 berdasarkan dokumen kurikulum 2018.
+	\item Menganalisis StudentPortal Versi 2018.
+	\item Menyesuaikan implementasi ekstrasi data dengan StudentPortal versi 2018.
+	\item Melakukan pengujian dan eksperimen terhadap mahasiswa Teknik Informatika UNPAR.
+	\item Melakukan dokumentasi.
 	
 \end{enumerate}
 
@@ -58,12 +64,12 @@ Untuk penulisan skripsi ini akan dibagi dalam enam bagian sebagai berikut:
 
 Bab 1 Pendahuluan berisi latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi penelitian dan sistematika penulisan.
 
-Bab 2 Landasan Teori berisi dasar-dasar teori yang akan digunakan dalam migrasi IFStudentPortal dan SIAModels ke kurikulum 2018. Dasar-dasar Teori yang akan digunakan diantaranya adalah IFStudentPortal, SIAModels, Kurikulum 2018 Program Studi Teknik Informatika. 
+Bab 2 Landasan Teori berisi dasar-dasar teori yang akan digunakan dalam penyesuaian IFStudentPortal dan SIAModels ke kurikulum 2018. Dasar-dasar Teori yang akan digunakan diantaranya adalah IFStudentPortal, SIAModels, Kurikulum 2018 Program Studi Teknik Informatika. 
 
-Bab 3 Analisis berisi kebutuhan data, analisis akibat sistem akibat kurikulum 2018 dan analisis student portal baru.
+Bab 3 Analisis berisi kebutuhan data, analisis akibat sistem akibat kurikulum 2018, analisis student portal versi 2018, dan analisis sistem IFStudentPortal.
 
 Bab 4 Perancangan berisi perancangan aplikasi, meliputi diagram kelas rinci berserta deskripsi kelas dan fungsinya.
 
-Bab 5 Implementasi dan pengujian berisi implementasi dan pengujian aplikasi, meliputi lingkungan implementasi, hasil implementasi, pengujian fungsional, dan pengujian eksperimental.
+Bab 5 Implementasi dan pengujian berisi implementasi dan pengujian aplikasi, meliputi lingkungan implementasi, implementasi IFStudentPortal ke Heroku, hasil implementasi, pengujian fungsional, dan pengujian eksperimental.
 
 Bab 6 Kesimpulan dan Saran berisi kesimpulan dari pembangunan aplikasi berserta saran untuk pengembangan berikutnya.

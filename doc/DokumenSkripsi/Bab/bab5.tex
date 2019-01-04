@@ -8,7 +8,7 @@ Bab ini terdiri atas dua bagian, yaitu Implementasi Perangkat Lunak dan Pengujia
 
 \subsection{Lingkungan Implementasi}
 		\label{sec:lingkungan_implementasi}
-			Lingkungan implemementasi yang digunakan adalah Heroku \footnote{\url{https://devcenter.heroku.com/categories/reference}}. Heroku merupakan \textit{cloud platform} yang menyediakan fitur yang dapat membantu pengguna untuk dapat memiliki alamat domain. Semua aplikasi Heroku dijalankan dalam koleksi kontainer Linux ringan yang disebut dynos. Spesifikasi Heroku yang digunakan oleh IFStudentPortal akan dijelaskan pada Tabel \ref{tab:dynotype}
+			Lingkungan implementasi yang digunakan adalah Heroku \footnote{\url{https://devcenter.heroku.com/categories/reference}}. Heroku merupakan \textit{cloud platform} yang menyediakan fitur yang dapat membantu pengguna untuk dapat memiliki alamat domain. Semua aplikasi Heroku dijalankan dalam koleksi kontainer Linux ringan yang disebut dynos. Spesifikasi Heroku yang digunakan oleh IFStudentPortal akan dijelaskan pada Tabel \ref{tab:dynotype}
 \begin{table}[H]
 	\centering
 		\caption{Spesifikasi Heroku}
@@ -33,9 +33,28 @@ Bab ini terdiri atas dua bagian, yaitu Implementasi Perangkat Lunak dan Pengujia
 				\item \textbf{CPU Share}, menentukan alokasi daya pemrosesan yang dialokasikan ke \textit{Virtual Machine} dalam layanan \textit{Cloud}.
 				\item \textbf{Compute}, Heroku \textit{compute unit} hanya \textit{Amazon compute unit} (karena Heroku berjalan diatas AWS). Satu unit komputasi pada AWS didefinisikan sebagai kekuatan komputer dari 1.0-1.2Ghz dari \textit{CPU server 2007}.
 			\end{enumerate}
-				
+			
+\subsection{Implementasi IFStudentPortal ke Heroku}
+Langkah-Langkah implementasi IFStudentPortal ke Heroku, yaitu:
+\begin{enumerate}
+	\item Membuat akun heroku yang dapat dibuat pada alamat situs berikut \url{https://signup.heroku.com/}.
+	\item Setelah membuat akun heroku kemudian \textit{login} dengan akun yang sudah dibuat.
+	\item Setelah login akan diarahkan ke halaman \textit{dashboard} dari heroku, kemudian pilih ``create new app''.
+	\item Kemudian masukkan nama aplikasi ``ifstudentportalskripsi'' dan klik ``create app''.
+	\item Setelah berhasil, masuk ke menu ``deploy'' disana terdapat beberapa cara untuk melakukan \textit{deploy} ke heroku.
+	\item Metode yang digunakan untuk deploy IFStudentPortal ke Heroku yaitu menggunakan ``heroku git'', beberapa langkah sebelum melakukan deploy, yaitu
+	\begin{enumerate}
+		\item Melakukan \textit{git clone } \url{https://github.com/AndriantoSugiarto/IFStudentPortal.git} pada ``terminal'' atau ``command prompt'' dari sistem operasi yang digunakan.
+		\item Mengubah secret key pada file ``conf/application.conf'' dan mengikuti petunjuk cara mengubah secret key pada playframework di \url{https://www.playframework.com/documentation/2.6.x/ApplicationSecret}.
+		\item Mengunduh dan menginstall ``Heroku CLI''
+		\item Setelah berhasil menginstall ``Heroku CLI'', kemudin melakukan perintah ``heroku login''.
+		\item Kemudian melakukan perintah ``heroku git:remote -a ifstudentportalskripsi''.
+		\item Kemudian melakukan perintah ``git push heroku master'' untuk melakukan \textit{deploy} IFStudentPortal ke heroku.
+		\item Setelah berhasil melakukan \textit{deploy} aplikasi dapat diakses melalui alamat ``\url{http://ifstudentportalskripsi.herokuapp.com/}''.
+	\end{enumerate}
+\end{enumerate}
 \subsection{Hasil Implementasi}
-		Hasil implementasi berupa aplikasi berbasis web yang dikembangkan untuk menyesuaikan dengan StudentPortal Baru dan Kurikulum 2018. Aplikasi dapat diakses dengan URL \url{https://ifstudentportalskripsi.herokuapp.com}. Aplikasi Informatika Student Portal terdiri dari lima halaman antara lain:
+		Hasil implementasi berupa aplikasi berbasis web yang dikembangkan untuk menyesuaikan dengan StudentPortal versi 2018 dan Kurikulum 2018. Aplikasi dapat diakses dengan URL \url{https://ifstudentportalskripsi.herokuapp.com}. Aplikasi Informatika Student Portal terdiri dari lima halaman antara lain:
 		\begin{enumerate}
 			\item\textbf{Halaman \textit{Login}}\\
 				Halaman \textit{login} digunakan pengguna untuk masuk ke dalam aplikasi. Pada halaman ini, pengguna dapat melakukan \textit{login} dengan mengisi \textit{email} pada kolom \textit{email} dan \textit{password} pada kolom \textit{password} kemudian mengklik tombol login. Tangkapan layar dari halaman \textit{login} dapat dilihat pada Gambar \ref{fig:5_halaman_login}.
@@ -117,7 +136,7 @@ Pengujian fungsional dilakukan sekitar bulan oktober sampai november untuk menge
 			\end{table}
 			
 \subsection{Pengujian Eksperimental}
-Pengujian eksperimental dilakukan terhadap mahasiswa angkatan 2013 sampai 2018. Dari setiap angkatan, diambil dua orang untuk melakukan pengujian. Setiap responden diminta untuk melakukan \textit{login} kemudian melihat dari setiap halaman pada Student Portal dan memastikan apakah data tersebut sesuai dengan data sebenarnya. Pengujian eksperimental sempat terjadi masalah, karena saat pengujian ekspermintal dilakukan sekitar awal bulan november nilai per semester pada StudentPortal menjadi kosong. Tanggal 14 November nilai per semester telah muncul kembali, sehingga pengujian eksperimental kembali dilakukan.
+Pengujian eksperimental dilakukan terhadap mahasiswa Teknik Informatika UNPAR angkatan 2013 sampai 2018 dan Mahasiswa Teknik informatika UNPAR yang sudah lulus. Dari setiap angkatan, diambil dua orang untuk melakukan pengujian. Setiap responden diminta untuk melakukan \textit{login} kemudian melihat dari setiap halaman pada Student Portal dan memastikan apakah data tersebut sesuai dengan data sebenarnya. Pengujian eksperimental sempat terjadi masalah, karena saat pengujian ekspermintal dilakukan sekitar awal bulan november nilai per semester pada StudentPortal menjadi kosong. Tanggal 14 November nilai per semester telah muncul kembali, sehingga pengujian eksperimental kembali dilakukan.
 Hasil pengujian eksperimental dirangkum sebagai berikut:
 \begin{itemize}
 	\item Angkatan 2013 \\
@@ -598,9 +617,23 @@ Hasil pengujian eksperimental dirangkum sebagai berikut:
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.3]{Gambar/2018_1_error}
-			\caption{\textit{Login error mahasiswa Juan Antonius}}
+			\caption{\textit{Login error} mahasiswa Juan Antonius}
 			\label{fig:2018_1_error}
 		\end{figure}
 		Pengujian eksperimental dilakukan kepada mahasiswa bernama Juan Antonius. Disini Juan tidak dapat \textit{login} ke IFStudentPortal dan IFStudentPortal mengeluarkan pesan \textit{error} yaitu ``bukan mahasiswa teknik informatika'' (Gambar \ref{fig:2018_1_error}). Ternyata pada angkatan 2018 terdapat perbedaan format NPM mahasiswa, sehingga pengujian eksperimental tidak dapat dilakukan karena aplikasi tidak menangani perbedaan format NPM mahasiswa.
+		\item Angkatan yang sudah lulus \\
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.45]{Gambar/HasilPengujian/2012_1}
+			\caption{\textit{Error Login} IFStudentPortal}
+			\label{fig:2012_1}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.45]{Gambar/HasilPengujian/2012_2}
+			\caption{\textit{Error Login} Student Portal UNPAR}
+			\label{fig:2012_2}
+		\end{figure}
+		Pengujian eksperimental ini dilakukan untuk mengetahui apakah yang mahasiswa yang telah lulus dapat mengakses IFStudentPortal. Pengujian dilakukan pada mahasiswa Tommy Adhitya The (2012730031). Hasil yang diperoleh dari pengujian ini bahwa mahasiswa Tommy tidak dapat mengakses IFStudentPortal (Gambar \ref{fig:2012_1}) karena mahasiswa Tommy sudah tidak dapat mengakses Student Portal yang diperlihatkan pada Gambar \ref{fig:2012_2}.
 	\end{itemize}
 \end{itemize}

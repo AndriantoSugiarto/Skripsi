@@ -50,1201 +50,141 @@ Pada subbab ini akan menjelaskan perancangan kelas akibat kurikulum 2018 dari ha
 \begin{enumerate}
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.matakuliah.kurikulum2018} \\
 	\textit{Package} ini berisi kelas-kelas yang merepresentasikan mata kuliah pada kurikulum 2018 berserta aturan prasyaratnya. Kelas-kelas yang ada pada \textit{package} ini adalah sebagai berikut:
+	\begin{table}[H]
+\centering
+\caption{Tabel rincian kelas mata kuliah kurikulum 2018}
+\label{tab:kelasmatakuliah2018_rincian}
+\begin{tabular}{|p{2cm}|p{3.5cm}|p{1.75cm}|p{2cm}|p{3.5cm}|p{1.75cm}|}
+\hline
+\textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} & \textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} \\ \hline
+AIF131101 & Pemrograman Berorientasi Objek &  & AIF183145 & Sertifikasi Dasar-dasar Java & v \\ \hline
+AIF131102 & Algoritma dan Struktur Data &  & AIF183147 & Teori Bilangan & v \\ \hline
+AIF131105 & Pengantar Informatika &  & AIF183149 & Teori Bahasa \& Kompilasi & v \\ \hline
+AIF131106 & Sistem Dijital &  & AIF183153 & Metode Numerik & v \\ \hline
+AIF131181 & Dasar-dasar Pemrograman &  & AIF183155 & Pemrograman Lojik & v \\ \hline
+AIF131182 & Pengantar Basis Data &  & AIF183201 & Sistem Operasi & v \\ \hline
+AIF131183 & Pemrograman Prosedural &  & AIF183204 & Jaringan Komputer & v \\ \hline
+AIF131191 & Pemrograman Berorientasi Objek &  & AIF183209 & Pemrograman pada Perangkat Bergerak & v \\ \hline
+AIF131192 & Algoritma dan Struktur Data & & AIF183225 & Seritifikasi Administrasi Jaringan Komputer 1 & \\ \hline
+AIF131195 & Pengantar Informatika &  & AIF183227 & Pengantar Telekomunikasi & v \\ \hline
+AIF131198 & Logika Informatika & & AIF183229 & Topik Khusus Sistem Terdistribusi 1 & \\ \hline
+AIF132202 & Desain dan Analisis Algoritma &  & AIF183232 & Pemrograman Berbasis Web Lanjut & v \\ \hline
+AIF132205 & Arsitektur dan Organisasi Komputer &  & AIF183236 & Seritifikasi Administrasi Jaringan Komputer 2 & v \\ \hline
+AIF132296 & Sistem Operasi &  & AIF183340 & Metodologi Pengembangan Sistem Informasi 2 & v \\ \hline
+AIF132298 & Rekayasa Perangkat Lunak &  & AIF183342 & Kewirausahaan Berbasis Teknologi & v \\ \hline
+AIF133305 & Jaringan Komputer & & AIF183346 & Topik Khusus Sistem Informasi 2 & \\ \hline
+AIF133315 & Pemrograman Berbasis Web &  & AIF183348 & Sistem Kecerdasan Bisnis & v \\ \hline
+AIF133317 & Desain Antarmuka Grafis & & AIF184000 & Etika Profesi & \\ \hline
+AIF133318 & Pemrograman Aplikasi Bergerak &  & AIF184001 & Skripsi 1 & v \\ \hline
+AIF133337 & Matematika Teknik &  & AIF184002 & Skripsi 2 & v \\ \hline
+AIF133350 & Algoritma Genetika &  & AIF184004 & Tugas Akhir & v \\ \hline
+AIF133352 & Jaringan Syaraf Tiruan & & AIF184005 & Komputer dan Masyarakat & \\ \hline
+AIF133356 & Analisis Proses Bisnis & & AIF184006 & Kerja Praktek 4 & \\ \hline
+AIF133380 & Teori Bahasa dan Otomata & & AIF184007 & Kerja Praktek 3 & \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:kelasmatakuliah2018_rincian_2}
+\begin{tabular}{|p{2cm}|p{3.5cm}|p{1.75cm}|p{2cm}|p{3.5cm}|p{1.75cm}|}
+\hline
+\textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} & \textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} \\ \hline
+AIF133381 & Analisis Sistem Informasi &  & AIF184104 & Bio-Inspired Computing & v \\ \hline
+AIF133382 & Gudang Data dan Penambangan Data &  & AIF184106 & Pemrograman Permainan Komputer & v \\ \hline
+AIF133383 & Praktika Grafika Komputer &  & AIF184108 & Kompresi Data & v \\ \hline
+AIF133384 & Praktika Pemrograman Basis Data &  & AIF184109 & Pembelajaran Mesin & v \\ \hline
+AIF133385 & Praktika Pemrograman Berbasis Web &  & AIF184110 & Pengolahan Citra & v \\ \hline
+AIF133386 & Manajemen Proyek Teknologi Informasi &  & AIF184114 & Verifikasi Formal & v \\ \hline
+AIF133388 & Praktika Pemrograman Aplikasi Bergerak &  & AIF184115 & Pencarian \& Temu Kembali Informasi & v \\ \hline
+AIF133389 & Kriptografi &  & AIF184116 & Sistem Multi Agen & v \\ \hline
+AIF134401 & Skripsi 1 &  & AIF184119 & Kecerdasan Buatan Untuk Permainan Komputer & v \\ \hline
+AIF134402 & Skripsi 2 & & AIF184120 & Topik Khusus Informatika 4 & \\ \hline
+AIF134443 & Matematika Kombinatorial &  & AIF184121 & Metode Optimisasi & v \\ \hline
+AIF134448 & Pemrosesan Data Geografis &  & AIF184123 & Teknologi Mesin Pencari & v \\ \hline
+AIF134451 & Audit Sistem Informasi &  & AIF184125 & Pengolahan Bahasa Alami & v \\ \hline
+AIF134455 & Sistem Pendukung Keputusan & & AIF184127 & Topik Khusus Informatika 3 & \\ \hline
+AIF134459 & Administrasi Basis Data &  & AIF184129 & Sertifikasi Administrasi Jaringan Komputer 3 & v \\ \hline
+AIF134460 & Manajemen Pengetahuan &  & AIF184222 & Sertifikasi Administrasi Jaringan Komputer 4 & v \\ \hline
+AIF134464 & Sistem Perusahaan Berskala Besar &  & AIF184224 & Sistem Terdistribusi & v \\ \hline
+AIF134468 & Teknologi Multimedia &  & AIF184228 & Pemrograman Jaringan & v \\ \hline
+AIF134471 & Metode Formal &  & AIF184230 & Keamanan Jaringan & v \\ \hline
+AIF134480 & Pemrograman Sistem &  & AIF184231 & Jaringan Nirkabel & v \\ \hline
+AIF134481 & Sistem Pakar & & AIF184232 & Topik Khusus Sistem Terdistribusi 4 & \\ \hline
+AIF134483 & Teknik Kompilasi &  & AIF184233 & Teknologi Middleware & v \\ \hline
+AIF134484 & Kewirausahaan &  & AIF184235 & Layanan Berbasis Web & v \\ \hline
+AIF134487 & Perencanaan Sistem Informasi & & AIF184237 & Topik Khusus Sistem Terdistribusi 3 & \\ \hline
+AIF134489 & Keamanan Informasi Dijital &  & AIF184247 & Jaringan Komputer Lanjut & v \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:kelasmatakuliah2018_rincian_3}
+\begin{tabular}{|p{2cm}|p{3.5cm}|p{1.75cm}|p{2cm}|p{3.5cm}|p{1.75cm}|}
+\hline
+\textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} & \textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} \\ \hline
+AIF181100 & Dasar Pemrograman & v & AIF184303 & Proyek Sistem Informasi 2 & v \\ \hline
+AIF181101 & Pemodelan untuk Komputasi &  & AIF184334 & Sistem Informasi Skala Besar & v \\ \hline
+AIF181103 & Matematika Dasar & & AIF184336 & Sistem e-Government & \\ \hline
+AIF181104 & Logika Informatika &  & AIF184338 & Manajemen Proses Bisnis & v \\ \hline
+AIF181105 & Pengantar Informatika &  & AIF184339 & Pengendalian \& Audit Teknologi Informasi & v \\ \hline
+AIF181106 & Matriks dan Ruang Vektor &  & AIF184340 & Sistem Informasi Geografis & v \\ \hline
+AIF181107 & Matematika Diskret &  & AIF184341 & Penambangan Data & v \\ \hline
+AIF181202 & Arsitektur dan Organisasi Komputer & & AIF184342 & Topik Khusus Sistem Informasi 4 & \\ \hline
+AIF182007 & Teknik Presentasi & & AIF184343 & Topik Khusus Sistem Informasi 3 & \\ \hline
+AIF182100 & Analisis dan Desain Perangkat Lunak & v & AIF184344 & Analisis Big Data & v \\ \hline
+AIF182101 & Algoritma dan Struktur Data & v & AIF184345 & Teknologi Big Data dan Cloud Computing & v \\ \hline
+AIF182103 & Struktur Diskret & v & AMS131190 & Matematika Informatika &  \\ \hline
+AIF182105 & Pemrograman Berorientasi Objek & v & AMS131191 & Kalkulus &  \\ \hline
+AIF182106 & Desain dan Analisis Algoritma & v & AMS132290 & Aljabar Linear dan Matriks &  \\ \hline
+AIF182109 & Statistika untuk Komputasi & & AMS133390 & Pemrograman Linear & \\ \hline
+AIF182111 & Pemrograman Kompetitif 1 & v & APS133302 & Dunia Dijital dan Sains &  \\ \hline
+AIF182112 & Pemrograman Kompetitif 2 & v & APS133309 & Dunia Dijital dan Sains &  \\ \hline
+AIF182204 & Pemrograman Berbasis Web & v & EAA131101 & Akuntansi Keuangan Dasar 1 &  \\ \hline
+AIF182210 & Pengantar Jaringan Komputer & & EAA131102 & Akuntansi Keuangan Dasar 2 & \\ \hline
+AIF182302 & Manajemen Informasi dan Basisdata & v & ESA131101 & Akuntansi Keuangan Dasar &  \\ \hline
+AIF182308 & Pengantar Sistem Informasi & v & ESM131101 & Pengantar Bisnis &  \\ \hline
+AIF183002 & Penulisan Ilmiah & & ESM131105 & Manajemen & \\ \hline
+AIF183010 & Kerja Praktek 2 & & MKU130001 & Pendidikan Pancasila & \\ \hline
+AIF183013 & Kerja Praktek 1 & & MKU130002 & Pendidikan Kewarganegaraan & \\ \hline
+AIF183015 & Pendidikan Pengabdian kepada Masyarakat & & MKU130003 & Agama Katolik & \\ \hline
+AIF183106 & Proyek Informatika & v & MKU130004 & Fenomenologi Agama &  \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:kelasmatakuliah2018_rincian_4}
+\begin{tabular}{|p{2cm}|p{3.5cm}|p{1.75cm}|p{2cm}|p{3.5cm}|p{1.75cm}|}
+\hline
+\textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} & \textbf{Kelas} & \textbf{Nama} & \textbf{Prasyarat} \\ \hline
+AIF183107 & Pengantar Sistem Cerdas & v & MKU130008 & Etika &  \\ \hline
+AIF183111 & Interaksi Manusia Komputer & & MKU130009 & Bahasa Indonesia & \\ \hline
+AIF183112 & Pengujian Perangkat Lunak & v & MKU130010 & Bahasa Inggris &  \\ \hline
+AIF183114 & Algoritma Kriptografi & v & MKU130011 & Estetika &  \\ \hline
+AIF183116 & Komputasi Paralel & v & MKU130012 & Logika &  \\ \hline
+AIF183117 & Grafika Komputer & v & MKU180110 & Pendidikan Kewarganegaraan &  \\ \hline
+AIF183118 & Komputasi Geometri & v & MKU180120 & Logika &  \\ \hline
+AIF183119 & Keamanan Informasi & v & MKU180130 & Bahasa Indonesia &  \\ \hline
+AIF183120 & Perancangan Permainan Komputer & v & MKU180240 & Etika &  \\ \hline
+AIF183121 & Pemrograman Kompetitif 3 & v & MKU180250 & Pendidikan Pancasila &  \\ \hline
+AIF183122 & Pemodelan \& Simulasi & v & MKU180360 & Estetika &  \\ \hline
+AIF183123 & Topik Khusus Informatika 1 & & MKU180370 & Agama Katolik & \\ \hline
+AIF183124 & Grafika Komputer Lanjut & v & MKU180380 & Fenomenologi Agama &  \\ \hline
+AIF183128 & Topik Khusus Informatika 2 & & SAB133315 & Kewirausahaan & \\ \hline
+AIF183141 & Pemrograman Fungsional & v & SIR131104 & Bahasa Jepang &  \\ \hline
+AIF183143 & Pemodelan Formal & v & SPO131116 & Perekonomian Indonesia &  \\ \hline
+\end{tabular}
+\end{table}
 	\begin{itemize}
-		\item \texttt{AIF131101} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Berorientasi Objek.
-\item \texttt{AIF131102} \\
-Kelas ini merepresentasikan mata kuliah Algoritma dan Struktur Data.
-\item \texttt{AIF131105} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Informatika.
-\item \texttt{AIF131106} \\
-Kelas ini merepresentasikan mata kuliah Sistem Dijital.
-\item \texttt{AIF131181} \\
-Kelas ini merepresentasikan mata kuliah Dasar-dasar Pemrograman.
-\item \texttt{AIF131182} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Basis Data.
-\item \texttt{AIF131183} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Prosedural.
-\item \texttt{AIF131191} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Berorientasi Objek.
-\item \texttt{AIF131192} \\
-Kelas ini merepresentasikan mata kuliah Algoritma dan Struktur Data.
-\item \texttt{AIF131195} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Informatika.
-\item \texttt{AIF131198} \\
-Kelas ini merepresentasikan mata kuliah Logika Informatika.
-\item \texttt{AIF132202} \\
-Kelas ini merepresentasikan mata kuliah Desain dan Analisis Algoritma.
-\item \texttt{AIF132205} \\
-Kelas ini merepresentasikan mata kuliah Arsitektur dan Organisasi Komputer.
-\item \texttt{AIF132206} \\
-Kelas ini merepresentasikan mata kuliah Sistem Operasi.
-\item \texttt{AIF132208} \\
-Kelas ini merepresentasikan mata kuliah Rekayasa Perangkat Lunak.
-\item \texttt{AIF132210} \\
-Kelas ini merepresentasikan mata kuliah Interaksi Manusia Komputer.
-\item \texttt{AIF132280} \\
-Kelas ini merepresentasikan mata kuliah Praktika Interaksi Manusia Komputer.
-\item \texttt{AIF132281} \\
-Kelas ini merepresentasikan mata kuliah Pengenalan Bidang Ilmu TIK.
-\item \texttt{AIF132282} \\
-Kelas ini merepresentasikan mata kuliah Algoritma dan Struktur Data Lanjut.
-\item \texttt{AIF132290} \\
-Kelas ini merepresentasikan mata kuliah Interaksi Manusia Komputer.
-\item \texttt{AIF132291} \\
-Kelas ini merepresentasikan mata kuliah Analisis dan Desain Berorientasi Objek.
-\item \texttt{AIF132292} \\
-Kelas ini merepresentasikan mata kuliah Desain dan Analisis Algoritma.
-\item \texttt{AIF132294} \\
-Kelas ini merepresentasikan mata kuliah Manajemen Informasi dan Basisdata.
-\item \texttt{AIF132296} \\
-Kelas ini merepresentasikan mata kuliah Sistem Operasi.
-\item \texttt{AIF132298} \\
-Kelas ini merepresentasikan mata kuliah Rekayasa Perangkat Lunak.
-\item \texttt{AIF133305} \\
-Kelas ini merepresentasikan mata kuliah Jaringan Komputer.
-\item \texttt{AIF133315} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Berbasis Web.
-\item \texttt{AIF133317} \\
-Kelas ini merepresentasikan mata kuliah Desain Antarmuka Grafis.
-\item \texttt{AIF133318} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Aplikasi Bergerak.
-\item \texttt{AIF133337} \\
-Kelas ini merepresentasikan mata kuliah Matematika Teknik.
-\item \texttt{AIF133350} \\
-Kelas ini merepresentasikan mata kuliah Algoritma Genetika.
-\item \texttt{AIF133352} \\
-Kelas ini merepresentasikan mata kuliah Jaringan Syaraf Tiruan.
-\item \texttt{AIF133356} \\
-Kelas ini merepresentasikan mata kuliah Analisis Proses Bisnis.
-\item \texttt{AIF133380} \\
-Kelas ini merepresentasikan mata kuliah Teori Bahasa dan Otomata.
-\item \texttt{AIF133381} \\
-Kelas ini merepresentasikan mata kuliah Analisis Sistem Informasi.
-\item \texttt{AIF133382} \\
-Kelas ini merepresentasikan mata kuliah Gudang Data dan Penambangan Data.
-\item \texttt{AIF133383} \\
-Kelas ini merepresentasikan mata kuliah Praktika Grafika Komputer.
-\item \texttt{AIF133384} \\
-Kelas ini merepresentasikan mata kuliah Praktika Pemrograman Basis Data.
-\item \texttt{AIF133385} \\
-Kelas ini merepresentasikan mata kuliah Praktika Pemrograman Berbasis Web.
-\item \texttt{AIF133386} \\
-Kelas ini merepresentasikan mata kuliah Manajemen Proyek Teknologi Informasi.
-\item \texttt{AIF133388} \\
-Kelas ini merepresentasikan mata kuliah Praktika Pemrograman Aplikasi Bergerak.
-\item \texttt{AIF133389} \\
-Kelas ini merepresentasikan mata kuliah Kriptografi.
-\item \texttt{AIF134401} \\
-Kelas ini merepresentasikan mata kuliah Skripsi 1.
-\item \texttt{AIF134402} \\
-Kelas ini merepresentasikan mata kuliah Skripsi 2.
-\item \texttt{AIF134443} \\
-Kelas ini merepresentasikan mata kuliah Matematika Kombinatorial.
-\item \texttt{AIF134448} \\
-Kelas ini merepresentasikan mata kuliah Pemrosesan Data Geografis.
-\item \texttt{AIF134451} \\
-Kelas ini merepresentasikan mata kuliah Audit Sistem Informasi.
-\item \texttt{AIF134455} \\
-Kelas ini merepresentasikan mata kuliah Sistem Pendukung Keputusan.
-\item \texttt{AIF134459} \\
-Kelas ini merepresentasikan mata kuliah Administrasi Basis Data.
-\item \texttt{AIF134460} \\
-Kelas ini merepresentasikan mata kuliah Manajemen Pengetahuan.
-\item \texttt{AIF134464} \\
-Kelas ini merepresentasikan mata kuliah Sistem Perusahaan Berskala Besar.
-\item \texttt{AIF134468} \\
-Kelas ini merepresentasikan mata kuliah Teknologi Multimedia.
-\item \texttt{AIF134471} \\
-Kelas ini merepresentasikan mata kuliah Metode Formal.
-\item \texttt{AIF134480} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Sistem.
-\item \texttt{AIF134481} \\
-Kelas ini merepresentasikan mata kuliah Sistem Pakar.
-\item \texttt{AIF134483} \\
-Kelas ini merepresentasikan mata kuliah Teknik Kompilasi.
-\item \texttt{AIF134484} \\
-Kelas ini merepresentasikan mata kuliah Kewirausahaan.
-\item \texttt{AIF134487} \\
-Kelas ini merepresentasikan mata kuliah Perencanaan Sistem Informasi.
-\item \texttt{AIF134489} \\
-Kelas ini merepresentasikan mata kuliah Keamanan Informasi Dijital.
-\item \texttt{AIF181100} \\
-Kelas ini merepresentasikan mata kuliah Dasar Pemrograman. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF181101} \\
-Kelas ini merepresentasikan mata kuliah Pemodelan untuk Komputasi.
-\item \texttt{AIF181103} \\
-Kelas ini merepresentasikan mata kuliah Matematika Dasar.
-\item \texttt{AIF181104} \\
-Kelas ini merepresentasikan mata kuliah Logika Informatika.
-\item \texttt{AIF181105} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Informatika.
-\item \texttt{AIF181106} \\
-Kelas ini merepresentasikan mata kuliah Matriks dan Ruang Vektor.
-\item \texttt{AIF181107} \\
-Kelas ini merepresentasikan mata kuliah Matematika Diskret.
-\item \texttt{AIF181202} \\
-Kelas ini merepresentasikan mata kuliah Arsitektur dan Organisasi Komputer.
-\item \texttt{AIF182007} \\
-Kelas ini merepresentasikan mata kuliah Teknik Presentasi.
-\item \texttt{AIF182100} \\
-Kelas ini merepresentasikan mata kuliah Analisis dan Desain Perangkat Lunak. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182101} \\
-Kelas ini merepresentasikan mata kuliah Algoritma dan Struktur Data. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182103} \\
-Kelas ini merepresentasikan mata kuliah Struktur Diskret. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182105} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Berorientasi Objek. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182106} \\
-Kelas ini merepresentasikan mata kuliah Desain dan Analisis Algoritma. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182109} \\
-Kelas ini merepresentasikan mata kuliah Statistika untuk Komputasi.
-\item \texttt{AIF182111} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Kompetitif 1. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182112} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Kompetitif 2. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182204} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Berbasis Web. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182210} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Jaringan Komputer.
-\item \texttt{AIF182302} \\
-Kelas ini merepresentasikan mata kuliah Manajemen Informasi dan Basisdata. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF182308} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Sistem Informasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183002} \\
-Kelas ini merepresentasikan mata kuliah Penulisan Ilmiah.
-\item \texttt{AIF183010} \\
-Kelas ini merepresentasikan mata kuliah Kerja Praktek 2.
-\item \texttt{AIF183013} \\
-Kelas ini merepresentasikan mata kuliah Kerja Praktek 1.
-\item \texttt{AIF183015} \\
-Kelas ini merepresentasikan mata kuliah Pendidikan Pengabdian kepada Masyarakat.
-\item \texttt{AIF183106} \\
-Kelas ini merepresentasikan mata kuliah Proyek Informatika. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183107} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Sistem Cerdas. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183111} \\
-Kelas ini merepresentasikan mata kuliah Interaksi Manusia Komputer.
-\item \texttt{AIF183112} \\
-Kelas ini merepresentasikan mata kuliah Pengujian Perangkat Lunak. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183114} \\
-Kelas ini merepresentasikan mata kuliah Algoritma Kriptografi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183116} \\
-Kelas ini merepresentasikan mata kuliah Komputasi Paralel. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183117} \\
-Kelas ini merepresentasikan mata kuliah Grafika Komputer. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183118} \\
-Kelas ini merepresentasikan mata kuliah Komputasi Geometri. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183119} \\
-Kelas ini merepresentasikan mata kuliah Keamanan Informasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183120} \\
-Kelas ini merepresentasikan mata kuliah Perancangan Permainan Komputer. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183121} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Kompetitif 3. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183122} \\
-Kelas ini merepresentasikan mata kuliah Pemodelan \& Simulasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183123} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Informatika 1.
-\item \texttt{AIF183124} \\
-Kelas ini merepresentasikan mata kuliah Grafika Komputer Lanjut. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183128} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Informatika 2.
-\item \texttt{AIF183141} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Fungsional. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183143} \\
-Kelas ini merepresentasikan mata kuliah Pemodelan Formal. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183145} \\
-Kelas ini merepresentasikan mata kuliah Sertifikasi Dasar-dasar Java. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183147} \\
-Kelas ini merepresentasikan mata kuliah Teori Bilangan. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183149} \\
-Kelas ini merepresentasikan mata kuliah Teori Bahasa \& Kompilasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183153} \\
-Kelas ini merepresentasikan mata kuliah Metode Numerik. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183155} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Lojik. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183201} \\
-Kelas ini merepresentasikan mata kuliah Sistem Operasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183204} \\
-Kelas ini merepresentasikan mata kuliah Jaringan Komputer. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183209} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman pada Perangkat Bergerak. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183225} \\
-Kelas ini merepresentasikan mata kuliah Seritifikasi Administrasi Jaringan Komputer 1.
-\item \texttt{AIF183227} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Telekomunikasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183229} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 1.
-\item \texttt{AIF183232} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Berbasis Web Lanjut. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183236} \\
-Kelas ini merepresentasikan mata kuliah Seritifikasi Administrasi Jaringan Komputer 2. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183238} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 2.
-\item \texttt{AIF183250} \\
-Kelas ini merepresentasikan mata kuliah Sistem \& Aplikasi Telematika. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183300} \\
-Kelas ini merepresentasikan mata kuliah Teknologi Basisdata. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183303} \\
-Kelas ini merepresentasikan mata kuliah Rekayasa Perangkat Lunak. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183305} \\
-Kelas ini merepresentasikan mata kuliah Manajemen Proyek. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183308} \\
-Kelas ini merepresentasikan mata kuliah Proyek Sistem Informasi 1. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183331} \\
-Kelas ini merepresentasikan mata kuliah Sistem e-Commerce. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183333} \\
-Kelas ini merepresentasikan mata kuliah Metodologi Pengembangan Sistem Informasi 1. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183337} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Informasi 1.
-\item \texttt{AIF183339} \\
-Kelas ini merepresentasikan mata kuliah Sertifikasi Perancangan dan Pemrograman Basis Data dengan SQL. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183340} \\
-Kelas ini merepresentasikan mata kuliah Metodologi Pengembangan Sistem Informasi 2. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183342} \\
-Kelas ini merepresentasikan mata kuliah Kewirausahaan Berbasis Teknologi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF183346} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Informasi 2.
-\item \texttt{AIF183348} \\
-Kelas ini merepresentasikan mata kuliah Sistem Kecerdasan Bisnis. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184000} \\
-Kelas ini merepresentasikan mata kuliah Etika Profesi.
-\item \texttt{AIF184001} \\
-Kelas ini merepresentasikan mata kuliah Skripsi 1. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184002} \\
-Kelas ini merepresentasikan mata kuliah Skripsi 2. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184004} \\
-Kelas ini merepresentasikan mata kuliah Tugas Akhir. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184005} \\
-Kelas ini merepresentasikan mata kuliah Komputer dan Masyarakat.
-\item \texttt{AIF184006} \\
-Kelas ini merepresentasikan mata kuliah Kerja Praktek 4.
-\item \texttt{AIF184007} \\
-Kelas ini merepresentasikan mata kuliah Kerja Praktek 3.
-\item \texttt{AIF184104} \\
-Kelas ini merepresentasikan mata kuliah Bio-Inspired Computing. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184106} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Permainan Komputer. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184108} \\
-Kelas ini merepresentasikan mata kuliah Kompresi Data. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184109} \\
-Kelas ini merepresentasikan mata kuliah Pembelajaran Mesin. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184110} \\
-Kelas ini merepresentasikan mata kuliah Pengolahan Citra. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184114} \\
-Kelas ini merepresentasikan mata kuliah Verifikasi Formal. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184115} \\
-Kelas ini merepresentasikan mata kuliah Pencarian \& Temu Kembali Informasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184116} \\
-Kelas ini merepresentasikan mata kuliah Sistem Multi Agen. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184119} \\
-Kelas ini merepresentasikan mata kuliah Kecerdasan Buatan Untuk Permainan Komputer. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184120} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Informatika 4.
-\item \texttt{AIF184121} \\
-Kelas ini merepresentasikan mata kuliah Metode Optimisasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184123} \\
-Kelas ini merepresentasikan mata kuliah Teknologi Mesin Pencari. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184125} \\
-Kelas ini merepresentasikan mata kuliah Pengolahan Bahasa Alami. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184127} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Informatika 3.
-\item \texttt{AIF184129} \\
-Kelas ini merepresentasikan mata kuliah Sertifikasi Administrasi Jaringan Komputer 3. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184222} \\
-Kelas ini merepresentasikan mata kuliah Sertifikasi Administrasi Jaringan Komputer 4. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184224} \\
-Kelas ini merepresentasikan mata kuliah Sistem Terdistribusi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184228} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Jaringan. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184230} \\
-Kelas ini merepresentasikan mata kuliah Keamanan Jaringan. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184231} \\
-Kelas ini merepresentasikan mata kuliah Jaringan Nirkabel. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184232} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 4.
-\item \texttt{AIF184233} \\
-Kelas ini merepresentasikan mata kuliah Teknologi Middleware. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184235} \\
-Kelas ini merepresentasikan mata kuliah Layanan Berbasis Web. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184237} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Terdistribusi 3.
-\item \texttt{AIF184247} \\
-Kelas ini merepresentasikan mata kuliah Jaringan Komputer Lanjut. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184303} \\
-Kelas ini merepresentasikan mata kuliah Proyek Sistem Informasi 2. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184334} \\
-Kelas ini merepresentasikan mata kuliah Sistem Informasi Skala Besar. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184336} \\
-Kelas ini merepresentasikan mata kuliah Sistem e-Government.
-\item \texttt{AIF184338} \\
-Kelas ini merepresentasikan mata kuliah Manajemen Proses Bisnis. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184339} \\
-Kelas ini merepresentasikan mata kuliah Pengendalian \& Audit Teknologi Informasi. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184340} \\
-Kelas ini merepresentasikan mata kuliah Sistem Informasi Geografis. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184341} \\
-Kelas ini merepresentasikan mata kuliah Penambangan Data. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184342} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Informasi 4.
-\item \texttt{AIF184343} \\
-Kelas ini merepresentasikan mata kuliah Topik Khusus Sistem Informasi 3.
-\item \texttt{AIF184344} \\
-Kelas ini merepresentasikan mata kuliah Analisis Big Data. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AIF184345} \\
-Kelas ini merepresentasikan mata kuliah Teknologi Big Data dan Cloud Computing. Method yang dimiliki kelas ini adalah sebagai berikut: 
-\begin{itemize}
-\item \textbf{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}\\
-Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
-\textbf{Parameter:}
-\begin{itemize}
-\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
-\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
-\end{itemize}
-\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
-\end{itemize}
-\item \texttt{AMS131190} \\
-Kelas ini merepresentasikan mata kuliah Matematika Informatika.
-\item \texttt{AMS131191} \\
-Kelas ini merepresentasikan mata kuliah Kalkulus.
-\item \texttt{AMS132290} \\
-Kelas ini merepresentasikan mata kuliah Aljabar Linear dan Matriks.
-\item \texttt{AMS133390} \\
-Kelas ini merepresentasikan mata kuliah Pemrograman Linear.
-\item \texttt{APS133302} \\
-Kelas ini merepresentasikan mata kuliah Dunia Dijital dan Sains.
-\item \texttt{APS133309} \\
-Kelas ini merepresentasikan mata kuliah Dunia Dijital dan Sains.
-\item \texttt{EAA131101} \\
-Kelas ini merepresentasikan mata kuliah Akuntansi Keuangan Dasar 1.
-\item \texttt{EAA131102} \\
-Kelas ini merepresentasikan mata kuliah Akuntansi Keuangan Dasar 2.
-\item \texttt{ESA131101} \\
-Kelas ini merepresentasikan mata kuliah Akuntansi Keuangan Dasar.
-\item \texttt{ESM131101} \\
-Kelas ini merepresentasikan mata kuliah Pengantar Bisnis.
-\item \texttt{ESM131105} \\
-Kelas ini merepresentasikan mata kuliah Manajemen.
-\item \texttt{MKU130001} \\
-Kelas ini merepresentasikan mata kuliah Pendidikan Pancasila.
-\item \texttt{MKU130002} \\
-Kelas ini merepresentasikan mata kuliah Pendidikan Kewarganegaraan.
-\item \texttt{MKU130003} \\
-Kelas ini merepresentasikan mata kuliah Agama Katolik.
-\item \texttt{MKU130004} \\
-Kelas ini merepresentasikan mata kuliah Fenomenologi Agama.
-\item \texttt{MKU130008} \\
-Kelas ini merepresentasikan mata kuliah Etika.
-\item \texttt{MKU130009} \\
-Kelas ini merepresentasikan mata kuliah Bahasa Indonesia.
-\item \texttt{MKU130010} \\
-Kelas ini merepresentasikan mata kuliah Bahasa Inggris.
-\item \texttt{MKU130011} \\
-Kelas ini merepresentasikan mata kuliah Estetika.
-\item \texttt{MKU130012} \\
-Kelas ini merepresentasikan mata kuliah Logika.
-\item \texttt{MKU180110} \\
-Kelas ini merepresentasikan mata kuliah Pendidikan Kewarganegaraan.
-\item \texttt{MKU180120} \\
-Kelas ini merepresentasikan mata kuliah Logika.
-\item \texttt{MKU180130} \\
-Kelas ini merepresentasikan mata kuliah Bahasa Indonesia.
-\item \texttt{MKU180240} \\
-Kelas ini merepresentasikan mata kuliah Etika.
-\item \texttt{MKU180250} \\
-Kelas ini merepresentasikan mata kuliah Pendidikan Pancasila.
-\item \texttt{MKU180360} \\
-Kelas ini merepresentasikan mata kuliah Estetika.
-\item \texttt{MKU180370} \\
-Kelas ini merepresentasikan mata kuliah Agama Katolik.
-\item \texttt{MKU180380} \\
-Kelas ini merepresentasikan mata kuliah Fenomenologi Agama.
-\item \texttt{SAB133315} \\
-Kelas ini merepresentasikan mata kuliah Kewirausahaan.
-\item \texttt{SIR131104} \\
-Kelas ini merepresentasikan mata kuliah Bahasa Jepang.
-\item \texttt{SPO131116} \\
-Kelas ini merepresentasikan mata kuliah Perekonomian Indonesia.
+		\item Untuk kelas mata kuliah yang memiliki prasayarat mempunyai \textit{method} \texttt{public boolean checkPrasyarat(Mahasiswa mahasiswa, List<String> reasonsContainer)}. \textit{Method} ini untuk memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter reasonsContainer.\\
+			\textbf{Parameter:}
+			\begin{itemize}
+				\item \textbf{mahasiswa} prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini.
+				\item \textbf{reasonsContainer} jika pesan-pesan terkait prasyarat akan ditambahkan di sini.
+			\end{itemize}
+			\textbf{Kembalian:} \texttt{true} jika seluruh prasyarat dipenuhi, \texttt{false} jika tidak.
 	\end{itemize}
 	\item \textit{Package} \texttt{id.ac.unpar.siamodels.prodi.teknikinformatika}\\
 	\textit{Package} ini memiliki kelas sebagai berikut:
@@ -1330,15 +270,15 @@ Pada halaman ini terdapat data mahasiswa berupa nama dan foto mahasiswa yang did
 	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/home}
 	\item Setelah berhasil, mengambil data nama mahasiswa dengan melakukan kueri css menggunakan kueri ``div.namaUser.d-none.d-lg-block.mr-3'' (Gambar \ref{pic:home_nama_user})
 	\item Setelah berhasil melakukan kueri css, akan mendapatkan nama dan email mahasiswa. Data yang dibutuhkan hanya nama mahasiswa, sehingga perlu memotong hasil kueri dari karakter pertama sampai indeks awal email mahasiswa. 
-	\item Kemudian disimpan pada atribut kelas \texttt{Mahasiswa} dengan menggunakan \textit{method} \texttt{void setNama(String nama)}.
+	\item Kemudian disimpan pada atribut kelas \texttt{Mahasiswa} dengan menggunakan \textit{method} \texttt{void setNama\\(String nama)}.
 	\item Setelah berhasil menyimpan nama mahasiswa, kemudian melakukan kueri css untuk menyimpan foto mahasiswa menggunakan kueri ``img.img-fluid.fotoProfil'' (Gambar \ref{pic:home_foto_user})
 	\item Setelah berhasil melakukan kueri css, akan mendapatkan foto mahasiswa dalam format \textit{Base64}. Disini perlu melakukan perubahan pada kelas \texttt{Mahasiswa}, yaitu:
 	\begin{itemize}
 		\item Atribut \texttt{URL photoUrl} menjadi \texttt{String photoPath}, karena data foto mahasiswa dalam format \textit{Base64}.
-		\item \textit{Method} \texttt{URL getPhotoURL()} menjadi \texttt{String getPhotoPath()}, karena perubahan pada atribut dibutuhkan perubahan \textit{method getter}.
-		\item \textit{Method} \texttt{void setPhotoURL(URL photoURL)} menjadi \texttt{void setPhotoPath(String photoPath)}, karena perubahan pada atribut dibutuhkan perubahan \textit{method setter}.
+		\item \textit{Method} \texttt{URL getPhotoURL()} menjadi \\\texttt{String getPhotoPath()}, karena perubahan pada atribut dibutuhkan perubahan \textit{method getter}.
+		\item \textit{Method} \texttt{void setPhotoURL(URL photoURL)} menjadi \texttt{void \\setPhotoPath(String photoPath)}, karena perubahan pada atribut dibutuhkan perubahan \textit{method setter}.
 	\end{itemize}
-	\item Kemudian disimpan pada atribut kelas \texttt{Mahasiswa} dengan menggunakan \textit{method} \texttt{void setPhotoPath(String photoPath)}
+	\item Kemudian disimpan pada atribut kelas \texttt{Mahasiswa} dengan menggunakan \textit{method} \texttt{void \\setPhotoPath(String photoPath)}
 	\item Proses berikutnya akan dijelaskan pada sub sub-bab halaman FRS/PRS
 \end{enumerate}
 
@@ -1404,7 +344,7 @@ Pada halaman ini terdapat data nilai mahasiswa terkini. Nilai yang diambil adala
 		\end{itemize}
 		\textit{Method} yang dimiliki kelas ini adalah \texttt{void run}. \textit{Method} ini merupakan \textit{method} turunan dari kelas \texttt{interface Runnable}. Untuk mendapatkan data nilai dilakukan dengan cara:
 		\begin{enumerate}
-			\item Mendapatkan tahun dan semester yang ditempuh mahasiswa dari atribut \texttt{Arraylist<String> listSemester} diambil dari value atribut \texttt{int l}. Kemudian String dibagi menjadi tahun dan semester yang dibutuhkan.
+			\item Mendapatkan tahun dan semester yang ditempuh mahasiswa dari atribut \texttt{Arraylist\\<String> listSemester} diambil dari value atribut \texttt{int l}. Kemudian String dibagi menjadi tahun dan semester yang dibutuhkan.
 			\item Setelah mendapatkan tahun dan semester. Kemudian melakukan koneksi ke alamat nilai berdasarkan tahun dan semester (\url{https://studentportal.unpar.ac.id/nilai/2013/1}).
 			\item Setelah berhasil, kemudian melakukan kueri css berdasarkan script yang mengandung nilai mahasiswa (Gambar \ref{pic:nilai_per_semester_script}). 
 			\item Selanjutnya adalah mendapatkan script yang mengandung script ``var data\_mata\_kuliah = [];'' sampai indeks dari ``var data\_angket = [];''.
@@ -1423,7 +363,7 @@ Pada halaman ini terdapat data nilai mahasiswa terkini. Nilai yang diambil adala
 			\caption{Elemen ``table tbody tr'' dengan nilai TOEFL Mahasiswa}
 			\label{pic:nilai_toefl_css}
 		\end{figure}
-Pada halaman ini terdapat data nilai TOEFL yang telah ditempuh oleh mahasiswa. Data nilai TOEFL akan diproses menggunakan \textit{method} pada kelas \texttt{Scraper}, yaitu \textit{method} \texttt{void requestNilaiTOEFL(String phpsessid, Mahasiswa mahasiswa)}. Untuk memproses data nilai TOEFL dilakukan dengan cara:
+Pada halaman ini terdapat data nilai TOEFL yang telah ditempuh oleh mahasiswa. Data nilai TOEFL akan diproses menggunakan \textit{method} pada kelas \texttt{Scraper}, yaitu \textit{method} \texttt{void requestNilaiTOEFL\\(String phpsessid, Mahasiswa mahasiswa)}. Untuk memproses data nilai TOEFL dilakukan dengan cara:
 \begin{enumerate}
 	\item Melakukan koneksi ke \url{https://studentportal.unpar.ac.id/nilai/toefl}
 	\item Setelah berhasil, mengambil data nilai TOEFL dengan melakukan kueri css menggunakan kueri ``table'', ``tbody'', dan ``tr'' (Gambar \ref{pic:nilai_toefl_css})
@@ -1431,4 +371,4 @@ Pada halaman ini terdapat data nilai TOEFL yang telah ditempuh oleh mahasiswa. D
 \end{enumerate}
 
 \section{Perancangan Antarmuka}
-Pada antarmuka untuk IFStudentPortal tidak ada perubahan.
+Pada subbab Perancangan Antarmuka tidak dilakukan perubahan terhadap tampilan antarmuka IFStudentPortal. Proses pengerjaan penelitian ini lebih fokus dalam penyesuaian IFStudentPortal dan SIAModels ke kurikulum 2018.
